@@ -10,10 +10,15 @@
 
 [个人版5.0.1代码仓库](https://gitee.com/ZZK-1989/tianruoocr.git)
 
+[个人版本地版1.0代码仓库](https://gitee.com/wanglifree/tianruoocr-cl.git)
+
 需要你先有5.0.0,不提供5.0.0本地下载
 
 [修改版覆盖补丁](https://wwa.lanzoui.com/b016n4lgh) 蓝奏:5lvc  
 ## 版本更新
+
+### V1.0[2021-9-25]
+1.OCR本地化
 
 ### V5.0.1 [2021-08-07]
 https://gitee.com/ZZK-1989/tianruoocr.git
