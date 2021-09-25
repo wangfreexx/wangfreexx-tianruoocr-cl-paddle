@@ -4,7 +4,7 @@
 天若ocr开源版本的本地版，采用Chinese-lite识别，再也不用网络啦
 
 下载地址
-> https://gitee.com/wanglifree/tianruoocr-cl
+> https://gitee.com/wanglifree/tianruoocr-cl/releases/v1.0
 
 主要fork了以下仓库：
 > https://gitee.com/ZZK-1989/tianruoocr
