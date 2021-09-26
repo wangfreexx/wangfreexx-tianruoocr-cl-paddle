@@ -645,7 +645,7 @@ namespace TrOCR
 			}
 			if (tab_标签.SelectedTab == Page_翻译API)
 			{
-				tab_标签.Height = (int)(255.0 * Program.Factor);
+				tab_标签.Height = (int)(200.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
 		}
@@ -1188,7 +1188,8 @@ namespace TrOCR
 		//接口申请
         private void button2_Click(object sender, EventArgs e)
         {
+			Process.Start("https://api.fanyi.baidu.com/");
 
-        }
+		}
     }
 }
