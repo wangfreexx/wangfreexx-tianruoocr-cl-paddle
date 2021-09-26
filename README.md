@@ -23,6 +23,8 @@
 
 由于我也是白小白，编译的话可能需要在本项目根目录和tianruoocr-master下各放置一个packages，不然OcrLiteLib无法识别到tianruoocr-master里面的packages...
 
+下载地址
+> https://gitee.com/wanglifree/tianruoocr-cl/releases/v1.2
 
 ## 版本更新
 ### v1.2
