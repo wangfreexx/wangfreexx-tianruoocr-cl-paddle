@@ -114,7 +114,7 @@ namespace TrOCR
 
             modelsDir = appPath + "models" + "\\" + "paddle-ocr";
             clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
-            var strvalue = IniHelper.GetValue("paddle模型", "检测");
+            var strvalue = IniHelper.GetValue("paddle模型", "模型");
             if (strvalue == "发生错误")
             {
                 detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
