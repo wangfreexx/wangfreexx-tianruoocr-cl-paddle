@@ -404,7 +404,7 @@ namespace TrOCR
 
 
 			/*
-			 *                 IniHelper.SetValue("OCR2", "padding", "0");
+			 *  IniHelper.SetValue("OCR2", "padding", "0");
                 IniHelper.SetValue("OCR2", "maxSideLen", "1024");
                 IniHelper.SetValue("OCR2", "boxScoreThresh", "0.700");
                 IniHelper.SetValue("OCR2", "boxThresh", "0.300");
@@ -585,7 +585,7 @@ namespace TrOCR
 			}
 			if (tab_标签.SelectedTab == Page_OCR设置)
 			{
-				tab_标签.Height = (int)(400.0 * Program.Factor);
+				tab_标签.Height = (int)(355.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
 		}
@@ -1038,15 +1038,7 @@ namespace TrOCR
 
 		private void 反馈send()
 		{
-			if (string.IsNullOrEmpty(txt_问题反馈.Text))
-			{
-                CommonHelper.ShowHelpMsg("反馈文本不能为空");
-                return;
-			}
-            var str = "sm=%E5%A4%A9%E8%8B%A5OCR%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB" + StaticValue.CurrentVersion + "&nr=";
-            Post_Html("http://cd.ys168.com/f_ht/ajcx/lyd.aspx?cz=lytj&pdgk=1&pdgly=0&pdzd=0&tou=1&yzm=undefined&_dlmc=tianruoyouxin&_dlmm=", str + HttpUtility.UrlEncode(txt_问题反馈.Text));
-            txt_问题反馈.Text = "";
-            CommonHelper.ShowHelpMsg("感谢您的反馈！");
+
 		}
 
 		public void PlaySong(string file)
@@ -1112,96 +1104,7 @@ namespace TrOCR
         {
 			Application.Restart();
 		}
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-			IniHelper.SetValue("配置", "开机自启", cbBox_开机.Checked.ToString());
-			IniHelper.SetValue("配置", "快速翻译", cbBox_翻译.Checked.ToString());
-			IniHelper.SetValue("配置", "识别弹窗", cbBox_弹窗.Checked.ToString());
-			IniHelper.SetValue("配置", "窗体动画", cobBox_动画.Text);
-			IniHelper.SetValue("配置", "记录数目", numbox_记录.Text);
-			IniHelper.SetValue("配置", "自动保存", cbBox_保存.Checked.ToString());
-			IniHelper.SetValue("配置", "截图位置", textBox_path.Text);
-			IniHelper.SetValue("快捷键", "文字识别", txtBox_文字识别.Text);
-			IniHelper.SetValue("快捷键", "翻译文本", txtBox_翻译文本.Text);
-			IniHelper.SetValue("快捷键", "记录界面", txtBox_记录界面.Text);
-			IniHelper.SetValue("快捷键", "识别界面", txtBox_识别界面.Text);
-			IniHelper.SetValue("密钥_百度", "secret_id", text_baiduaccount.Text);
-			IniHelper.SetValue("密钥_百度", "secret_key", text_baidupassword.Text);
-			IniHelper.SetValue("代理", "代理类型", combox_代理.Text);
-			IniHelper.SetValue("代理", "服务器", text_服务器.Text);
-			IniHelper.SetValue("代理", "端口", text_端口.Text);
-			IniHelper.SetValue("代理", "需要密码", chbox_代理服务器.Checked.ToString());
-			IniHelper.SetValue("代理", "服务器账号", text_账号.Text);
-			IniHelper.SetValue("代理", "服务器密码", text_密码.Text);
-			IniHelper.SetValue("更新", "检测更新", check_检查更新.Checked.ToString());
-			IniHelper.SetValue("更新", "更新间隔", checkBox_更新间隔.Checked.ToString());
-			IniHelper.SetValue("更新", "间隔时间", numbox_间隔时间.Value.ToString());
-			IniHelper.SetValue("截图音效", "自动保存", chbox_save.Checked.ToString());
-			IniHelper.SetValue("截图音效", "音效路径", text_音效path.Text);
-			IniHelper.SetValue("截图音效", "粘贴板", chbox_copy.Checked.ToString());
-			if (!chbox_取色.Checked)
-			{
-				IniHelper.SetValue("取色器", "类型", "RGB");
-			}
-			if (chbox_取色.Checked)
-			{
-				IniHelper.SetValue("取色器", "类型", "HEX");
-			}
-
-			IniHelper.SetValue("OCR", "padding", ocrNum1.Value.ToString());
-			IniHelper.SetValue("OCR", "maxSideLen", ocrNum2.Value.ToString());
-			IniHelper.SetValue("OCR", "boxScoreThresh", ocrNum3.Value.ToString());
-			IniHelper.SetValue("OCR", "boxThresh", ocrNum4.Value.ToString());
-			IniHelper.SetValue("OCR", "unClipRatio", ocrNum5.Value.ToString());
-			if (doAngleCheckBox.Checked)
-			{
-				IniHelper.SetValue("OCR", "doAngle", "1");
-			}
-			else
-			{
-				IniHelper.SetValue("OCR", "doAngle", "0");
-			}
-
-			if (mostAngleCheckBox.Checked)
-			{
-				IniHelper.SetValue("OCR", "mostAngle", "1");
-			}
-			else
-			{
-				IniHelper.SetValue("OCR", "mostAngle", "0");
-			}
-
-			IniHelper.SetValue("OCR", "numThread", ocrNum6.Value.ToString());
-
-			//模型2数据保存
-			IniHelper.SetValue("OCR2", "padding", ocrNum7.Value.ToString());
-			IniHelper.SetValue("OCR2", "maxSideLen", ocrNum8.Value.ToString());
-			IniHelper.SetValue("OCR2", "boxScoreThresh", ocrNum9.Value.ToString());
-			IniHelper.SetValue("OCR2", "boxThresh", ocrNum10.Value.ToString());
-			IniHelper.SetValue("OCR2", "unClipRatio", ocrNum11.Value.ToString());
-			if (doAngleCheckBox2.Checked)
-			{
-				IniHelper.SetValue("OCR2", "doAngle", "1");
-			}
-			else
-			{
-				IniHelper.SetValue("OCR2", "doAngle", "0");
-			}
-
-			if (mostAngleCheckBox2.Checked)
-			{
-				IniHelper.SetValue("OCR2", "mostAngle", "1");
-			}
-			else
-			{
-				IniHelper.SetValue("OCR2", "mostAngle", "0");
-			}
-
-			IniHelper.SetValue("OCR2", "numThread", ocrNum12.Value.ToString());
-
-			MessageBox.Show("保存成功");
-		}
+     
 
         private void button3_Click(object sender, EventArgs e)
         {

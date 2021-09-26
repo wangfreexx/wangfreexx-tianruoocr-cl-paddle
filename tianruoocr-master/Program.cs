@@ -446,6 +446,22 @@ namespace TrOCR
             {
                 IniHelper.SetValue("OCR2", "numThread", "4");
             }
+
+
+            //自定义模型
+            if (IniHelper.GetValue("paddle模型", "检测模型") == "发生错误")
+            {
+                IniHelper.SetValue("paddle模型", "检测模型", "ch_PP-OCRv2_det_infer.onnx");
+            }
+            if (IniHelper.GetValue("paddle模型", "识别模型") == "发生错误")
+            {
+                IniHelper.SetValue("paddle模型", "识别模型", "ch_mobile_v2.0_rec_infer.onnx");
+            }
+            if (IniHelper.GetValue("paddle模型", "keytxt") == "发生错误")
+            {
+                IniHelper.SetValue("paddle模型", "keytxt", "ppocr_keys.txt");
+            }
+
         }
     }
 }

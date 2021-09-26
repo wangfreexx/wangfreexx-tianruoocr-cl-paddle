@@ -106,16 +106,44 @@ namespace TrOCR
                 MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
             }
 
-            //模型2初始化
+            //模型2初始化,从配置文件载入模型名字
+ 
+
+
+
             modelsDir = appPath + "models" + "\\" + "paddle-ocr";
-            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
             clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
-            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-            keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+            var strvalue = IniHelper.GetValue("paddle模型", "检测模型");
+            if (strvalue == "发生错误")
+            {
+                detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+            }
+            else
+            {
+                detPath = modelsDir + "\\" + strvalue;
+            }
+            strvalue = IniHelper.GetValue("paddle模型", "识别模型");
+            if (strvalue == "发生错误")
+            {
+                recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+            }
+            else
+            {
+                recPath = modelsDir + "\\" + strvalue;
+            }
+            strvalue = IniHelper.GetValue("paddle模型", "keytxt");
+            if (strvalue == "发生错误")
+            {
+                keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+            }
+            else
+            {
+                keysPath = modelsDir + "\\" + strvalue;
+            }
             isDetExists = File.Exists(detPath);
             isClsExists = File.Exists(clsPath);
             isRecExists = File.Exists(recPath);
-            isKeysExists = File.Exists(recPath);
+            isKeysExists = File.Exists(keysPath);
             if (isDetExists && isClsExists && isRecExists && isKeysExists)
             {
                 var value2 = IniHelper.GetValue("OCR2", "numThread");

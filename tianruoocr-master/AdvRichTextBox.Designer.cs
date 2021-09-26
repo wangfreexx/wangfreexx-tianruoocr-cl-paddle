@@ -406,8 +406,8 @@ namespace TrOCR
         {
             if (!File.Exists("cvextern.dll"))
             {
-                MessageBox.Show("请从蓝奏网盘中下载cvextern.dll大小约25m，点击确定自动弹出网页。\r\n将下载后的文件与 天若OCR文字识别.exe 这个文件放在一起。");
-                Process.Start("https://www.lanzous.com/i1ab3vg");
+                //MessageBox.Show("请从蓝奏网盘中下载cvextern.dll大小约25m，点击确定自动弹出网页。\r\n将下载后的文件与 天若OCR文字识别.exe 这个文件放在一起。");
+                //Process.Start("https://www.lanzous.com/i1ab3vg");
                 return;
             }
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
@@ -1168,8 +1168,8 @@ namespace TrOCR
         {
             if (!File.Exists("cvextern.dll"))
             {
-                MessageBox.Show("请从蓝奏网盘中下载cvextern.dll大小约25m，点击确定自动弹出网页。\r\n将下载后的文件与 天若OCR文字识别.exe 这个文件放在一起。");
-                Process.Start("https://www.lanzous.com/i1ab3vg");
+                //MessageBox.Show("请从蓝奏网盘中下载cvextern.dll大小约25m，点击确定自动弹出网页。\r\n将下载后的文件与 天若OCR文字识别.exe 这个文件放在一起。");
+                //Process.Start("https://www.lanzous.com/i1ab3vg");
                 return;
             }
             ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(AdvRichTextBox));
