@@ -5,10 +5,7 @@
 [官方正版](https://meta.appinn.net/t/topic/9840) 
 
 ---
-
-[开源版5.0.0](https://github.com/AnyListen/tianruoocr_last )
-
-[个人版5.0.1代码仓库](https://gitee.com/ZZK-1989/tianruoocr.git)
+## 更新请看[个人版本地版1.0代码仓库](https://gitee.com/wanglifree/tianruoocr-cl.git)
 
 [个人版本地版1.0代码仓库](https://gitee.com/wanglifree/tianruoocr-cl.git)
 
