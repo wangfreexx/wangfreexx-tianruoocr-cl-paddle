@@ -1,7 +1,7 @@
 # tianruoocr-cl
 
 #### 介绍
-天若ocr开源版本的本地版，采用Chinese-lite和Paddle识别，再也不用网络啦
+天若ocr开源版本的本地版，采用Chinese-lite识别，再也不用网络啦
 主要fork了以下仓库：
 > https://gitee.com/ZZK-1989/tianruoocr
 
