@@ -411,6 +411,41 @@ namespace TrOCR
             {
                 IniHelper.SetValue("OCR", "numThread", "4");
             }
+
+
+            //模型2
+            if (IniHelper.GetValue("OCR2", "padding") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "padding", "0");
+            }
+            if (IniHelper.GetValue("OCR2", "maxSideLen") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "maxSideLen", "1024");
+            }
+            if (IniHelper.GetValue("OCR2", "boxScoreThresh") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "boxScoreThresh", "0.700");
+            }
+            if (IniHelper.GetValue("OCR2", "boxThresh") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "boxThresh", "0.300");
+            }
+            if (IniHelper.GetValue("OCR2", "unClipRatio") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "unClipRatio", "2.0");
+            }
+            if (IniHelper.GetValue("OCR2", "doAngle") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "doAngle", "1");
+            }
+            if (IniHelper.GetValue("OCR2", "mostAngle") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "mostAngle", "1");
+            }
+            if (IniHelper.GetValue("OCR2", "numThread") == "发生错误")
+            {
+                IniHelper.SetValue("OCR2", "numThread", "4");
+            }
         }
     }
 }
