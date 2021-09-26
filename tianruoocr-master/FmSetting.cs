@@ -402,6 +402,103 @@ namespace TrOCR
 				ocrNum6.Value = int.Parse(value27); ;
 			}
 
+
+			/*
+			 *                 IniHelper.SetValue("OCR2", "padding", "0");
+                IniHelper.SetValue("OCR2", "maxSideLen", "1024");
+                IniHelper.SetValue("OCR2", "boxScoreThresh", "0.700");
+                IniHelper.SetValue("OCR2", "boxThresh", "0.300");
+                IniHelper.SetValue("OCR2", "unClipRatio", "1.5");
+                IniHelper.SetValue("OCR2", "doAngle", "1");
+                IniHelper.SetValue("OCR2", "mostAngle", "0");
+                IniHelper.SetValue("OCR2", "numThread", "4");
+			 */
+			value27 = IniHelper.GetValue("OCR2", "padding");
+			if (value27 == "发生错误")
+			{
+				ocrNum7.Value = 0;
+			}
+			else
+			{
+				ocrNum7.Value = int.Parse(value27);
+			}
+			value27 = IniHelper.GetValue("OCR2", "maxSideLen");
+			if (value27 == "发生错误")
+			{
+				ocrNum8.Value = 1024;
+			}
+			else
+			{
+				ocrNum8.Value = int.Parse(value27);
+			}
+			value27 = IniHelper.GetValue("OCR2", "boxScoreThresh");
+			if (value27 == "发生错误")
+			{
+				ocrNum9.Value = 0.700M;
+			}
+			else
+			{
+				ocrNum9.Value = (decimal)Convert.ToSingle(value27);
+			}
+			value27 = IniHelper.GetValue("OCR2", "boxThresh");
+			if (value27 == "发生错误")
+			{
+				ocrNum10.Value = 0.300M;
+			}
+			else
+			{
+				ocrNum10.Value = (decimal)Convert.ToSingle(value27);
+			}
+			value27 = IniHelper.GetValue("OCR2", "unClipRatio");
+			if (value27 == "发生错误")
+			{
+				ocrNum11.Value = 1.5M;
+			}
+			else
+			{
+				ocrNum11.Value = (decimal)Convert.ToSingle(value27);
+			}
+
+			value27 = IniHelper.GetValue("OCR2", "doAngle");
+			if (value27 == "发生错误")
+			{
+				doAngleCheckBox2.Checked = true;
+			}
+			if (value27 == "0")
+			{
+				doAngleCheckBox2.Checked = false;
+			}
+			else
+			{
+				doAngleCheckBox2.Checked = true;
+			}
+
+			value27 = IniHelper.GetValue("OCR2", "mostAngle");
+			if (value27 == "发生错误")
+			{
+				mostAngleCheckBox2.Checked = true;
+			}
+			if (value27 == "0")
+			{
+				mostAngleCheckBox2.Checked = false;
+			}
+			else
+			{
+				mostAngleCheckBox2.Checked = true;
+			}
+
+			value27 = IniHelper.GetValue("OCR2", "numThread");
+			if (value27 == "发生错误")
+			{
+				ocrNum12.Value = 4;
+			}
+			else
+			{
+				ocrNum12.Value = int.Parse(value27); ;
+			}
+
+
+
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -882,6 +979,31 @@ namespace TrOCR
 
 			IniHelper.SetValue("OCR", "numThread", ocrNum6.Value.ToString());
 
+			//模型2数据保存
+			IniHelper.SetValue("OCR2", "padding", ocrNum7.Value.ToString());
+			IniHelper.SetValue("OCR2", "maxSideLen", ocrNum8.Value.ToString());
+			IniHelper.SetValue("OCR2", "boxScoreThresh", ocrNum9.Value.ToString());
+			IniHelper.SetValue("OCR2", "boxThresh", ocrNum10.Value.ToString());
+			IniHelper.SetValue("OCR2", "unClipRatio", ocrNum11.Value.ToString());
+			if (doAngleCheckBox2.Checked)
+			{
+				IniHelper.SetValue("OCR2", "doAngle", "1");
+			}
+			else
+			{
+				IniHelper.SetValue("OCR2", "doAngle", "0");
+			}
+
+			if (mostAngleCheckBox2.Checked)
+			{
+				IniHelper.SetValue("OCR2", "mostAngle", "1");
+			}
+			else
+			{
+				IniHelper.SetValue("OCR2", "mostAngle", "0");
+			}
+
+			IniHelper.SetValue("OCR2", "numThread", ocrNum12.Value.ToString());
 
 			DialogResult = DialogResult.OK;
 		}
@@ -1051,7 +1173,39 @@ namespace TrOCR
 			}
 
 			IniHelper.SetValue("OCR", "numThread", ocrNum6.Value.ToString());
+
+			//模型2数据保存
+			IniHelper.SetValue("OCR2", "padding", ocrNum7.Value.ToString());
+			IniHelper.SetValue("OCR2", "maxSideLen", ocrNum8.Value.ToString());
+			IniHelper.SetValue("OCR2", "boxScoreThresh", ocrNum9.Value.ToString());
+			IniHelper.SetValue("OCR2", "boxThresh", ocrNum10.Value.ToString());
+			IniHelper.SetValue("OCR2", "unClipRatio", ocrNum11.Value.ToString());
+			if (doAngleCheckBox2.Checked)
+			{
+				IniHelper.SetValue("OCR2", "doAngle", "1");
+			}
+			else
+			{
+				IniHelper.SetValue("OCR2", "doAngle", "0");
+			}
+
+			if (mostAngleCheckBox2.Checked)
+			{
+				IniHelper.SetValue("OCR2", "mostAngle", "1");
+			}
+			else
+			{
+				IniHelper.SetValue("OCR2", "mostAngle", "0");
+			}
+
+			IniHelper.SetValue("OCR2", "numThread", ocrNum12.Value.ToString());
+
 			MessageBox.Show("保存成功");
+		}
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+			Application.Restart();
 		}
     }
 }

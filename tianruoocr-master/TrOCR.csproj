@@ -250,6 +250,10 @@
     <None Include="DLL\pinyin.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OcrLib\OcrLib.csproj">
+      <Project>{ab10d356-2d95-4460-96ca-9a7129ad0a76}</Project>
+      <Name>OcrLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OcrLiteLib\OcrLiteLib.csproj">
       <Project>{3a1647da-83cd-4f9d-9ffa-f663bb55ff6a}</Project>
       <Name>OcrLiteLib</Name>

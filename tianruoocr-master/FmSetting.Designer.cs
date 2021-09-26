@@ -94,31 +94,49 @@
             this.label21 = new System.Windows.Forms.Label();
             this.反馈Button = new System.Windows.Forms.Button();
             this.txt_问题反馈 = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label_版本号 = new System.Windows.Forms.Label();
-            this.label_更新日期 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.txt_更新说明 = new System.Windows.Forms.TextBox();
             this.Page_OCR设置 = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.ocrNum6 = new System.Windows.Forms.NumericUpDown();
             this.ocrNum3 = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
             this.ocrNum2 = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.ocrNum1 = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label24 = new System.Windows.Forms.Label();
             this.ocrNum4 = new System.Windows.Forms.NumericUpDown();
             this.label25 = new System.Windows.Forms.Label();
             this.ocrNum5 = new System.Windows.Forms.NumericUpDown();
             this.doAngleCheckBox = new System.Windows.Forms.CheckBox();
             this.mostAngleCheckBox = new System.Windows.Forms.CheckBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.ocrNum6 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label_版本号 = new System.Windows.Forms.Label();
+            this.label_更新日期 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txt_更新说明 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.Page_OCR设置2 = new System.Windows.Forms.TabPage();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.ocrNum12 = new System.Windows.Forms.NumericUpDown();
+            this.ocrNum9 = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
+            this.ocrNum8 = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.ocrNum7 = new System.Windows.Forms.NumericUpDown();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.ocrNum10 = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.ocrNum11 = new System.Windows.Forms.NumericUpDown();
+            this.doAngleCheckBox2 = new System.Windows.Forms.CheckBox();
+            this.mostAngleCheckBox2 = new System.Windows.Forms.CheckBox();
             this.Page_代理.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.Page_密钥.SuspendLayout();
@@ -142,15 +160,23 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numbox_间隔时间)).BeginInit();
             this.Page_反馈.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.Page_OCR设置.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.Page_OCR设置2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).BeginInit();
             this.SuspendLayout();
             // 
             // Page_代理
@@ -880,6 +906,7 @@
             this.tab_标签.Controls.Add(this.Page_更新);
             this.tab_标签.Controls.Add(this.Page_反馈);
             this.tab_标签.Controls.Add(this.Page_OCR设置);
+            this.tab_标签.Controls.Add(this.Page_OCR设置2);
             this.tab_标签.Location = new System.Drawing.Point(10, 2);
             this.tab_标签.Name = "tab_标签";
             this.tab_标签.SelectedIndex = 0;
@@ -1017,60 +1044,6 @@
             this.txt_问题反馈.Size = new System.Drawing.Size(378, 134);
             this.txt_问题反馈.TabIndex = 5;
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Location = new System.Drawing.Point(117, 14);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(255, 83);
-            this.groupBox8.TabIndex = 4;
-            this.groupBox8.TabStop = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(13, 56);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(141, 17);
-            this.label19.TabIndex = 5;
-            // 
-            // label_版本号
-            // 
-            this.label_版本号.AutoSize = true;
-            this.label_版本号.Location = new System.Drawing.Point(13, 13);
-            this.label_版本号.Name = "label_版本号";
-            this.label_版本号.Size = new System.Drawing.Size(95, 12);
-            this.label_版本号.TabIndex = 4;
-            // 
-            // label_更新日期
-            // 
-            this.label_更新日期.AutoSize = true;
-            this.label_更新日期.Location = new System.Drawing.Point(13, 34);
-            this.label_更新日期.Name = "label_更新日期";
-            this.label_更新日期.Size = new System.Drawing.Size(125, 12);
-            this.label_更新日期.TabIndex = 6;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Image = global::TrOCR.Properties.Resources.头像;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 15);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(84, 82);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            // 
-            // txt_更新说明
-            // 
-            this.txt_更新说明.BackColor = System.Drawing.Color.White;
-            this.txt_更新说明.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_更新说明.Location = new System.Drawing.Point(6, 20);
-            this.txt_更新说明.Multiline = true;
-            this.txt_更新说明.Name = "txt_更新说明";
-            this.txt_更新说明.Size = new System.Drawing.Size(366, 155);
-            this.txt_更新说明.TabIndex = 4;
-            // 
             // Page_OCR设置
             // 
             this.Page_OCR设置.Controls.Add(this.label27);
@@ -1081,8 +1054,94 @@
             this.Page_OCR设置.Padding = new System.Windows.Forms.Padding(3);
             this.Page_OCR设置.Size = new System.Drawing.Size(390, 329);
             this.Page_OCR设置.TabIndex = 9;
-            this.Page_OCR设置.Text = "OCR设置";
+            this.Page_OCR设置.Text = "CL-OCR设置";
             this.Page_OCR设置.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(247, 248);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(125, 12);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "线程更改需要重启程序";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(285, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "重启";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label23, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label24, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum4, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label25, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum5, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.doAngleCheckBox, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.mostAngleCheckBox, 1, 5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 22);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(169, 281);
+            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(5, 226);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(59, 12);
+            this.label26.TabIndex = 28;
+            this.label26.Text = "numThread";
+            // 
+            // ocrNum6
+            // 
+            this.ocrNum6.Location = new System.Drawing.Point(87, 229);
+            this.ocrNum6.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.ocrNum6.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum6.Name = "ocrNum6";
+            this.ocrNum6.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum6.TabIndex = 29;
+            this.ocrNum6.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             // 
             // ocrNum3
             // 
@@ -1172,41 +1231,6 @@
             this.label23.Size = new System.Drawing.Size(47, 12);
             this.label23.TabIndex = 6;
             this.label23.Text = "padding";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label23, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label24, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label25, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum5, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.doAngleCheckBox, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.mostAngleCheckBox, 1, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 22);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(169, 281);
-            this.tableLayoutPanel1.TabIndex = 3;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label24
             // 
@@ -1306,56 +1330,59 @@
             this.mostAngleCheckBox.Text = "mostAngle";
             this.mostAngleCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label26
+            // groupBox8
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(5, 226);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(59, 12);
-            this.label26.TabIndex = 28;
-            this.label26.Text = "numThread";
+            this.groupBox8.Location = new System.Drawing.Point(117, 14);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(255, 83);
+            this.groupBox8.TabIndex = 4;
+            this.groupBox8.TabStop = false;
             // 
-            // ocrNum6
+            // label19
             // 
-            this.ocrNum6.Location = new System.Drawing.Point(87, 229);
-            this.ocrNum6.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.ocrNum6.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ocrNum6.Name = "ocrNum6";
-            this.ocrNum6.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum6.TabIndex = 29;
-            this.ocrNum6.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(13, 56);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(141, 17);
+            this.label19.TabIndex = 5;
             // 
-            // button1
+            // label_版本号
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(285, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "重启";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label_版本号.AutoSize = true;
+            this.label_版本号.Location = new System.Drawing.Point(13, 13);
+            this.label_版本号.Name = "label_版本号";
+            this.label_版本号.Size = new System.Drawing.Size(95, 12);
+            this.label_版本号.TabIndex = 4;
             // 
-            // label27
+            // label_更新日期
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(247, 248);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(125, 12);
-            this.label27.TabIndex = 12;
-            this.label27.Text = "线程更改需要重启程序";
+            this.label_更新日期.AutoSize = true;
+            this.label_更新日期.Location = new System.Drawing.Point(13, 34);
+            this.label_更新日期.Name = "label_更新日期";
+            this.label_更新日期.Size = new System.Drawing.Size(125, 12);
+            this.label_更新日期.TabIndex = 6;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.White;
+            this.pictureBox6.Image = global::TrOCR.Properties.Resources.头像;
+            this.pictureBox6.Location = new System.Drawing.Point(12, 15);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(84, 82);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 5;
+            this.pictureBox6.TabStop = false;
+            // 
+            // txt_更新说明
+            // 
+            this.txt_更新说明.BackColor = System.Drawing.Color.White;
+            this.txt_更新说明.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_更新说明.Location = new System.Drawing.Point(6, 20);
+            this.txt_更新说明.Multiline = true;
+            this.txt_更新说明.Name = "txt_更新说明";
+            this.txt_更新说明.Size = new System.Drawing.Size(366, 155);
+            this.txt_更新说明.TabIndex = 4;
             // 
             // button2
             // 
@@ -1367,6 +1394,284 @@
             this.button2.Text = "保存设置";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Page_OCR设置2
+            // 
+            this.Page_OCR设置2.Controls.Add(this.label28);
+            this.Page_OCR设置2.Controls.Add(this.button3);
+            this.Page_OCR设置2.Controls.Add(this.tableLayoutPanel2);
+            this.Page_OCR设置2.Location = new System.Drawing.Point(4, 22);
+            this.Page_OCR设置2.Name = "Page_OCR设置2";
+            this.Page_OCR设置2.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_OCR设置2.Size = new System.Drawing.Size(390, 329);
+            this.Page_OCR设置2.TabIndex = 10;
+            this.Page_OCR设置2.Text = "PA-OCR设置";
+            this.Page_OCR设置2.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(245, 250);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(125, 12);
+            this.label28.TabIndex = 15;
+            this.label28.Text = "线程更改需要重启程序";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(283, 282);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "重启";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label30, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum8, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum7, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label32, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label33, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum10, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label34, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum11, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.doAngleCheckBox2, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.mostAngleCheckBox2, 1, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 24);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(169, 281);
+            this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(5, 226);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(59, 12);
+            this.label29.TabIndex = 28;
+            this.label29.Text = "numThread";
+            // 
+            // ocrNum12
+            // 
+            this.ocrNum12.Location = new System.Drawing.Point(87, 229);
+            this.ocrNum12.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.ocrNum12.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum12.Name = "ocrNum12";
+            this.ocrNum12.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum12.TabIndex = 29;
+            this.ocrNum12.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // ocrNum9
+            // 
+            this.ocrNum9.DecimalPlaces = 3;
+            this.ocrNum9.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum9.Location = new System.Drawing.Point(87, 69);
+            this.ocrNum9.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum9.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.ocrNum9.Name = "ocrNum9";
+            this.ocrNum9.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum9.TabIndex = 13;
+            this.ocrNum9.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            65536});
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(5, 66);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(71, 24);
+            this.label30.TabIndex = 12;
+            this.label30.Text = "boxScoreThresh";
+            // 
+            // ocrNum8
+            // 
+            this.ocrNum8.Location = new System.Drawing.Point(87, 37);
+            this.ocrNum8.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.ocrNum8.Name = "ocrNum8";
+            this.ocrNum8.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum8.TabIndex = 10;
+            this.ocrNum8.Value = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(5, 34);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "maxSideLen";
+            // 
+            // ocrNum7
+            // 
+            this.ocrNum7.Location = new System.Drawing.Point(87, 5);
+            this.ocrNum7.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.ocrNum7.Name = "ocrNum7";
+            this.ocrNum7.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum7.TabIndex = 7;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(5, 2);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(47, 12);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "padding";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(5, 98);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(59, 12);
+            this.label33.TabIndex = 14;
+            this.label33.Text = "boxThresh";
+            // 
+            // ocrNum10
+            // 
+            this.ocrNum10.DecimalPlaces = 3;
+            this.ocrNum10.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum10.Location = new System.Drawing.Point(87, 101);
+            this.ocrNum10.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum10.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.ocrNum10.Name = "ocrNum10";
+            this.ocrNum10.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum10.TabIndex = 15;
+            this.ocrNum10.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            65536});
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(5, 130);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(71, 12);
+            this.label34.TabIndex = 21;
+            this.label34.Text = "unClipRatio";
+            // 
+            // ocrNum11
+            // 
+            this.ocrNum11.DecimalPlaces = 1;
+            this.ocrNum11.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum11.Location = new System.Drawing.Point(87, 133);
+            this.ocrNum11.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.ocrNum11.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum11.Name = "ocrNum11";
+            this.ocrNum11.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum11.TabIndex = 22;
+            this.ocrNum11.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            65536});
+            // 
+            // doAngleCheckBox2
+            // 
+            this.doAngleCheckBox2.AutoSize = true;
+            this.doAngleCheckBox2.Checked = true;
+            this.doAngleCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.doAngleCheckBox2.Location = new System.Drawing.Point(5, 165);
+            this.doAngleCheckBox2.Name = "doAngleCheckBox2";
+            this.doAngleCheckBox2.Size = new System.Drawing.Size(66, 16);
+            this.doAngleCheckBox2.TabIndex = 26;
+            this.doAngleCheckBox2.Text = "doAngle";
+            this.doAngleCheckBox2.UseVisualStyleBackColor = true;
+            // 
+            // mostAngleCheckBox2
+            // 
+            this.mostAngleCheckBox2.AutoSize = true;
+            this.mostAngleCheckBox2.Location = new System.Drawing.Point(87, 165);
+            this.mostAngleCheckBox2.Name = "mostAngleCheckBox2";
+            this.mostAngleCheckBox2.Size = new System.Drawing.Size(78, 16);
+            this.mostAngleCheckBox2.TabIndex = 27;
+            this.mostAngleCheckBox2.Text = "mostAngle";
+            this.mostAngleCheckBox2.UseVisualStyleBackColor = true;
             // 
             // FmSetting
             // 
@@ -1417,17 +1722,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.numbox_间隔时间)).EndInit();
             this.Page_反馈.ResumeLayout(false);
             this.Page_反馈.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.Page_OCR设置.ResumeLayout(false);
             this.Page_OCR设置.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.Page_OCR设置2.ResumeLayout(false);
+            this.Page_OCR设置2.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -1612,5 +1927,23 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.NumericUpDown ocrNum6;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage Page_OCR设置2;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.NumericUpDown ocrNum12;
+        private System.Windows.Forms.NumericUpDown ocrNum9;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.NumericUpDown ocrNum8;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.NumericUpDown ocrNum7;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.NumericUpDown ocrNum10;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.NumericUpDown ocrNum11;
+        private System.Windows.Forms.CheckBox doAngleCheckBox2;
+        private System.Windows.Forms.CheckBox mostAngleCheckBox2;
     }
 }

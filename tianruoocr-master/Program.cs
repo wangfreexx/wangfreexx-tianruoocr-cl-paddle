@@ -166,6 +166,15 @@ namespace TrOCR
                 IniHelper.SetValue("OCR", "doAngle", "1");
                 IniHelper.SetValue("OCR", "mostAngle", "1");
                 IniHelper.SetValue("OCR", "numThread", "4");
+
+                IniHelper.SetValue("OCR2", "padding", "0");
+                IniHelper.SetValue("OCR2", "maxSideLen", "1024");
+                IniHelper.SetValue("OCR2", "boxScoreThresh", "0.700");
+                IniHelper.SetValue("OCR2", "boxThresh", "0.300");
+                IniHelper.SetValue("OCR2", "unClipRatio", "1.5");
+                IniHelper.SetValue("OCR2", "doAngle", "1");
+                IniHelper.SetValue("OCR2", "mostAngle", "0");
+                IniHelper.SetValue("OCR2", "numThread", "4");
             }
         }
 
