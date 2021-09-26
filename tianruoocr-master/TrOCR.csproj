@@ -166,6 +166,7 @@
     <Compile Include="Helper\IniHelper.cs" />
     <Compile Include="Helper\OcrHelper.cs" />
     <Compile Include="Helper\TranslateHelper.cs" />
+    <Compile Include="Json.cs" />
     <Compile Include="Messageload.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +251,10 @@
     <None Include="DLL\pinyin.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GoogleTranslateApi\GoogleTranslateApi.csproj">
+      <Project>{43cf1509-ab52-495c-a598-946a71451045}</Project>
+      <Name>GoogleTranslateApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OcrLib\OcrLib.csproj">
       <Project>{ab10d356-2d95-4460-96ca-9a7129ad0a76}</Project>
       <Name>OcrLib</Name>

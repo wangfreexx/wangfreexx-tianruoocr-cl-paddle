@@ -136,6 +136,18 @@
             this.label_更新日期 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txt_更新说明 = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.Page_翻译API = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.翻译api_key = new System.Windows.Forms.TextBox();
+            this.翻译api_id = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.Page_代理.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.Page_密钥.SuspendLayout();
@@ -176,6 +188,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.Page_翻译API.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Page_代理
@@ -906,6 +922,7 @@
             this.tab_标签.Controls.Add(this.Page_反馈);
             this.tab_标签.Controls.Add(this.Page_OCR设置);
             this.tab_标签.Controls.Add(this.Page_OCR设置2);
+            this.tab_标签.Controls.Add(this.Page_翻译API);
             this.tab_标签.Location = new System.Drawing.Point(10, 2);
             this.tab_标签.Name = "tab_标签";
             this.tab_标签.SelectedIndex = 0;
@@ -1063,7 +1080,7 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(125, 12);
             this.label27.TabIndex = 12;
-            this.label27.Text = "线程更改需要重启程序";
+            this.label27.Text = "参数修改需要重启程序";
             // 
             // button1
             // 
@@ -1081,7 +1098,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
@@ -1331,6 +1348,7 @@
             // 
             // Page_OCR设置2
             // 
+            this.Page_OCR设置2.Controls.Add(this.groupBox7);
             this.Page_OCR设置2.Controls.Add(this.label28);
             this.Page_OCR设置2.Controls.Add(this.button3);
             this.Page_OCR设置2.Controls.Add(this.tableLayoutPanel2);
@@ -1349,7 +1367,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(125, 12);
             this.label28.TabIndex = 15;
-            this.label28.Text = "线程更改需要重启程序";
+            this.label28.Text = "参数修改需要重启程序";
             // 
             // button3
             // 
@@ -1367,7 +1385,7 @@
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
@@ -1661,6 +1679,130 @@
             this.txt_更新说明.Size = new System.Drawing.Size(366, 155);
             this.txt_更新说明.TabIndex = 4;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.radioButton3);
+            this.groupBox7.Controls.Add(this.radioButton2);
+            this.groupBox7.Controls.Add(this.radioButton1);
+            this.groupBox7.Location = new System.Drawing.Point(233, 39);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(125, 127);
+            this.groupBox7.TabIndex = 16;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "模型选择";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(14, 27);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 16);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "中文";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(14, 54);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(77, 16);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "英文/数字";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(14, 83);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(47, 16);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "日文";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // Page_翻译API
+            // 
+            this.Page_翻译API.Controls.Add(this.tabControl1);
+            this.Page_翻译API.Location = new System.Drawing.Point(4, 22);
+            this.Page_翻译API.Name = "Page_翻译API";
+            this.Page_翻译API.Size = new System.Drawing.Size(390, 329);
+            this.Page_翻译API.TabIndex = 11;
+            this.Page_翻译API.Text = "翻译API";
+            this.Page_翻译API.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(9, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(378, 135);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.翻译api_key);
+            this.tabPage1.Controls.Add(this.翻译api_id);
+            this.tabPage1.Controls.Add(this.label35);
+            this.tabPage1.Controls.Add(this.label36);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(370, 109);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "百度翻译接口";
+            // 
+            // 翻译api_key
+            // 
+            this.翻译api_key.BackColor = System.Drawing.Color.White;
+            this.翻译api_key.Location = new System.Drawing.Point(56, 55);
+            this.翻译api_key.Name = "翻译api_key";
+            this.翻译api_key.Size = new System.Drawing.Size(260, 21);
+            this.翻译api_key.TabIndex = 3;
+            // 
+            // 翻译api_id
+            // 
+            this.翻译api_id.BackColor = System.Drawing.Color.White;
+            this.翻译api_id.Location = new System.Drawing.Point(56, 20);
+            this.翻译api_id.Name = "翻译api_id";
+            this.翻译api_id.Size = new System.Drawing.Size(260, 21);
+            this.翻译api_id.TabIndex = 2;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(18, 58);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(35, 12);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "KEY：";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(18, 23);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(29, 12);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "ID：";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(241, 83);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "接口申请";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FmSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1730,6 +1872,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.Page_翻译API.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -1931,5 +2079,17 @@
         private System.Windows.Forms.NumericUpDown ocrNum11;
         private System.Windows.Forms.CheckBox doAngleCheckBox2;
         private System.Windows.Forms.CheckBox mostAngleCheckBox2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TabPage Page_翻译API;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TextBox 翻译api_key;
+        private System.Windows.Forms.TextBox 翻译api_id;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button button2;
     }
 }

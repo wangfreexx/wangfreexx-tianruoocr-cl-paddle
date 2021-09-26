@@ -476,7 +476,7 @@ namespace TrOCR
 			value27 = IniHelper.GetValue("OCR2", "mostAngle");
 			if (value27 == "发生错误")
 			{
-				mostAngleCheckBox2.Checked = true;
+				mostAngleCheckBox2.Checked = false;
 			}
 			if (value27 == "0")
 			{
@@ -496,6 +496,56 @@ namespace TrOCR
 			{
 				ocrNum12.Value = int.Parse(value27); ;
 			}
+			//模型选择
+			value27 = IniHelper.GetValue("paddle模型", "模型");
+			//自定义模型
+			if (value27 == "发生错误")
+			{
+				radioButton1.Checked=true;
+			}
+			else {
+                switch (int.Parse(value27))
+                {
+					case 1:
+						radioButton1.Checked = true;
+						break;
+					case 2:
+						radioButton2.Checked = true;
+						break;
+					case 3:
+						radioButton3.Checked = true;
+						break;
+					default:
+						radioButton1.Checked = true;
+						break;
+                }
+            }
+
+
+			//翻译接口
+
+			value27 = IniHelper.GetValue("翻译API_百度", "secret_id");
+			//自定义模型
+			if (value27 == "发生错误")
+			{
+				翻译api_id.Text = "";
+			}
+			else {
+				翻译api_id.Text = value27;
+			}
+			value27 = IniHelper.GetValue("翻译API_百度", "secret_key");
+			//自定义模型
+			if (value27 == "发生错误")
+			{
+				翻译api_key.Text = "";
+			}
+			else
+			{
+				翻译api_key.Text = value27;
+			}
+
+
+
 
 
 
@@ -586,6 +636,16 @@ namespace TrOCR
 			if (tab_标签.SelectedTab == Page_OCR设置)
 			{
 				tab_标签.Height = (int)(355.0 * Program.Factor);
+				Height = tab_标签.Height + 50;
+			}
+			if (tab_标签.SelectedTab == Page_OCR设置2)
+			{
+				tab_标签.Height = (int)(355.0 * Program.Factor);
+				Height = tab_标签.Height + 50;
+			}
+			if (tab_标签.SelectedTab == Page_翻译API)
+			{
+				tab_标签.Height = (int)(255.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
 		}
@@ -1005,6 +1065,21 @@ namespace TrOCR
 
 			IniHelper.SetValue("OCR2", "numThread", ocrNum12.Value.ToString());
 
+			if (radioButton1.Checked)
+			{
+				IniHelper.SetValue("paddle模型", "模型", "1");
+			}
+			else if (radioButton2.Checked) {
+				IniHelper.SetValue("paddle模型", "模型", "2");
+			}
+			else if (radioButton3.Checked)
+			{
+				IniHelper.SetValue("paddle模型", "模型", "3");
+			}
+
+			//翻译接口
+			IniHelper.SetValue("翻译API_百度", "secret_id", 翻译api_id.Text);
+			IniHelper.SetValue("翻译API_百度", "secret_key", 翻译api_key.Text);
 			DialogResult = DialogResult.OK;
 		}
 
@@ -1110,5 +1185,10 @@ namespace TrOCR
         {
 			Application.Restart();
 		}
+		//接口申请
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

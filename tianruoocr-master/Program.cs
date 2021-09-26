@@ -449,17 +449,19 @@ namespace TrOCR
 
 
             //自定义模型
-            if (IniHelper.GetValue("paddle模型", "检测模型") == "发生错误")
+            if (IniHelper.GetValue("paddle模型", "模型") == "发生错误")
             {
-                IniHelper.SetValue("paddle模型", "检测模型", "ch_PP-OCRv2_det_infer.onnx");
+                IniHelper.SetValue("paddle模型", "模型", "1");
             }
-            if (IniHelper.GetValue("paddle模型", "识别模型") == "发生错误")
+            //翻译接口
+            if (IniHelper.GetValue("翻译API_百度", "secret_id") == "发生错误")
             {
-                IniHelper.SetValue("paddle模型", "识别模型", "ch_mobile_v2.0_rec_infer.onnx");
+                IniHelper.SetValue("翻译API_百度", "secret_id", "");
             }
-            if (IniHelper.GetValue("paddle模型", "keytxt") == "发生错误")
+
+            if (IniHelper.GetValue("翻译API_百度", "secret_key") == "发生错误")
             {
-                IniHelper.SetValue("paddle模型", "keytxt", "ppocr_keys.txt");
+                IniHelper.SetValue("翻译API_百度", "secret_key", "");
             }
 
         }

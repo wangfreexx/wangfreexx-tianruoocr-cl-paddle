@@ -783,8 +783,7 @@ namespace TrOCR
         {
             set
             {
-                new Thread(new ThreadStart(this.错别字检查API)).Start();
-                HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
+
             }
         }
 
@@ -795,18 +794,7 @@ namespace TrOCR
             this.richTextBox1.Select(0, 0);
             try
             {
-                JArray jarray = JArray.Parse(((JObject)JsonConvert.DeserializeObject(this.Post_Html("http://www.cuobiezi.net/api/v1/zh_spellcheck/client/pos/json", "{\"check_mode\": \"value2\",\"content\": \"" + this.richTextBox1.Text + "\", \"content2\": \"value1\",  \"doc_type\": \"value2\",\"method\": \"value2\",\"return_format\": \"value2\",\"username\": \"tianruoyouxin\"}")))["Cases"].ToString());
-                for (int i = 0; i < jarray.Count; i++)
-                {
-                    JObject jobject = JObject.Parse(jarray[i].ToString());
-                    int start = 0;
-                    int length = this.richTextBox1.Text.Length;
-                    for (int num = this.richTextBox1.Find(jobject["Error"].ToString(), start, length, RichTextBoxFinds.None); num != -1; num = this.richTextBox1.Find(jobject["Error"].ToString(), start, length, RichTextBoxFinds.None))
-                    {
-                        this.richTextBox1.SelectionColor = Color.Red;
-                        start = num + jobject["Error"].ToString().Length;
-                    }
-                }
+               
                 this.richTextBox1.Select(0, 0);
             }
             catch

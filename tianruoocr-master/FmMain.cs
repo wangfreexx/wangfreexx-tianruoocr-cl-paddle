@@ -27,6 +27,7 @@ using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
 using Timer = System.Windows.Forms.Timer;
+using System.Security.Cryptography;
 // ReSharper disable StringLiteralTypo
 
 namespace TrOCR
@@ -113,33 +114,40 @@ namespace TrOCR
 
             modelsDir = appPath + "models" + "\\" + "paddle-ocr";
             clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
-            var strvalue = IniHelper.GetValue("paddle模型", "检测模型");
+            var strvalue = IniHelper.GetValue("paddle模型", "检测");
             if (strvalue == "发生错误")
             {
                 detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-            }
-            else
-            {
-                detPath = modelsDir + "\\" + strvalue;
-            }
-            strvalue = IniHelper.GetValue("paddle模型", "识别模型");
-            if (strvalue == "发生错误")
-            {
                 recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-            }
-            else
-            {
-                recPath = modelsDir + "\\" + strvalue;
-            }
-            strvalue = IniHelper.GetValue("paddle模型", "keytxt");
-            if (strvalue == "发生错误")
-            {
                 keysPath = modelsDir + "\\" + "ppocr_keys.txt";
             }
             else
             {
-                keysPath = modelsDir + "\\" + strvalue;
+                switch (int.Parse(strvalue))
+                {
+                    case 1:
+                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                        recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                        keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+                        break;
+                    case 2:
+                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                        recPath = modelsDir + "\\" + "en_number_mobile_v2.0_rec_infer.onnx";
+                        keysPath = modelsDir + "\\" + "en_dict.txt";
+                        break;
+                    case 3:
+                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                        recPath = modelsDir + "\\" + "japan_rec_crnn.onnx";
+                        keysPath = modelsDir + "\\" + "japan_dict.txt";
+                        break;
+                    default:
+                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                        recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                        keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+                        break;
+                }
             }
+           
             isDetExists = File.Exists(detPath);
             isClsExists = File.Exists(clsPath);
             isRecExists = File.Exists(recPath);
@@ -1193,60 +1201,53 @@ namespace TrOCR
 
         public string Translate_Google(string text)
         {
+            //todo
             var text2 = "";
             try
             {
-                var text3 = "zh-CN";
-                var text4 = "en";
+                text = text.Replace(Environment.NewLine, "");
+                text = text.Replace("\r", "");
+                text = text.Replace("\n", "");
+                GoogleTranslateApi.Language source;
+                GoogleTranslateApi.Language target;
+                GoogleTranslateApi.GoogleTranslator translate;
                 if (StaticValue.ZH2EN)
                 {
-                    if (ch_count(text.Trim()) > en_count(text.Trim()) || (en_count(text.Trim()) == 1 && ch_count(text.Trim()) == 1))
+                    if (ch_count(typeset_txt.Trim()) > en_count(typeset_txt.Trim()))
                     {
-                        text3 = "zh-CN";
-                        text4 = "en";
+                        source = GoogleTranslateApi.Language.Chinese;
+                        target = GoogleTranslateApi.Language.English;
                     }
                     else
                     {
-                        text3 = "en";
-                        text4 = "zh-CN";
+                        source = GoogleTranslateApi.Language.English;
+                        target = GoogleTranslateApi.Language.Chinese;
                     }
                 }
-                if (StaticValue.ZH2JP)
+                else if (StaticValue.ZH2JP)
                 {
-                    if (contain_jap(replaceStr(Del_ch(text.Trim()))))
+                    if (contain_jap(replaceStr(Del_ch(typeset_txt.Trim()))))
                     {
-                        text3 = "ja";
-                        text4 = "zh-CN";
-                    }
-                    else
-                    {
-                        text3 = "zh-CN";
-                        text4 = "ja";
-                    }
-                }
-                if (StaticValue.ZH2KO)
-                {
-                    if (contain_kor(text.Trim()))
-                    {
-                        text3 = "ko";
-                        text4 = "zh-CN";
-                    }
-                    else
-                    {
-                        text3 = "zh-CN";
-                        text4 = "ko";
-                    }
-                }
-                var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=",
-                    HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
-                var html = CommonHelper.PostStrData("https://translate.google.cn/translate_a/single", data);
+                        source = GoogleTranslateApi.Language.Japanese;
+                        target = GoogleTranslateApi.Language.Chinese;
 
-                var jArray = (JArray)JsonConvert.DeserializeObject(html);
-                var count = ((JArray)jArray[0]).Count;
-                for (var i = 0; i < count; i++)
-                {
-                    text2 += jArray[0][i][0].ToString();
+                    }
+                    else
+                    {
+                        source = GoogleTranslateApi.Language.Chinese;
+                        target = GoogleTranslateApi.Language.Japanese;
+                    }
                 }
+                else if (StaticValue.ZH2KO)
+                {
+                    return "不支持韩语翻译";
+                }
+                else
+                {
+                    return "选得什么鬼语言";
+                }
+                translate = new GoogleTranslateApi.GoogleTranslator(source, target);
+                text2 = translate.Text(text);
             }
             catch (Exception)
             {
@@ -3535,60 +3536,6 @@ namespace TrOCR
             }
         }
 
-        public void checked_location_sougou(JArray jarray, int lastlength, string words, string location)
-        {
-            paragraph = false;
-            var num = 20000;
-            var num2 = 0;
-            foreach (var t in jarray)
-            {
-                var jObject = JObject.Parse(t.ToString());
-                var num3 = split_char_x(jObject[location][1].ToString()) - split_char_x(jObject[location][0].ToString());
-                if (num3 > num2)
-                {
-                    num2 = num3;
-                }
-                var num4 = split_char_x(jObject[location][0].ToString());
-                if (num4 < num)
-                {
-                    num = num4;
-                }
-            }
-            var jobject2 = JObject.Parse(jarray[0].ToString());
-            if (Math.Abs(split_char_x(jobject2[location][0].ToString()) - num) > 10)
-            {
-                paragraph = true;
-            }
-            var text = "";
-            var text2 = "";
-            for (var j = 0; j < jarray.Count; j++)
-            {
-                var jobject3 = JObject.Parse(jarray[j].ToString());
-                var array = jobject3[words].ToString().ToCharArray();
-                var jobject4 = JObject.Parse(jarray[j].ToString());
-                var flag = Math.Abs(split_char_x(jobject4[location][1].ToString()) - split_char_x(jobject4[location][0].ToString()) - num2) > 20;
-                var flag2 = Math.Abs(split_char_x(jobject4[location][0].ToString()) - num) > 10;
-                if (flag && flag2)
-                {
-                    text = text.Trim() + "\r\n" + jobject4[words].ToString().Trim();
-                }
-                else if (IsNum(array[0].ToString()) && !contain_ch(array[1].ToString()) && flag)
-                {
-                    text = text.Trim() + "\r\n" + jobject4[words].ToString().Trim() + "\r\n";
-                }
-                else
-                {
-                    text += jobject4[words].ToString().Trim();
-                }
-                if (contain_en(array[array.Length - lastlength].ToString()))
-                {
-                    text = text + jobject3[words].ToString().Trim() + " ";
-                }
-                text2 = text2 + jobject4[words].ToString().Trim() + "\r\n";
-            }
-            split_txt = text2.Replace("\r\n\r\n", "\r\n");
-            typeset_txt = text;
-        }
 
         public int split_char_x(string splitChar)
         {
@@ -3660,10 +3607,15 @@ namespace TrOCR
 
         private string TranslateBaidu(string content)
         {
+            //todo
             var text = "";
             try
             {
-                new CookieContainer();
+                content = content.Replace(Environment.NewLine, "");
+                content = content.Replace("\r", "");
+                content = content.Replace("\n", "");
+                Console.WriteLine(content);
+                //content = content.Replace("\2", " ");
                 var text2 = "zh";
                 var text3 = "en";
                 if (StaticValue.ZH2EN)
@@ -3679,7 +3631,7 @@ namespace TrOCR
                         text3 = "zh";
                     }
                 }
-                if (StaticValue.ZH2JP)
+                else if (StaticValue.ZH2JP)
                 {
                     if (contain_jap(replaceStr(Del_ch(content.Trim()))))
                     {
@@ -3692,7 +3644,7 @@ namespace TrOCR
                         text3 = "jp";
                     }
                 }
-                if (StaticValue.ZH2KO)
+                else if (StaticValue.ZH2KO)
                 {
                     if (contain_kor(content.Trim()))
                     {
@@ -3705,21 +3657,96 @@ namespace TrOCR
                         text3 = "kor";
                     }
                 }
-                //                var html = CommonHelper.PostStrData("https://fanyi.baidu.com/basetrans",
-                //                    string.Concat("query=", HttpUtility.UrlEncode(Text.Trim()).Replace("+", "%20"), "&from=", text2,
-                //                        "&to=", text3));
-                var html = TranslateHelper.BdTrans(content.Trim(), text2, text3);
-                var jArray = JArray.Parse(((JObject)JsonConvert.DeserializeObject(html))["fanyi_list"].ToString());
-                foreach (var arr in jArray)
+                var value1 = IniHelper.GetValue("翻译API_百度", "secret_id");
+                //自定义模型
+                string appId = "";
+                if (value1 == "发生错误")
                 {
-                    text = text + arr + "\r\n";
+                    appId = "";
                 }
+                else
+                {
+                    appId = value1;
+                }
+                value1 = IniHelper.GetValue("翻译API_百度", "secret_key");
+                //自定义模型
+                var secretKey = "";
+                if (value1 == "发生错误")
+                {
+                    secretKey = "";
+                }
+                else
+                {
+                    secretKey = value1;
+                }
+
+                if (secretKey == "" && appId == "") {
+                    return "未输入ID和KEY";
+                }
+
+
+                var rd = new Random();
+                var salt = rd.Next(100000).ToString();
+                var sign = EncryptString(appId + content + salt + secretKey);
+                var url = "http://api.fanyi.baidu.com/api/trans/vip/translate?";
+                url += "q=" + HttpUtility.UrlEncode(content);
+                url += "&from=" + text2;
+                url += "&to=" + text3;
+                url += "&appid=" + appId;
+                url += "&salt=" + salt;
+                url += "&sign=" + sign;
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "GET";
+                request.ContentType = "text/html;charset=UTF-8";
+                request.UserAgent = null;
+                request.Timeout = 6666;
+                HttpWebResponse response;
+                try
+                {
+                    response = (HttpWebResponse)request.GetResponse();
+                }
+                catch
+                {
+                    return "翻译超时，请检查网络，或更换翻译平台。。";
+                }
+                var myResponseStream = response.GetResponseStream();
+                var myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
+                var retString = myStreamReader.ReadToEnd();
+                myStreamReader.Close();
+                myResponseStream.Close();
+
+                //read json(retString) as a object
+                //var result = System.Text.Json.JsonSerializer.Deserialize<Rootobject>(retString);
+                var result = JsonConvert.DeserializeObject<Rootobject>(retString);
+                if (result.trans_result == null)
+                {
+                    return "翻译超时，请检查网络，或更换翻译平台。";
+                }
+                return result.trans_result[0].dst;
+
             }
             catch (Exception)
             {
                 text = "[百度接口报错]：\r\n1.接口请求出现问题等待修复。";
             }
             return text;
+        }
+
+        // 计算MD5值
+        public static string EncryptString(string str)
+        {
+            var md5 = MD5.Create();
+            // 将字符串转换成字节数组
+            var byteOld = Encoding.UTF8.GetBytes(str);
+            // 调用加密方法
+            var byteNew = md5.ComputeHash(byteOld);
+            // 将加密结果转换为字符串
+            var sb = new StringBuilder();
+            foreach (var b in byteNew)
+                // 将字节转换成16进制表示的字符串，
+                sb.Append(b.ToString("x2"));
+            // 返回加密的字符串
+            return sb.ToString();
         }
 
         public void Trans_tencent_Click(object sender, EventArgs e)
@@ -3732,73 +3759,13 @@ namespace TrOCR
             return string.Concat("&source=", from, "&target=", to, "&sourceText=", HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
         }
 
-        public string TencentPOST(string url, string content)
-        {
-            string result;
-            try
-            {
-                var referer = "https://fanyi.qq.com/";
-                result = CommonHelper.PostStrData(url, content, "", referer);
-            }
-            catch
-            {
-                result = "[腾讯接口报错]：\r\n请切换其它接口或再次尝试。";
-            }
-            return result;
-        }
 
         private string Translate_Tencent(string strTrans)
         {
             var text = "";
             try
             {
-                var from = "zh";
-                var to = "en";
-                if (StaticValue.ZH2EN)
-                {
-                    if (ch_count(strTrans.Trim()) > en_count(strTrans.Trim()) || (en_count(text.Trim()) == 1 && ch_count(text.Trim()) == 1))
-                    {
-                        from = "zh";
-                        to = "en";
-                    }
-                    else
-                    {
-                        from = "en";
-                        to = "zh";
-                    }
-                }
-                if (StaticValue.ZH2JP)
-                {
-                    if (contain_jap(replaceStr(Del_ch(strTrans.Trim()))))
-                    {
-                        from = "jp";
-                        to = "zh";
-                    }
-                    else
-                    {
-                        from = "zh";
-                        to = "jp";
-                    }
-                }
-                if (StaticValue.ZH2KO)
-                {
-                    if (contain_kor(strTrans.Trim()))
-                    {
-                        from = "kr";
-                        to = "zh";
-                    }
-                    else
-                    {
-                        from = "zh";
-                        to = "kr";
-                    }
-                }
-                var jArray = JArray.Parse(((JObject)JsonConvert.DeserializeObject(TencentPOST("https://fanyi.qq.com/api/translate", Content_Length(strTrans, from, to))))["translate"]["records"].ToString());
-                foreach (var t in jArray)
-                {
-                    var jObject = JObject.Parse(t.ToString());
-                    text += jObject["targetText"].ToString();
-                }
+                text = "暂时不能用";
             }
             catch (Exception)
             {
@@ -3809,52 +3776,10 @@ namespace TrOCR
 
         public void BdTableOCR()
         {
-            typeset_txt = "[消息]：表格已下载！";
-            split_txt = "";
+
             try
             {
-                baidu_vip = CommonHelper.GetHtmlContent(string.Format("{0}?{1}", "https://aip.baidubce.com/oauth/2.0/token", "grant_type=client_credentials&client_id=" + StaticValue.BD_API_ID + "&client_secret=" + StaticValue.BD_API_KEY));
-                if (baidu_vip == "")
-                {
-                    MessageBox.Show("请检查密钥输入是否正确！", "提醒");
-                }
-                else
-                {
-                    split_txt = "";
-                    var image = image_screen;
-                    var array = OcrHelper.ImgToBytes(image);
-                    var s = "image=" + HttpUtility.UrlEncode(Convert.ToBase64String(array));
-                    var bytes = Encoding.UTF8.GetBytes(s);
-                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://aip.baidubce.com/rest/2.0/solution/v1/form_ocr/request?access_token=" + ((JObject)JsonConvert.DeserializeObject(baidu_vip))["access_token"]);
-                    httpWebRequest.Proxy = null;
-                    httpWebRequest.Method = "POST";
-                    httpWebRequest.ContentType = "application/x-www-form-urlencoded";
-                    httpWebRequest.Timeout = 8000;
-                    httpWebRequest.ReadWriteTimeout = 5000;
-                    using (var requestStream = httpWebRequest.GetRequestStream())
-                    {
-                        requestStream.Write(bytes, 0, bytes.Length);
-                    }
-                    var responseStream = ((HttpWebResponse)httpWebRequest.GetResponse()).GetResponseStream();
-                    var value = new StreamReader(responseStream, Encoding.GetEncoding("utf-8")).ReadToEnd();
-                    responseStream.Close();
-                    var postStr = "request_id=" + JObject.Parse(JArray.Parse(((JObject)JsonConvert.DeserializeObject(value))["result"].ToString())[0].ToString())["request_id"].ToString().Trim() + "&result_type=json";
-                    var text = "";
-                    while (!text.Contains("已完成"))
-                    {
-                        if (text.Contains("image recognize error"))
-                        {
-                            RichBoxBody.Text = "[消息]：未发现表格！";
-                            break;
-                        }
-                        Thread.Sleep(120);
-                        text = CommonHelper.PostStrData("https://aip.baidubce.com/rest/2.0/solution/v1/form_ocr/get_request_result?access_token=" + ((JObject)JsonConvert.DeserializeObject(baidu_vip))["access_token"], postStr);
-                    }
-                    if (!text.Contains("image recognize error"))
-                    {
-                        get_table(text);
-                    }
-                }
+                RichBoxBody.Text = "*****没有这个功能啦****";
             }
             catch
             {
@@ -4007,66 +3932,7 @@ namespace TrOCR
             RichBoxBody.Rtx1Rtf = str + str2 + text + str3;
         }
 
-        public string Translate_Googlekey(string text)
-        {
-            var text2 = "";
-            try
-            {
-                var text3 = "zh-CN";
-                var text4 = "en";
-                if (StaticValue.ZH2EN)
-                {
-                    if (ch_count(typeset_txt.Trim()) > en_count(typeset_txt.Trim()))
-                    {
-                        text3 = "zh-CN";
-                        text4 = "en";
-                    }
-                    else
-                    {
-                        text3 = "en";
-                        text4 = "zh-CN";
-                    }
-                }
-                else if (StaticValue.ZH2JP)
-                {
-                    if (contain_jap(replaceStr(Del_ch(typeset_txt.Trim()))))
-                    {
-                        text3 = "ja";
-                        text4 = "zh-CN";
-                    }
-                    else
-                    {
-                        text3 = "zh-CN";
-                        text4 = "ja";
-                    }
-                }
-                else if (StaticValue.ZH2KO)
-                {
-                    if (contain_kor(typeset_txt.Trim()))
-                    {
-                        text3 = "ko";
-                        text4 = "zh-CN";
-                    }
-                    else
-                    {
-                        text3 = "zh-CN";
-                        text4 = "ko";
-                    }
-                }
-                var postData = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=", HttpUtility.UrlEncode(text).Replace("+", "%20"));
-                var jArray = (JArray)JsonConvert.DeserializeObject(CommonHelper.PostStrData("https://translate.google.cn/translate_a/single", postData));
-                var count = ((JArray)jArray[0]).Count;
-                for (var i = 0; i < count; i++)
-                {
-                    text2 += jArray[0][i][0].ToString();
-                }
-            }
-            catch (Exception)
-            {
-                text2 = "[谷歌接口报错]：\r\n出现这个提示文字，表示您当前的网络不适合使用谷歌接口。\r\n请放弃使用谷歌接口，腾讯，百度接口都可以正常使用。";
-            }
-            return text2;
-        }
+
 
         public void OCR_baidutable_Click(object sender, EventArgs e)
         {
@@ -4201,27 +4067,7 @@ namespace TrOCR
             split_txt = "";
             try
             {
-                var img = image_screen;
-                var inArray = OcrHelper.ImgToBytes(img);
-                var s = "{\t\"formats\": [\"latex_styled\", \"text\"],\t\"metadata\": {\t\t\"count\": 0,\t\t\"platform\": \"windows 10\",\t\t\"skip_recrop\": true,\t\t\"user_id\": \"\",\t\t\"version\": \"snip.windows@01.02.0027\"\t},\t\"ocr\": [\"text\", \"math\"],\t\"src\": \"data:image/jpeg;base64," + Convert.ToBase64String(inArray) + "\"}";
-                var bytes = Encoding.UTF8.GetBytes(s);
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.mathpix.com/v3/latex");
-                httpWebRequest.Method = "POST";
-                httpWebRequest.ContentType = "application/json";
-                httpWebRequest.Timeout = 8000;
-                httpWebRequest.ReadWriteTimeout = 5000;
-                httpWebRequest.Headers.Add("app_id: mathpix_chrome");
-                httpWebRequest.Headers.Add("app_key: 85948264c5d443573286752fbe8df361");
-                using (var requestStream = httpWebRequest.GetRequestStream())
-                {
-                    requestStream.Write(bytes, 0, bytes.Length);
-                }
-                var responseStream = ((HttpWebResponse)httpWebRequest.GetResponse()).GetResponseStream();
-                var value = new StreamReader(responseStream, Encoding.GetEncoding("utf-8")).ReadToEnd();
-                responseStream.Close();
-                var text = "$" + ((JObject)JsonConvert.DeserializeObject(value))["latex_styled"] + "$";
-                split_txt = text;
-                typeset_txt = text;
+                RichBoxBody.Text = "***没有这个功能啦***";
             }
             catch
             {
