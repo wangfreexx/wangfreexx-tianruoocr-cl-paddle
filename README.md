@@ -16,3 +16,4 @@
 
 但是内存占用很大！线程设的4，可以修改
 
+由于我也是白小白，可能需要在本项目根目录和tianruoocr-master下各放置一个packages，不然OcrLiteLib无法识别到tianruoocr-master里面的packages...
