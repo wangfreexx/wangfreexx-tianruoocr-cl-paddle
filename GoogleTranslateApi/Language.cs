@@ -43,6 +43,6 @@ namespace GoogleTranslateApi
         public static Language Italian { get { return new Language("it"); } }
         public static Language Japanese { get { return new Language("ja"); } }
         public static Language Chinese { get { return new Language("zh"); } }
-        //public static Language Auto { get { return new Language("auto"); } }
+        public static Language Auto { get { return new Language("auto"); } }
     }
 }

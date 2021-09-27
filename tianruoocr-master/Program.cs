@@ -18,7 +18,8 @@ namespace TrOCR
         [STAThread]
         public static void Main(string[] args)
         {
-            var programStarted = new EventWaitHandle(false, EventResetMode.AutoReset, "天若OCR文字识别本地版", out var needNew);
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            var programStarted = new EventWaitHandle(false, EventResetMode.AutoReset, "天若OCR文字识别", out var needNew);
             if (!needNew)
             {
                 programStarted.Set();
@@ -47,7 +48,11 @@ namespace TrOCR
             Application.Run(new FmMain());
         }
 
-        
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            Console.WriteLine(e.ExceptionObject.ToString());
+            MessageBox.Show(e.ExceptionObject.ToString());
+        }
 
         public static void CheckUpdate()
         {

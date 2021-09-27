@@ -1177,13 +1177,19 @@ namespace TrOCR
 
         private void button1_Click(object sender, EventArgs e)
         {
-			Application.Restart();
+			Process.Start(Application.ExecutablePath);
+
+			//关闭当前实例
+			Process.GetCurrentProcess().Kill();
 		}
      
 
         private void button3_Click(object sender, EventArgs e)
         {
-			Application.Restart();
+			Process.Start(Application.ExecutablePath);
+
+			//关闭当前实例
+			Process.GetCurrentProcess().Kill();
 		}
 		//接口申请
         private void button2_Click(object sender, EventArgs e)
