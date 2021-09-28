@@ -111,7 +111,7 @@
 			this.trans_google.Click += new global::System.EventHandler(this.Trans_google_Click);
 			this.trans_baidu.Text = "百度";
 			this.trans_baidu.Click += new global::System.EventHandler(this.Trans_baidu_Click);
-			this.trans_tencent.Text = "腾讯";
+			this.trans_tencent.Text = "保留段落谷歌翻译";
 			this.trans_tencent.Click += new global::System.EventHandler(this.Trans_tencent_Click);
 			this.menu_copy.Items.AddRange(new global::System.Windows.Forms.ToolStripItem[]
 			{
@@ -154,12 +154,16 @@
 				this.Main_jiekou,
 				this.Main_exit
 			});
+			/*
+			 *             sougou.Text = "本地CL";
+            tencent.Text = "本地Paddle";
+			 */
 			this.menu.Font = new global::System.Drawing.Font("微软雅黑", 9f / global::TrOCR.Helper.StaticValue.DpiFactor, global::System.Drawing.FontStyle.Regular);
-			this.sougou.Text = "搜狗√";
+			this.sougou.Text = "本地CL√";
 			this.sougou.Click += new global::System.EventHandler(this.OCR_sougou_Click);
 			this.Mathfuntion.Text = "公式";
 			this.Mathfuntion.Click += new global::System.EventHandler(this.OCR_Mathfuntion_Click);
-			this.tencent.Text = "腾讯";
+			this.tencent.Text = "本地Paddle";
 			this.tencent.Click += new global::System.EventHandler(this.OCR_tencent_Click);
 			this.baidu.Text = "百度";
 			this.baidu.Click += new global::System.EventHandler(this.OCR_baidu_Click);

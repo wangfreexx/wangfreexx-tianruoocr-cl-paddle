@@ -3586,21 +3586,21 @@ namespace TrOCR
             {
                 trans_baidu.Text = "百度√";
                 trans_google.Text = "谷歌";
-                trans_tencent.Text = "腾讯";
+                trans_tencent.Text = "保留段落谷歌翻译";
                 IniHelper.SetValue("配置", "翻译接口", "百度");
             }
             if (name == "谷歌")
             {
                 trans_baidu.Text = "百度";
                 trans_google.Text = "谷歌√";
-                trans_tencent.Text = "腾讯";
+                trans_tencent.Text = "保留段落谷歌翻译";
                 IniHelper.SetValue("配置", "翻译接口", "谷歌");
             }
             if (name == "腾讯")
             {
                 trans_google.Text = "谷歌";
                 trans_baidu.Text = "百度";
-                trans_tencent.Text = "腾讯√";
+                trans_tencent.Text = "保留段落谷歌翻译√";
                 IniHelper.SetValue("配置", "翻译接口", "腾讯");
             }
         }
@@ -3611,9 +3611,6 @@ namespace TrOCR
             var text = "";
             try
             {
-                content = content.Replace(Environment.NewLine, "");
-                content = content.Replace("\r", "");
-                content = content.Replace("\n", "");
                 Console.WriteLine(content);
                 //content = content.Replace("\2", " ");
                 var text2 = "zh";
@@ -3759,17 +3756,24 @@ namespace TrOCR
             return string.Concat("&source=", from, "&target=", to, "&sourceText=", HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
         }
 
-
+        //现在变成保留段落谷歌翻译
         private string Translate_Tencent(string strTrans)
         {
             var text = "";
             try
             {
-                text = "暂时不能用";
+                //todo
+                string[] sArray = strTrans.Split('\n');
+                foreach(var ss in sArray)
+                {
+                    text += Translate_Google(ss) + Environment.NewLine;
+                }
+
+
             }
             catch (Exception)
             {
-                text = "[腾讯接口报错]：\r\n1.接口请求出现问题等待修复。";
+                text = "[接口报错]：\r\n1.接口请求出现问题等待修复。";
             }
             return text;
         }
