@@ -180,6 +180,15 @@ namespace TrOCR
                 IniHelper.SetValue("OCR2", "doAngle", "1");
                 IniHelper.SetValue("OCR2", "mostAngle", "0");
                 IniHelper.SetValue("OCR2", "numThread", "4");
+
+                IniHelper.SetValue("paddle模型", "模型", "1");
+
+                IniHelper.SetValue("翻译API_百度", "secret_id", "");
+
+
+
+                IniHelper.SetValue("翻译API_百度", "secret_key", "");
+
             }
         }
 
@@ -363,7 +372,7 @@ namespace TrOCR
             if (IniHelper.GetValue("特殊", "ali_cookie") == "发生错误")
             {
                 IniHelper.SetValue("特殊", "ali_cookie",
-                    "cna=noXhE38FHGkCAXDve7YaZ8Tn; cnz=noXhE4/VhB8CAbZ773ApeV14; isg=BGJi2c2YTeeP6FG7S_Re8kveu-jEs2bNwToQnKz7jlWAfwL5lEO23eh9q3km9N5l; ");
+                    " ");
             }
 
             if (IniHelper.GetValue("特殊", "ali_account") == "发生错误")

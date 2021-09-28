@@ -1285,9 +1285,20 @@ namespace TrOCR
 			//关闭当前实例
 			Process.GetCurrentProcess().Kill();
 		}
-     
+		private void button参数说明_Click(object sender, EventArgs e)
+		{
 
-        private void button3_Click(object sender, EventArgs e)
+			string text = "padding：图像预处理，在图片外周添加白边，用于提升识别率，文字框没有正确框住所有文字时，增加此值。" + Environment.NewLine;
+			text+= "maxSideLen ：按图片最长边的长度，此值为0代表不缩放，例：1024，如果图片长边大于1024则把图像整体缩小到1024再进行图像分割计算，如果图片长边小于1024则不缩放，如果图片长边小于32，则缩放到32。" + Environment.NewLine;
+			text += "boxScoreThresh：文字框置信度门限，文字框没有正确框住所有文字时，减小此值。" + Environment.NewLine;
+			text += "boxThresh：请自行试验。" + Environment.NewLine;
+			text += "unClipRatio：单个文字框大小倍率，越大时单个文字框越大。此项与图片的大小相关，越大的图片此值应该越大。" + Environment.NewLine;
+			text += "doAngle：启用(1)/禁用(0) 文字方向检测，只有图片倒置的情况下(旋转90~270度的图片)，才需要启用文字方向检测。" + Environment.NewLine;
+			text += "mostAngle：启用(1)/禁用(0) 角度投票(整张图片以最大可能文字方向来识别)，当禁用文字方向检测时，此项也不起作用。" + Environment.NewLine;
+			MessageBox.Show(text);
+		}
+
+			private void button3_Click(object sender, EventArgs e)
         {
 			IniHelper.SetValue("配置", "开机自启", cbBox_开机.Checked.ToString());
 			IniHelper.SetValue("配置", "快速翻译", cbBox_翻译.Checked.ToString());
