@@ -164,11 +164,19 @@ namespace GoogleTranslateApi
         /// </summary>
         /// <param name="text">The text to be translated</param>
         /// <returns>A string that contains the translated text</returns>
-        public string Text(string text)
+        public string Text(string text,int dh=0)
         {
             string Dest = string.Empty;
             /* FIXED - Remove '\n' (Line feed/new line char) */
-            text = (Download(text)).Replace("\n", "");
+            if (dh == 0)
+            {
+                text = (Download(text)).Replace("\n", "");
+            }
+            else { 
+                text = (Download(text));
+            }
+           
+            
             /* FIXED - Gets the multiples blocks that can be received */
             Block Datablock = new Block(text);
             for(int n = 0; n < Datablock[0][0].Blocks; n++)

@@ -586,7 +586,7 @@ namespace TrOCR
 			更新Button_check.Click += 更新Button_check_Click;
             tab_标签.TabPages.RemoveByKey("Page_更新");
             tab_标签.TabPages.RemoveByKey("Page_反馈");
-			tab_标签.TabPages.RemoveByKey("Page_密钥");
+			//tab_标签.TabPages.RemoveByKey("Page_密钥");
 			tab_标签.TabPages.RemoveByKey("Page_代理");
 		}
 
@@ -644,6 +644,11 @@ namespace TrOCR
 				Height = tab_标签.Height + 50;
 			}
 			if (tab_标签.SelectedTab == Page_翻译API)
+			{
+				tab_标签.Height = (int)(200.0 * Program.Factor);
+				Height = tab_标签.Height + 50;
+			}
+			if (tab_标签.SelectedTab == Page_密钥)
 			{
 				tab_标签.Height = (int)(200.0 * Program.Factor);
 				Height = tab_标签.Height + 50;

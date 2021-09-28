@@ -28,6 +28,7 @@ using ZXing.Common;
 using ZXing.QrCode;
 using Timer = System.Windows.Forms.Timer;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 // ReSharper disable StringLiteralTypo
 
 namespace TrOCR
@@ -2094,11 +2095,44 @@ namespace TrOCR
 
         public void OCR_baidu()
         {
-            
+            split_txt = "";
             try
             {
-                RichBoxBody.Text = "***未开放***";
-
+                baidu_vip = CommonHelper.GetHtmlContent("https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=" + StaticValue.BD_API_ID + "&client_secret=" + StaticValue.BD_API_KEY);
+                if (string.IsNullOrEmpty(baidu_vip))
+                {
+                    MessageBox.Show("请检查密钥输入是否正确！", "提醒");
+                }
+                else
+                {
+                    var str = "CHN_ENG";
+                    split_txt = "";
+                    var img = image_screen;
+                    var inArray = OcrHelper.ImgToBytes(img);
+                    switch (interface_flag)
+                    {
+                        case "中英":
+                            str = "CHN_ENG";
+                            break;
+                        case "日语":
+                            str = "JAP";
+                            break;
+                        case "韩语":
+                            str = "KOR";
+                            break;
+                    }
+                    var s = "image=" + HttpUtility.UrlEncode(Convert.ToBase64String(inArray)) + "&language_type=" + str;
+                    var url = "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic?access_token=" +
+                              ((JObject)JsonConvert.DeserializeObject(baidu_vip))["access_token"];
+                    var value = CommonHelper.PostStrData(url, s);
+                    //Console.WriteLine(value);
+                    if (value.IndexOf("error_code")!=-1) {
+                        RichBoxBody.Text = "***该区域未发现文本或者密钥次数用尽***";
+                        return;
+                    }
+                    var jArray = JArray.Parse(((JObject)JsonConvert.DeserializeObject(value))["words_result"].ToString());
+                    checked_txt(jArray, 1, "words");
+                }
             }
             catch
             {
@@ -3611,7 +3645,7 @@ namespace TrOCR
             var text = "";
             try
             {
-                Console.WriteLine(content);
+
                 //content = content.Replace("\2", " ");
                 var text2 = "zh";
                 var text3 = "en";
@@ -3621,11 +3655,15 @@ namespace TrOCR
                     {
                         text2 = "zh";
                         text3 = "en";
+                        text = text.Replace(Environment.NewLine, "");
+                        text = text.Replace("\n", "");
                     }
                     else
                     {
                         text2 = "en";
                         text3 = "zh";
+                        text = text.Replace(Environment.NewLine, " ");
+                        text = text.Replace("\n", " ");
                     }
                 }
                 else if (StaticValue.ZH2JP)
@@ -3766,6 +3804,7 @@ namespace TrOCR
                 string[] sArray = strTrans.Split('\n');
                 foreach(var ss in sArray)
                 {
+                    Task.Delay(100);
                     text += Translate_Google(ss) + Environment.NewLine;
                 }
 
