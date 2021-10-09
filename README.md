@@ -4,6 +4,8 @@
 天若ocr开源版本的本地版，采用Chinese-lite和paddle-ocr识别，再也不用网络啦
 
 推荐paddle-ocr识别，可以在识别结果里面切换接口
+
+win7无法使用，基本无解
 主要fork了以下仓库：
 > https://gitee.com/ZZK-1989/tianruoocr
 
