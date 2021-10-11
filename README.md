@@ -5,7 +5,7 @@
 
 推荐paddle-ocr识别，可以在识别结果里面切换接口
 
-win7无法使用，基本无解
+
 主要fork了以下仓库：
 > https://gitee.com/ZZK-1989/tianruoocr
 
@@ -26,7 +26,9 @@ win7无法使用，基本无解
 线程设的4，可以修改
 
 由于我也是白小白，编译的话可能需要在本项目根目录和tianruoocr-master下各放置一个packages，不然OcrLiteLib无法识别到tianruoocr-master里面的packages...
-
+## 问题汇总
+1. win7无法使用，基本无解
+2. 如果出现`Exception from HRESULT: 0x8007007E`可以使用dx修复工具进行修复，一般能够启动
 
 ## 版本更新
 ### v1.2.5
