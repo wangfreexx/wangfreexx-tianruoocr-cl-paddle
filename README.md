@@ -1,7 +1,11 @@
 # tianruoocr-cl
 
 #### 介绍
-天若ocr开源版本的本地版，采用Chinese-lite识别，再也不用网络啦
+天若ocr开源版本的本地版，采用Chinese-lite和paddle-ocr识别，再也不用网络啦
+
+推荐paddle-ocr识别，可以在识别结果里面切换接口
+
+
 主要fork了以下仓库：
 > https://gitee.com/ZZK-1989/tianruoocr
 
@@ -22,9 +26,14 @@
 线程设的4，可以修改
 
 由于我也是白小白，编译的话可能需要在本项目根目录和tianruoocr-master下各放置一个packages，不然OcrLiteLib无法识别到tianruoocr-master里面的packages...
-
+## 问题汇总
+1. win7无法使用，基本无解
+2. 如果出现`Exception from HRESULT: 0x8007007E`可以使用dx修复工具进行修复，一般能够启动
 
 ## 版本更新
+### v1.2.5
+1. 把原来删除的百度在线ocr给撤销回来了，现在可以使用了，并且加入了错误检测，避免崩溃
+2. 段落翻译增加了延时，避免ip被封
 ### v1.2.4
 1. 添加了保留段落翻译，不再合并段落翻译，切换接口即可，由于单独翻译，速度可能稍慢
 ### v1.2.3
