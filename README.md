@@ -33,8 +33,8 @@
 =======
 
 下载地址
-> https://gitee.com/wanglifree/tianruoocr-cl/releases/v1.2
->>>>>>> 51d9cb6cadba8e934bd774137d5e62749d352dae
+> https://gitee.com/wanglifree/tianruoocr-cl/releases
+
 
 ## 版本更新
 ### v1.2.5
