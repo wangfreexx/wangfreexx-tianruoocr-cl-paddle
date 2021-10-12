@@ -26,7 +26,7 @@
 线程设的4，可以修改
 
 由于我也是白小白，编译的话可能需要在本项目根目录和tianruoocr-master下各放置一个packages，不然OcrLiteLib无法识别到tianruoocr-master里面的packages...
-<<<<<<< HEAD
+
 ## 问题汇总
 1. win7无法使用，基本无解
 2. 如果出现`Exception from HRESULT: 0x8007007E`可以使用dx修复工具进行修复，一般能够启动
