@@ -648,7 +648,7 @@ namespace TrOCR
             try
             {
                 ClearMemory();
-                //todo
+                //todo  cl
                 if (ocrEngin2 == null)
                 {
                     MessageBox.Show("未初始化，无法执行!");
@@ -1207,7 +1207,6 @@ namespace TrOCR
             try
             {
                 text = text.Replace(Environment.NewLine, "");
-                text = text.Replace("\r", "");
                 text = text.Replace("\n", "");
                 GoogleTranslateApi.Language source;
                 GoogleTranslateApi.Language target;
@@ -1903,6 +1902,8 @@ namespace TrOCR
 
         public void Main_OCR_Thread_last()
         {
+            RichBoxBody.Text = "";
+            RichBoxBody.Refresh();
             image_screen.Dispose();
             StaticValue.IsCapture = false;
             var text = typeset_txt;
@@ -2132,6 +2133,8 @@ namespace TrOCR
                     }
                     var jArray = JArray.Parse(((JObject)JsonConvert.DeserializeObject(value))["words_result"].ToString());
                     checked_txt(jArray, 1, "words");
+                    //RichBoxBody.Text = typeset_txt;
+                    //RichBoxBody.Refresh();
                 }
             }
             catch
