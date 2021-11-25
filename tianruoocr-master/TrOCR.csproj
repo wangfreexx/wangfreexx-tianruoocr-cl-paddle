@@ -87,10 +87,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\Newtonsoft\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ShareX.HelpersLib">
+    <Reference Include="ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\ShareX\ShareX.HelpersLib.dll</HintPath>
     </Reference>
-    <Reference Include="ShareX.ScreenCaptureLib">
+    <Reference Include="ShareX.ScreenCaptureLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\ShareX\ShareX.ScreenCaptureLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />

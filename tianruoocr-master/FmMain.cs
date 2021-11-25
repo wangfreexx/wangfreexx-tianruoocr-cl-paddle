@@ -109,7 +109,7 @@ namespace TrOCR
             }
 
             //模型2初始化,从配置文件载入模型名字
- 
+
 
 
 
@@ -148,7 +148,7 @@ namespace TrOCR
                         break;
                 }
             }
-           
+
             isDetExists = File.Exists(detPath);
             isClsExists = File.Exists(clsPath);
             isRecExists = File.Exists(recPath);
@@ -940,7 +940,7 @@ namespace TrOCR
             transtalate_fla = "开启";
             RichBoxBody.Dock = DockStyle.None;
             RichBoxBody_T.Dock = DockStyle.None;
-            RichBoxBody_T.BorderStyle = BorderStyle.Fixed3D;
+            RichBoxBody_T.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             RichBoxBody_T.Text = "";
             RichBoxBody.Focus();
             if (num_ok == 0)
@@ -1594,6 +1594,8 @@ namespace TrOCR
                 Size = new Size((int)font_base.Width * 23, (int)font_base.Height * 24);
                 FormBorderStyle = FormBorderStyle.Sizable;
                 StaticValue.IsCapture = true;
+
+
                 image_screen = RegionCaptureTasks.GetRegionImage_Mo(new RegionCaptureOptions
                 {
                     ShowMagnifier = false,
@@ -1902,8 +1904,8 @@ namespace TrOCR
 
         public void Main_OCR_Thread_last()
         {
-            RichBoxBody.Text = "";
-            RichBoxBody.Refresh();
+            //RichBoxBody.Text = "";
+            //RichBoxBody.Refresh();
             image_screen.Dispose();
             StaticValue.IsCapture = false;
             var text = typeset_txt;
@@ -1931,6 +1933,7 @@ namespace TrOCR
             {
                 set_merge = false;
                 RichBoxBody.Text = text.Replace("\n", "").Replace("\r", "");
+                //RichBoxBody.Text = ProcessText(text);
             }
             var timeSpan = new TimeSpan(DateTime.Now.Ticks);
             var timeSpan2 = timeSpan.Subtract(ts).Duration();
@@ -2044,6 +2047,50 @@ namespace TrOCR
             HelpWin32.UnregisterHotKey(Handle, 222);
             RichBoxBody.Refresh();
         }
+        //合并文字
+        private string ProcessText(string str)
+        {
+            //string str = str1;
+
+            //合并换行
+
+            for (var counter = 0; counter < str.Length - 1; counter++)
+            {
+
+                //合并换行
+                if (str[counter + 1].ToString() == "\r" || str[counter + 1].ToString() == "\r\n" || str[counter + 1].ToString() == "\n")
+                {
+                    //如果检测到句号结尾,则不去掉换行
+                    if (str[counter].ToString() == "." || str[counter].ToString() == "。") continue;
+
+                    //去除换行
+                    try
+                    {
+                        str = str.Remove(counter + 1, 2);
+                    }
+                    catch
+                    {
+                        str = str.Remove(counter + 1, 1);
+                    }
+
+
+                    //判断英文单词或,结尾,则加一个空格
+                    if (Regex.IsMatch(str[counter].ToString(), "[a-zA-Z]") || str[counter].ToString() == ",")
+                        str = str.Insert(counter + 1, " ");
+
+                    //判断"-"结尾,且前一个字符为英文单词,则去除"-"
+                    if (str[counter].ToString() == "-" && Regex.IsMatch(str[counter - 1].ToString(), "[a-zA-Z]"))
+                        str = str.Remove(counter, 1);
+                }
+                //检测到中文时去除空格
+                if (Regex.IsMatch(str, @"[\u4e00-\u9fa5]") && str[counter].ToString() == " ")
+                {
+                    str = str.Remove(counter, 1);
+                }
+            }
+            return str;
+        }
+
 
         private void OCR_baidu_Ch_and_En_Click(object sender, EventArgs e)
         {
@@ -2127,7 +2174,8 @@ namespace TrOCR
                               ((JObject)JsonConvert.DeserializeObject(baidu_vip))["access_token"];
                     var value = CommonHelper.PostStrData(url, s);
                     //Console.WriteLine(value);
-                    if (value.IndexOf("error_code")!=-1) {
+                    if (value.IndexOf("error_code") != -1)
+                    {
                         RichBoxBody.Text = "***该区域未发现文本或者密钥次数用尽***";
                         return;
                     }
@@ -2308,6 +2356,7 @@ namespace TrOCR
 
                 OcrLiteLib.OcrResult ocrResult = ocrEngin.Detect(((Bitmap)image_screen).ToImage<Bgr, Byte>().Mat, padding, maxSideLen, boxScoreThresh, boxThresh, unClipRatio, doAngle, mostAngle);
                 RichBoxBody.Text = ocrResult.StrRes;
+                Console.WriteLine(RichBoxBody.Text);
                 //OcrResult ocrResult = ocrEngin.Detect();
                 ClearMemory();
 
@@ -3718,7 +3767,8 @@ namespace TrOCR
                     secretKey = value1;
                 }
 
-                if (secretKey == "" && appId == "") {
+                if (secretKey == "" && appId == "")
+                {
                     return "未输入ID和KEY";
                 }
 
@@ -3805,7 +3855,7 @@ namespace TrOCR
             {
                 //todo
                 string[] sArray = strTrans.Split('\n');
-                foreach(var ss in sArray)
+                foreach (var ss in sArray)
                 {
                     Task.Delay(100);
                     text += Translate_Google(ss) + Environment.NewLine;

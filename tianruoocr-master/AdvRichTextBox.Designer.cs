@@ -423,7 +423,7 @@ namespace TrOCR
 
         public void toolStripButtonSplit_Click(object sender, EventArgs e)
         {
-            this.richTextBox1.Text = StaticValue.v_Split;
+            //this.richTextBox1.Text = StaticValue.v_Split;
             Application.DoEvents();
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
@@ -448,8 +448,52 @@ namespace TrOCR
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
 
+        private string ProcessText(string str)
+        {
+            //string str = str1;
+
+            //合并换行
+
+            for (var counter = 0; counter < str.Length - 1; counter++)
+            {
+
+                //合并换行
+                if (str[counter + 1].ToString() == "\r" || str[counter + 1].ToString() == "\r\n" || str[counter + 1].ToString() == "\n")
+                {
+                    //如果检测到句号结尾,则不去掉换行
+                    if (str[counter].ToString() == "." || str[counter].ToString() == "。") continue;
+
+                    //去除换行
+                    try
+                    {
+                        str = str.Remove(counter + 1, 2);
+                    }
+                    catch
+                    {
+                        str = str.Remove(counter + 1, 1);
+                    }
+
+
+                    //判断英文单词或,结尾,则加一个空格
+                    if (Regex.IsMatch(str[counter].ToString(), "[a-zA-Z]") || str[counter].ToString() == ",")
+                        str = str.Insert(counter + 1, " ");
+
+                    //判断"-"结尾,且前一个字符为英文单词,则去除"-"
+                    if (str[counter].ToString() == "-" && Regex.IsMatch(str[counter - 1].ToString(), "[a-zA-Z]"))
+                        str = str.Remove(counter, 1);
+                }
+                //检测到中文时去除空格
+                if (Regex.IsMatch(str, @"[\u4e00-\u9fa5]") && str[counter].ToString() == " ")
+                {
+                    str = str.Remove(counter, 1);
+                }
+            }
+            return str;
+        }
         public void toolStripButtonMerge_Click(object sender, EventArgs e)
         {
+            this.richTextBox1.Text= ProcessText(this.richTextBox1.Text);
+            /*
             string text = this.richTextBox1.Text.TrimEnd(new char[]
             {
                 '\n'
@@ -488,7 +532,7 @@ namespace TrOCR
                     text2 += array[array.Length - 1];
                 }
                 this.richTextBox1.Text = text2;
-            }
+            }*/
             Application.DoEvents();
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
