@@ -490,6 +490,8 @@ namespace TrOCR
             }
             return str;
         }
+
+
         public void toolStripButtonMerge_Click(object sender, EventArgs e)
         {
             this.richTextBox1.Text= ProcessText(this.richTextBox1.Text);
