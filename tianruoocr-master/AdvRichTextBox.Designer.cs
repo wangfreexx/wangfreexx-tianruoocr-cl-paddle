@@ -464,15 +464,7 @@ namespace TrOCR
                     if (str[counter].ToString() == "." || str[counter].ToString() == "。") continue;
 
                     //去除换行
-                    try
-                    {
-                        str = str.Remove(counter + 1, 2);
-                    }
-                    catch
-                    {
-                        str = str.Remove(counter + 1, 1);
-                    }
-
+                    str = str.Remove(counter + 1, 1);
 
                     //判断英文单词或,结尾,则加一个空格
                     if (Regex.IsMatch(str[counter].ToString(), "[a-zA-Z]") || str[counter].ToString() == ",")
@@ -494,7 +486,7 @@ namespace TrOCR
 
         public void toolStripButtonMerge_Click(object sender, EventArgs e)
         {
-            this.richTextBox1.Text= ProcessText(this.richTextBox1.Text);
+            this.richTextBox1.Text = ProcessText(this.richTextBox1.Text);
             /*
             string text = this.richTextBox1.Text.TrimEnd(new char[]
             {
@@ -840,7 +832,7 @@ namespace TrOCR
             this.richTextBox1.Select(0, 0);
             try
             {
-               
+
                 this.richTextBox1.Select(0, 0);
             }
             catch

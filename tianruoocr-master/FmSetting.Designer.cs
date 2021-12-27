@@ -95,6 +95,7 @@
             this.反馈Button = new System.Windows.Forms.Button();
             this.txt_问题反馈 = new System.Windows.Forms.TextBox();
             this.Page_OCR设置 = new System.Windows.Forms.TabPage();
+            this.参数说明1 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -113,6 +114,7 @@
             this.doAngleCheckBox = new System.Windows.Forms.CheckBox();
             this.mostAngleCheckBox = new System.Windows.Forms.CheckBox();
             this.Page_OCR设置2 = new System.Windows.Forms.TabPage();
+            this.参数说明2 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -148,8 +150,6 @@
             this.label_更新日期 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txt_更新说明 = new System.Windows.Forms.TextBox();
-            this.参数说明1 = new System.Windows.Forms.Button();
-            this.参数说明2 = new System.Windows.Forms.Button();
             this.Page_代理.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.Page_密钥.SuspendLayout();
@@ -1076,14 +1076,24 @@
             this.Page_OCR设置.Text = "CL-OCR设置";
             this.Page_OCR设置.UseVisualStyleBackColor = true;
             // 
+            // 参数说明1
+            // 
+            this.参数说明1.Location = new System.Drawing.Point(218, 280);
+            this.参数说明1.Name = "参数说明1";
+            this.参数说明1.Size = new System.Drawing.Size(73, 23);
+            this.参数说明1.TabIndex = 13;
+            this.参数说明1.Text = "参数说明";
+            this.参数说明1.UseVisualStyleBackColor = true;
+            this.参数说明1.Click += new System.EventHandler(this.button参数说明_Click);
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(247, 248);
+            this.label27.Location = new System.Drawing.Point(216, 248);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(125, 12);
+            this.label27.Size = new System.Drawing.Size(161, 12);
             this.label27.TabIndex = 12;
-            this.label27.Text = "参数修改需要重启程序";
+            this.label27.Text = "参数修改需要切换模型或重启";
             // 
             // button1
             // 
@@ -1101,7 +1111,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
@@ -1364,6 +1374,16 @@
             this.Page_OCR设置2.Text = "PA-OCR设置";
             this.Page_OCR设置2.UseVisualStyleBackColor = true;
             // 
+            // 参数说明2
+            // 
+            this.参数说明2.Location = new System.Drawing.Point(221, 282);
+            this.参数说明2.Name = "参数说明2";
+            this.参数说明2.Size = new System.Drawing.Size(73, 23);
+            this.参数说明2.TabIndex = 17;
+            this.参数说明2.Text = "参数说明";
+            this.参数说明2.UseVisualStyleBackColor = true;
+            this.参数说明2.Click += new System.EventHandler(this.button参数说明_Click);
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.radioButton3);
@@ -1412,11 +1432,11 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(245, 250);
+            this.label28.Location = new System.Drawing.Point(219, 250);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(125, 12);
+            this.label28.Size = new System.Drawing.Size(161, 12);
             this.label28.TabIndex = 15;
-            this.label28.Text = "参数修改需要重启程序";
+            this.label28.Text = "参数修改需要切换模型或重启";
             // 
             // button3
             // 
@@ -1434,7 +1454,7 @@
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
@@ -1806,26 +1826,6 @@
             this.txt_更新说明.Name = "txt_更新说明";
             this.txt_更新说明.Size = new System.Drawing.Size(366, 155);
             this.txt_更新说明.TabIndex = 4;
-            // 
-            // 参数说明1
-            // 
-            this.参数说明1.Location = new System.Drawing.Point(218, 280);
-            this.参数说明1.Name = "参数说明1";
-            this.参数说明1.Size = new System.Drawing.Size(73, 23);
-            this.参数说明1.TabIndex = 13;
-            this.参数说明1.Text = "参数说明";
-            this.参数说明1.UseVisualStyleBackColor = true;
-            this.参数说明1.Click += new System.EventHandler(this.button参数说明_Click);
-            // 
-            // 参数说明2
-            // 
-            this.参数说明2.Location = new System.Drawing.Point(221, 282);
-            this.参数说明2.Name = "参数说明2";
-            this.参数说明2.Size = new System.Drawing.Size(73, 23);
-            this.参数说明2.TabIndex = 17;
-            this.参数说明2.Text = "参数说明";
-            this.参数说明2.UseVisualStyleBackColor = true;
-            this.参数说明2.Click += new System.EventHandler(this.button参数说明_Click);
             // 
             // FmSetting
             // 

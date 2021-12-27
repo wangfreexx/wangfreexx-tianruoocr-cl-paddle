@@ -78,100 +78,110 @@ namespace TrOCR
             OCR_foreach("");
 
             //模型1初始化 Chinese-lite
-            string appPath = AppDomain.CurrentDomain.BaseDirectory;
-            //string appDir = Directory.GetParent(appPath).FullName;
-            string modelsDir = appPath + "models" + "\\" + "cl-ocr";
-            string detPath = modelsDir + "\\" + "dbnet.onnx";
-            string clsPath = modelsDir + "\\" + "angle_net.onnx";
-            string recPath = modelsDir + "\\" + "crnn_lite_lstm.onnx";
-            string keysPath = modelsDir + "\\" + "keys.txt";
-            bool isDetExists = File.Exists(detPath);
-            bool isClsExists = File.Exists(clsPath);
-            bool isRecExists = File.Exists(recPath);
-            bool isKeysExists = File.Exists(keysPath);
-            if (isDetExists && isClsExists && isRecExists && isKeysExists)
-            {
-                var value1 = IniHelper.GetValue("OCR", "numThread");
-                ocrEngin = new OcrLite();
-                if (value1 == "发生错误")
-                {
-                    ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, 2);
-                }
-                else
-                {
-                    ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value1));
-                }
+            //string appPath = AppDomain.CurrentDomain.BaseDirectory;
+            ////string appDir = Directory.GetParent(appPath).FullName;
+            //string modelsDir = appPath + "models" + "\\" + "cl-ocr";
+            //string detPath = modelsDir + "\\" + "dbnet.onnx";
+            //string clsPath = modelsDir + "\\" + "angle_net.onnx";
+            //string recPath = modelsDir + "\\" + "crnn_lite_lstm.onnx";
+            //string keysPath = modelsDir + "\\" + "keys.txt";
+            //bool isDetExists = File.Exists(detPath);
+            //bool isClsExists = File.Exists(clsPath);
+            //bool isRecExists = File.Exists(recPath);
+            //bool isKeysExists = File.Exists(keysPath);
+            //if (isDetExists && isClsExists && isRecExists && isKeysExists)
+            //{
+            //    var value1 = IniHelper.GetValue("OCR", "numThread");
+            //    ocrEngin = new OcrLite();
+            //    try
+            //    {
+            //        if (value1 == "发生错误")
+            //        {
+            //            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, 2);
+            //        }
+            //        else
+            //        {
+            //            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value1));
+            //        }
 
-            }
-            else
-            {
-                MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
-            }
+            //    }
+            //    catch (Exception)
+            //    {
+            //        MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
+            //        throw;
+            //    }
+
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
+            //}
 
             //模型2初始化,从配置文件载入模型名字
 
 
 
 
-            modelsDir = appPath + "models" + "\\" + "paddle-ocr";
-            clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
-            var strvalue = IniHelper.GetValue("paddle模型", "模型");
-            if (strvalue == "发生错误")
-            {
-                detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-                keysPath = modelsDir + "\\" + "ppocr_keys.txt";
-            }
-            else
-            {
-                switch (int.Parse(strvalue))
-                {
-                    case 1:
-                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                        recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-                        keysPath = modelsDir + "\\" + "ppocr_keys.txt";
-                        break;
-                    case 2:
-                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                        recPath = modelsDir + "\\" + "en_number_mobile_v2.0_rec_infer.onnx";
-                        keysPath = modelsDir + "\\" + "en_dict.txt";
-                        break;
-                    case 3:
-                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                        recPath = modelsDir + "\\" + "japan_rec_crnn.onnx";
-                        keysPath = modelsDir + "\\" + "japan_dict.txt";
-                        break;
-                    default:
-                        detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                        recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-                        keysPath = modelsDir + "\\" + "ppocr_keys.txt";
-                        break;
-                }
-            }
+            //modelsDir = appPath + "models" + "\\" + "paddle-ocr";
+            //clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
+            //var strvalue = IniHelper.GetValue("paddle模型", "模型");
+            //if (strvalue == "发生错误")
+            //{
+            //    detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+            //    recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+            //    keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+            //}
+            //else
+            //{
+            //    switch (int.Parse(strvalue))
+            //    {
+            //        case 1:
+            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+            //            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+            //            keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+            //            break;
+            //        case 2:
+            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+            //            recPath = modelsDir + "\\" + "en_number_mobile_v2.0_rec_infer.onnx";
+            //            keysPath = modelsDir + "\\" + "en_dict.txt";
+            //            break;
+            //        case 3:
+            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+            //            recPath = modelsDir + "\\" + "japan_rec_crnn.onnx";
+            //            keysPath = modelsDir + "\\" + "japan_dict.txt";
+            //            break;
+            //        default:
+            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+            //            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+            //            keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+            //            break;
+            //    }
+            //}
 
-            isDetExists = File.Exists(detPath);
-            isClsExists = File.Exists(clsPath);
-            isRecExists = File.Exists(recPath);
-            isKeysExists = File.Exists(keysPath);
-            if (isDetExists && isClsExists && isRecExists && isKeysExists)
-            {
-                var value2 = IniHelper.GetValue("OCR2", "numThread");
-                ocrEngin2 = new Ocr();
-                if (value2 == "发生错误")
-                {
-                    ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, 2);
-                }
-                else
-                {
-                    ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value2));
-                }
-                //ocrEngin = new OcrLite();
-                //ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, (int)numThreadNumeric.Value);
-            }
-            else
-            {
-                MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！");
-            }
+            //isDetExists = File.Exists(detPath);
+            //isClsExists = File.Exists(clsPath);
+            //isRecExists = File.Exists(recPath);
+            //isKeysExists = File.Exists(keysPath);
+            //if (isDetExists && isClsExists && isRecExists && isKeysExists)
+            //{
+            //    var value2 = IniHelper.GetValue("OCR2", "numThread");
+            //    ocrEngin2 = new Ocr();
+            //    if (value2 == "发生错误")
+            //    {
+            //        ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, 2);
+            //    }
+            //    else
+            //    {
+            //        ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value2));
+            //    }
+            //    //ocrEngin = new OcrLite();
+            //    //ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, (int)numThreadNumeric.Value);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！");
+            //}
 
 
             //模型1数据读入
@@ -643,11 +653,14 @@ namespace TrOCR
             RichBoxBody.richTextBox1.Paste();
         }
 
+
         public void OCR_Tencent()
         {
+
             try
             {
                 ClearMemory();
+
                 //todo  cl
                 if (ocrEngin2 == null)
                 {
@@ -655,15 +668,16 @@ namespace TrOCR
                     return;
                 }
 
-
                 OcrLib.OcrResult ocrResult2 = ocrEngin2.Detect(((Bitmap)image_screen).ToImage<Bgr, Byte>().Mat, padding, maxSideLen, boxScoreThresh, boxThresh, unClipRatio, doAngle, mostAngle);
                 RichBoxBody.Text = ocrResult2.StrRes;
+
                 //OcrResult ocrResult = ocrEngin.Detect();
                 ClearMemory();
 
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("InitMinimize()" + ex.Message);
                 if (esc != "退出")
                 {
                     RichBoxBody.Text = "***该区域未发现文本***";
@@ -1206,48 +1220,56 @@ namespace TrOCR
             var text2 = "";
             try
             {
-                text = text.Replace(Environment.NewLine, "");
-                text = text.Replace("\n", "");
-                GoogleTranslateApi.Language source;
-                GoogleTranslateApi.Language target;
-                GoogleTranslateApi.GoogleTranslator translate;
+                var text3 = "zh-CN";
+                var text4 = "en";
                 if (StaticValue.ZH2EN)
                 {
-                    if (ch_count(typeset_txt.Trim()) > en_count(typeset_txt.Trim()))
+                    if (ch_count(text.Trim()) > en_count(text.Trim()) || (en_count(text.Trim()) == 1 && ch_count(text.Trim()) == 1))
                     {
-                        source = GoogleTranslateApi.Language.Chinese;
-                        target = GoogleTranslateApi.Language.English;
+                        text3 = "zh-CN";
+                        text4 = "en";
                     }
                     else
                     {
-                        source = GoogleTranslateApi.Language.English;
-                        target = GoogleTranslateApi.Language.Chinese;
+                        text3 = "en";
+                        text4 = "zh-CN";
                     }
                 }
-                else if (StaticValue.ZH2JP)
+                if (StaticValue.ZH2JP)
                 {
-                    if (contain_jap(replaceStr(Del_ch(typeset_txt.Trim()))))
+                    if (contain_jap(replaceStr(Del_ch(text.Trim()))))
                     {
-                        source = GoogleTranslateApi.Language.Japanese;
-                        target = GoogleTranslateApi.Language.Chinese;
+                        text3 = "ja";
+                        text4 = "zh-CN";
+                    }
+                    else
+                    {
+                        text3 = "zh-CN";
+                        text4 = "ja";
+                    }
+                }
+                if (StaticValue.ZH2KO)
+                {
+                    if (contain_kor(text.Trim()))
+                    {
+                        text3 = "ko";
+                        text4 = "zh-CN";
+                    }
+                    else
+                    {
+                        text3 = "zh-CN";
+                        text4 = "ko";
+                    }
+                }
+                var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=",HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
+                var html = CommonHelper.PostStrData("https://translate.googleapis.com/translate_a/single", data);
 
-                    }
-                    else
-                    {
-                        source = GoogleTranslateApi.Language.Chinese;
-                        target = GoogleTranslateApi.Language.Japanese;
-                    }
-                }
-                else if (StaticValue.ZH2KO)
+                var jArray = (JArray)JsonConvert.DeserializeObject(html);
+                var count = ((JArray)jArray[0]).Count;
+                for (var i = 0; i < count; i++)
                 {
-                    return "不支持韩语翻译";
+                    text2 += jArray[0][i][0].ToString();
                 }
-                else
-                {
-                    return "选得什么鬼语言";
-                }
-                translate = new GoogleTranslateApi.GoogleTranslator(source, target);
-                text2 = translate.Text(text);
             }
             catch (Exception)
             {
@@ -1904,8 +1926,11 @@ namespace TrOCR
 
         public void Main_OCR_Thread_last()
         {
+            //var text1=RichBoxBody.Text;
+            //Console.WriteLine(text1);
             //RichBoxBody.Text = "";
             //RichBoxBody.Refresh();
+            //RichBoxBody.Text = text1;
             image_screen.Dispose();
             StaticValue.IsCapture = false;
             var text = typeset_txt;
@@ -2046,6 +2071,7 @@ namespace TrOCR
             }
             HelpWin32.UnregisterHotKey(Handle, 222);
             RichBoxBody.Refresh();
+            RichBoxBody.Text = RichBoxBody.Text;
         }
         //合并文字
         private string ProcessText(string str)
@@ -2353,6 +2379,7 @@ namespace TrOCR
                     return;
                 }
 
+                //RichBoxBody.Refresh();
 
                 OcrLiteLib.OcrResult ocrResult = ocrEngin.Detect(((Bitmap)image_screen).ToImage<Bgr, Byte>().Mat, padding, maxSideLen, boxScoreThresh, boxThresh, unClipRatio, doAngle, mostAngle);
                 RichBoxBody.Text = ocrResult.StrRes;
@@ -2362,8 +2389,9 @@ namespace TrOCR
 
 
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("InitMinimize()" + ex.Message);
                 if (esc != "退出")
                 {
                     RichBoxBody.Text = "***该区域未发现文本***";
@@ -2554,6 +2582,8 @@ namespace TrOCR
                     break;
                 case "搜狗":
                     interface_flag = "搜狗";
+                    //todo
+                    Init_model(0);
                     Refresh();
                     sougou.Text = "本地CL√";
                     break;
@@ -2561,6 +2591,7 @@ namespace TrOCR
                     interface_flag = "腾讯";
                     Refresh();
                     tencent.Text = "本地Paddle√";
+                    Init_model(1);
                     break;
                 case "有道":
                     interface_flag = "有道";
@@ -2610,6 +2641,129 @@ namespace TrOCR
             }
 
             HelpWin32.IniFileHelper.SetValue("配置", "接口", interface_flag, filePath);
+        }
+        //初始化模型，现在放在这里
+        private void Init_model(int mode)
+        {
+            if (mode == 0)
+            {
+                string appPath = AppDomain.CurrentDomain.BaseDirectory;
+                //string appDir = Directory.GetParent(appPath).FullName;
+                string modelsDir = appPath + "models" + "\\" + "cl-ocr";
+                string detPath = modelsDir + "\\" + "dbnet.onnx";
+                string clsPath = modelsDir + "\\" + "angle_net.onnx";
+                string recPath = modelsDir + "\\" + "crnn_lite_lstm.onnx";
+                string keysPath = modelsDir + "\\" + "keys.txt";
+                bool isDetExists = File.Exists(detPath);
+                bool isClsExists = File.Exists(clsPath);
+                bool isRecExists = File.Exists(recPath);
+                bool isKeysExists = File.Exists(keysPath);
+                if (isDetExists && isClsExists && isRecExists && isKeysExists)
+                {
+                    var value1 = IniHelper.GetValue("OCR", "numThread");
+                    ocrEngin = new OcrLite();
+                    try
+                    {
+                        if (value1 == "发生错误")
+                        {
+                            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, 2);
+                        }
+                        else
+                        {
+                            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value1));
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                        throw;
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                }
+            }
+            else if (mode == 1)
+            {
+                string appPath = AppDomain.CurrentDomain.BaseDirectory;
+                string modelsDir = appPath + "models" + "\\" + "paddle-ocr";
+                string clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
+                var strvalue = IniHelper.GetValue("paddle模型", "模型");
+                string detPath;
+                string recPath;
+                string keysPath;
+                if (strvalue == "发生错误")
+                {
+                    detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                    recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                    keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+                }
+                else
+                {
+                    switch (int.Parse(strvalue))
+                    {
+                        case 1:
+                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                            keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+                            break;
+                        case 2:
+                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                            recPath = modelsDir + "\\" + "en_number_mobile_v2.0_rec_infer.onnx";
+                            keysPath = modelsDir + "\\" + "en_dict.txt";
+                            break;
+                        case 3:
+                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                            recPath = modelsDir + "\\" + "japan_rec_crnn.onnx";
+                            keysPath = modelsDir + "\\" + "japan_dict.txt";
+                            break;
+                        default:
+                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                            keysPath = modelsDir + "\\" + "ppocr_keys.txt";
+                            break;
+                    }
+                }
+
+                bool isDetExists = File.Exists(detPath);
+                bool isClsExists = File.Exists(clsPath);
+                bool isRecExists = File.Exists(recPath);
+                bool isKeysExists = File.Exists(keysPath);
+                if (isDetExists && isClsExists && isRecExists && isKeysExists)
+                {
+                    var value2 = IniHelper.GetValue("OCR2", "numThread");
+                    ocrEngin2 = new Ocr();
+                    try
+                    {
+                        if (value2 == "发生错误")
+                        {
+                            ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, 2);
+                        }
+                        else
+                        {
+                            ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value2));
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                        throw;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                }
+
+
+            }
+
         }
 
         private void OCR_shupai_Click(object sender, EventArgs e)
@@ -3672,21 +3826,21 @@ namespace TrOCR
             {
                 trans_baidu.Text = "百度√";
                 trans_google.Text = "谷歌";
-                trans_tencent.Text = "保留段落谷歌翻译";
+                trans_tencent.Text = "无";
                 IniHelper.SetValue("配置", "翻译接口", "百度");
             }
             if (name == "谷歌")
             {
                 trans_baidu.Text = "百度";
                 trans_google.Text = "谷歌√";
-                trans_tencent.Text = "保留段落谷歌翻译";
+                trans_tencent.Text = "无";
                 IniHelper.SetValue("配置", "翻译接口", "谷歌");
             }
             if (name == "腾讯")
             {
                 trans_google.Text = "谷歌";
                 trans_baidu.Text = "百度";
-                trans_tencent.Text = "保留段落谷歌翻译√";
+                trans_tencent.Text = "无√";
                 IniHelper.SetValue("配置", "翻译接口", "腾讯");
             }
         }
@@ -3850,24 +4004,24 @@ namespace TrOCR
         //现在变成保留段落谷歌翻译
         private string Translate_Tencent(string strTrans)
         {
-            var text = "";
-            try
-            {
-                //todo
-                string[] sArray = strTrans.Split('\n');
-                foreach (var ss in sArray)
-                {
-                    Task.Delay(100);
-                    text += Translate_Google(ss) + Environment.NewLine;
-                }
+            //var text = "";
+            //try
+            //{
+            //    //todo
+            //    string[] sArray = strTrans.Split('\n');
+            //    foreach (var ss in sArray)
+            //    {
+            //        Task.Delay(100);
+            //        text += Translate_Google(ss) + Environment.NewLine;
+            //    }
 
 
-            }
-            catch (Exception)
-            {
-                text = "[接口报错]：\r\n1.接口请求出现问题等待修复。";
-            }
-            return text;
+            //}
+            //catch (Exception)
+            //{
+            //    text = "[接口报错]：\r\n1.接口请求出现问题等待修复。";
+            //}
+            return "无";
         }
 
         public void BdTableOCR()

@@ -38,7 +38,7 @@ namespace OcrLiteLib
             }
         }
 
-        public OcrResult Detect(Emgu.CV.Mat img, int padding, int imgResize, float boxScoreThresh, float boxThresh, 
+        public OcrResult Detect(Mat img, int padding, int imgResize, float boxScoreThresh, float boxThresh, 
                               float unClipRatio, bool doAngle, bool mostAngle)
         {
             Mat brgSrc = img;

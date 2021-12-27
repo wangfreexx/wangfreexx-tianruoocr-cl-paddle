@@ -40,6 +40,7 @@ namespace OcrLib
         public OcrResult Detect(Mat img, int padding, int maxSideLen, float boxScoreThresh, float boxThresh,
                               float unClipRatio, bool doAngle, bool mostAngle)
         {
+
             Mat originSrc = img;
             int originMaxSide = Math.Max(originSrc.Cols, originSrc.Rows);
 

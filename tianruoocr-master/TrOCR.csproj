@@ -76,13 +76,13 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV.Bitmap, Version=4.4.0.4099, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Emgu.CV.Bitmap.4.4.0.4099\lib\netstandard2.0\Emgu.CV.Bitmap.dll</HintPath>
+    <Reference Include="Emgu.CV.Bitmap">
+      <HintPath>..\..\OcrLiteOnnxCs\packages\Emgu.CV.Bitmap.4.4.0.4099\lib\netstandard2.0\Emgu.CV.Bitmap.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.Platform.NetStandard, Version=4.5.3.4721, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <HintPath>packages\Emgu.CV.4.5.3.4721\lib\netstandard2.0\Emgu.CV.Platform.NetStandard.dll</HintPath>
+    <Reference Include="Emgu.CV.Platform.NetStandard, Version=4.4.0.4099, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\Emgu.CV.4.4.0.4099\lib\netstandard2.0\Emgu.CV.Platform.NetStandard.dll</HintPath>
     </Reference>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\Newtonsoft\Newtonsoft.Json.dll</HintPath>
@@ -99,8 +99,8 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
@@ -267,17 +267,10 @@
     <Content Include="Data\screenshot.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\update.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\Image1.bmp" />
     <None Include="DLL\pinyin.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GoogleTranslateApi\GoogleTranslateApi.csproj">
-      <Project>{43cf1509-ab52-495c-a598-946a71451045}</Project>
-      <Name>GoogleTranslateApi</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OcrLib\OcrLib.csproj">
       <Project>{ab10d356-2d95-4460-96ca-9a7129ad0a76}</Project>
       <Name>OcrLib</Name>
