@@ -2071,6 +2071,7 @@ namespace TrOCR
             }
             HelpWin32.UnregisterHotKey(Handle, 222);
             RichBoxBody.Refresh();
+
             RichBoxBody.Text = RichBoxBody.Text;
         }
         //合并文字
@@ -2674,9 +2675,9 @@ namespace TrOCR
                         }
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                        MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！"+"/n"+"错误信息："+ ex.Message);
                         throw;
                     }
 
@@ -2684,7 +2685,7 @@ namespace TrOCR
                 }
                 else
                 {
-                    MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                    MessageBox.Show("Chineseocr-lite不存在或不完整，请确认模型文件夹和文件后，重新初始化！");
                 }
             }
             else if (mode == 1)
@@ -2749,16 +2750,16 @@ namespace TrOCR
                         }
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                        MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！" + "/n" + "错误信息：" + ex.Message);
                         throw;
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！");
+                    MessageBox.Show("Paddle-OCR不存在或不完整，请确认模型文件夹和文件后，重新初始化！");
                 }
 
 
