@@ -49,7 +49,17 @@ namespace TrOCR
             tranclick = false;
             are = new AutoResetEvent(false);
             imagelist = new List<Image>();
-            StaticValue.NoteCount = Convert.ToInt32(IniHelper.GetValue("配置", "记录数目"));
+            var noteCount = IniHelper.GetValue("配置", "记录数目");
+            int valuetemp;
+            if (noteCount == "发生错误" || !int.TryParse(noteCount, out valuetemp)) {
+                StaticValue.NoteCount = 20;
+            }
+            else
+            {
+                StaticValue.NoteCount = valuetemp;
+            }
+            
+
             baidu_flags = "";
             esc = "";
             voice_count = 0;
@@ -185,161 +195,172 @@ namespace TrOCR
 
 
             //模型1数据读入
-            var value27 = IniHelper.GetValue("OCR", "padding");
-            if (value27 == "发生错误")
-            {
-                padding = 50;
-            }
-            else
-            {
-                padding = int.Parse(value27);
-            }
-            value27 = IniHelper.GetValue("OCR", "maxSideLen");
-            if (value27 == "发生错误")
-            {
-                maxSideLen = 1024;
-            }
-            else
-            {
-                maxSideLen = int.Parse(value27);
-            }
-            value27 = IniHelper.GetValue("OCR", "boxScoreThresh");
-            if (value27 == "发生错误")
-            {
-                boxScoreThresh = 0.618f;
-            }
-            else
-            {
-                boxScoreThresh = Convert.ToSingle(value27);
-            }
-            value27 = IniHelper.GetValue("OCR", "boxThresh");
-            if (value27 == "发生错误")
-            {
-                boxThresh = 0.300f;
-            }
-            else
-            {
-                boxThresh = Convert.ToSingle(value27);
-            }
-            value27 = IniHelper.GetValue("OCR", "unClipRatio");
-            if (value27 == "发生错误")
-            {
-                unClipRatio = 2.0f;
-            }
-            else
-            {
-                unClipRatio = Convert.ToSingle(value27);
-            }
+            //var value27 = IniHelper.GetValue("OCR", "padding");
+            //if (value27 == "发生错误")
+            //{
+            //    padding = 50;
+            //}
+            //else
+            //{
+            //    padding = int.Parse(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR", "maxSideLen");
+            //if (value27 == "发生错误")
+            //{
+            //    maxSideLen = 1024;
+            //}
+            //else
+            //{
+            //    maxSideLen = int.Parse(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR", "boxScoreThresh");
+            //if (value27 == "发生错误")
+            //{
+            //    boxScoreThresh = 0.618f;
+            //}
+            //else
+            //{
+            //    boxScoreThresh = Convert.ToSingle(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR", "boxThresh");
+            //if (value27 == "发生错误")
+            //{
+            //    boxThresh = 0.300f;
+            //}
+            //else
+            //{
+            //    boxThresh = Convert.ToSingle(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR", "unClipRatio");
+            //if (value27 == "发生错误")
+            //{
+            //    unClipRatio = 2.0f;
+            //}
+            //else
+            //{
+            //    unClipRatio = Convert.ToSingle(value27);
+            //}
 
-            value27 = IniHelper.GetValue("OCR", "doAngle");
-            if (value27 == "发生错误")
-            {
-                doAngle = true;
-            }
-            if (value27 == "0")
-            {
-                doAngle = false;
-            }
-            else
-            {
-                doAngle = true;
-            }
+            //value27 = IniHelper.GetValue("OCR", "doAngle");
+            //if (value27 == "发生错误")
+            //{
+            //    doAngle = true;
+            //}
+            //if (value27 == "0")
+            //{
+            //    doAngle = false;
+            //}
+            //else
+            //{
+            //    doAngle = true;
+            //}
 
-            value27 = IniHelper.GetValue("OCR", "mostAngle");
-            if (value27 == "发生错误")
-            {
-                mostAngle = true;
-            }
-            if (value27 == "0")
-            {
-                mostAngle = false;
-            }
-            else
-            {
-                mostAngle = true;
-            }
+            //value27 = IniHelper.GetValue("OCR", "mostAngle");
+            //if (value27 == "发生错误")
+            //{
+            //    mostAngle = true;
+            //}
+            //if (value27 == "0")
+            //{
+            //    mostAngle = false;
+            //}
+            //else
+            //{
+            //    mostAngle = true;
+            //}
 
             //模型2数据读入
-            value27 = IniHelper.GetValue("OCR2", "padding");
-            if (value27 == "发生错误")
-            {
-                padding2 = 0;
-            }
-            else
-            {
-                padding2 = int.Parse(value27);
-            }
-            value27 = IniHelper.GetValue("OCR2", "maxSideLen");
-            if (value27 == "发生错误")
-            {
-                maxSideLen2 = 1024;
-            }
-            else
-            {
-                maxSideLen2 = int.Parse(value27);
-            }
-            value27 = IniHelper.GetValue("OCR2", "boxScoreThresh");
-            if (value27 == "发生错误")
-            {
-                boxScoreThresh2 = 0.700f;
-            }
-            else
-            {
-                boxScoreThresh2 = Convert.ToSingle(value27);
-            }
-            value27 = IniHelper.GetValue("OCR2", "boxThresh");
-            if (value27 == "发生错误")
-            {
-                boxThresh2 = 0.300f;
-            }
-            else
-            {
-                boxThresh = Convert.ToSingle(value27);
-            }
-            value27 = IniHelper.GetValue("OCR2", "unClipRatio");
-            if (value27 == "发生错误")
-            {
-                unClipRatio2 = 1.5f;
-            }
-            else
-            {
-                unClipRatio2 = Convert.ToSingle(value27);
-            }
+            //value27 = IniHelper.GetValue("OCR2", "padding");
+            //if (value27 == "发生错误")
+            //{
+            //    padding2 = 0;
+            //}
+            //else
+            //{
+            //    padding2 = int.Parse(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR2", "maxSideLen");
+            //if (value27 == "发生错误")
+            //{
+            //    maxSideLen2 = 1024;
+            //}
+            //else
+            //{
+            //    maxSideLen2 = int.Parse(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR2", "boxScoreThresh");
+            //if (value27 == "发生错误")
+            //{
+            //    boxScoreThresh2 = 0.700f;
+            //}
+            //else
+            //{
+            //    boxScoreThresh2 = Convert.ToSingle(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR2", "boxThresh");
+            //if (value27 == "发生错误")
+            //{
+            //    boxThresh2 = 0.300f;
+            //}
+            //else
+            //{
+            //    boxThresh = Convert.ToSingle(value27);
+            //}
+            //value27 = IniHelper.GetValue("OCR2", "unClipRatio");
+            //if (value27 == "发生错误")
+            //{
+            //    unClipRatio2 = 1.5f;
+            //}
+            //else
+            //{
+            //    unClipRatio2 = Convert.ToSingle(value27);
+            //}
 
-            value27 = IniHelper.GetValue("OCR2", "doAngle");
-            if (value27 == "发生错误")
-            {
-                doAngle2 = true;
-            }
-            if (value27 == "0")
-            {
-                doAngle2 = false;
-            }
-            else
-            {
-                doAngle2 = true;
-            }
+            //value27 = IniHelper.GetValue("OCR2", "doAngle");
+            //if (value27 == "发生错误")
+            //{
+            //    doAngle2 = true;
+            //}
+            //if (value27 == "0")
+            //{
+            //    doAngle2 = false;
+            //}
+            //else
+            //{
+            //    doAngle2 = true;
+            //}
 
-            value27 = IniHelper.GetValue("OCR2", "mostAngle");
-            if (value27 == "发生错误")
-            {
-                mostAngle2 = true;
-            }
-            if (value27 == "0")
-            {
-                mostAngle2 = false;
-            }
-            else
-            {
-                mostAngle2 = true;
-            }
-
-
-
-
-
+            //value27 = IniHelper.GetValue("OCR2", "mostAngle");
+            //if (value27 == "发生错误")
+            //{
+            //    mostAngle2 = true;
+            //}
+            //if (value27 == "0")
+            //{
+            //    mostAngle2 = false;
+            //}
+            //else
+            //{
+            //    mostAngle2 = true;
+            //}
 
         }
+
+        //public static bool IsNumber(string s)
+        //{
+        //    if (string.IsNullOrWhiteSpace(s)) return false;
+        //    const string pattern = "^\\d+$";
+        //    Regex rx = new Regex(pattern);
+        //    return rx.IsMatch(s);
+        //}
+
+        //public static bool IsFNumber(string s)
+        //{
+        //    if (string.IsNullOrWhiteSpace(s)) return false;
+        //    const string pattern = "^\\d+(\\.\\d+)?$";
+        //    Regex rx = new Regex(pattern);
+        //    return rx.IsMatch(s);
+        //}
 
         [DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize")]
         public static extern int SetProcessWorkingSetSize(IntPtr process, int minSize, int maxSize);
@@ -872,7 +893,16 @@ namespace TrOCR
             if (fmSetting.DialogResult == DialogResult.OK)
             {
                 var filePath = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
-                StaticValue.NoteCount = Convert.ToInt32(HelpWin32.IniFileHelper.GetValue("配置", "记录数目", filePath));
+                try
+                {
+                    StaticValue.NoteCount = Convert.ToInt32(HelpWin32.IniFileHelper.GetValue("配置", "记录数目", filePath));
+                }
+                catch (Exception)
+                {
+                    StaticValue.NoteCount = 20;
+                    throw;
+                }
+               
                 pubnote = new string[StaticValue.NoteCount];
                 for (var i = 0; i < StaticValue.NoteCount; i++)
                 {
@@ -1261,7 +1291,7 @@ namespace TrOCR
                         text4 = "ko";
                     }
                 }
-                var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=",HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
+                var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=", HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
                 var html = CommonHelper.PostStrData("https://translate.googleapis.com/translate_a/single", data);
 
                 var jArray = (JArray)JsonConvert.DeserializeObject(html);
@@ -2646,6 +2676,9 @@ namespace TrOCR
         //初始化模型，现在放在这里
         private void Init_model(int mode)
         {
+            string value27;
+            int valuetemp;
+            float valuetempf;
             if (mode == 0)
             {
                 string appPath = AppDomain.CurrentDomain.BaseDirectory;
@@ -2661,23 +2694,23 @@ namespace TrOCR
                 bool isKeysExists = File.Exists(keysPath);
                 if (isDetExists && isClsExists && isRecExists && isKeysExists)
                 {
-                    var value1 = IniHelper.GetValue("OCR", "numThread");
+                    value27= IniHelper.GetValue("OCR", "numThread");
                     ocrEngin = new OcrLite();
                     try
                     {
-                        if (value1 == "发生错误")
+                        if (value27 == "发生错误"|| !int.TryParse(value27, out valuetemp))
                         {
                             ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, 2);
                         }
                         else
                         {
-                            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value1));
+                            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, valuetemp);
                         }
 
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！"+"/n"+"错误信息："+ ex.Message);
+                        MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！" + "/n" + "错误信息：" + ex.Message);
                         throw;
                     }
 
@@ -2687,17 +2720,91 @@ namespace TrOCR
                 {
                     MessageBox.Show("Chineseocr-lite不存在或不完整，请确认模型文件夹和文件后，重新初始化！");
                 }
+
+                value27 = IniHelper.GetValue("OCR", "padding");
+                if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
+                {
+                    padding = 50;
+                }
+                else
+                {
+                    padding = valuetemp;
+                }
+                value27 = IniHelper.GetValue("OCR", "maxSideLen");
+                if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
+                {
+                    maxSideLen = 1024;
+                }
+                else
+                {
+                    maxSideLen = valuetemp;
+                }
+                value27 = IniHelper.GetValue("OCR", "boxScoreThresh");
+                if (value27 == "发生错误" || !float.TryParse(value27, out valuetempf))
+                {
+                    boxScoreThresh = 0.618f;
+                }
+                else
+                {
+                    boxScoreThresh = valuetempf;
+                }
+                value27 = IniHelper.GetValue("OCR", "boxThresh");
+                if (value27 == "发生错误" || !float.TryParse(value27, out valuetempf))
+                {
+                    boxThresh = 0.300f;
+                }
+                else
+                {
+                    boxThresh = valuetempf;
+                }
+                value27 = IniHelper.GetValue("OCR", "unClipRatio");
+                if (value27 == "发生错误" || !float.TryParse(value27, out valuetempf))
+                {
+                    unClipRatio = 2.0f;
+                }
+                else
+                {
+                    unClipRatio = valuetempf;
+                }
+
+                value27 = IniHelper.GetValue("OCR", "doAngle");
+                if (value27 == "发生错误" )
+                {
+                    doAngle = true;
+                }
+                if (value27 == "0")
+                {
+                    doAngle = false;
+                }
+                else
+                {
+                    doAngle = true;
+                }
+
+                value27 = IniHelper.GetValue("OCR", "mostAngle");
+                if (value27 == "发生错误" )
+                {
+                    mostAngle = true;
+                }
+                if (value27 == "0")
+                {
+                    mostAngle = false;
+                }
+                else
+                {
+                    mostAngle = true;
+                }
             }
             else if (mode == 1)
             {
                 string appPath = AppDomain.CurrentDomain.BaseDirectory;
                 string modelsDir = appPath + "models" + "\\" + "paddle-ocr";
                 string clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
-                var strvalue = IniHelper.GetValue("paddle模型", "模型");
+                value27 = IniHelper.GetValue("paddle模型", "模型");
                 string detPath;
                 string recPath;
                 string keysPath;
-                if (strvalue == "发生错误")
+                if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
                 {
                     detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
                     recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
@@ -2705,7 +2812,7 @@ namespace TrOCR
                 }
                 else
                 {
-                    switch (int.Parse(strvalue))
+                    switch (valuetemp)
                     {
                         case 1:
                             detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
@@ -2736,17 +2843,17 @@ namespace TrOCR
                 bool isKeysExists = File.Exists(keysPath);
                 if (isDetExists && isClsExists && isRecExists && isKeysExists)
                 {
-                    var value2 = IniHelper.GetValue("OCR2", "numThread");
+                    value27 = IniHelper.GetValue("OCR2", "numThread");
                     ocrEngin2 = new Ocr();
                     try
                     {
-                        if (value2 == "发生错误")
+                        if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
                         {
                             ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, 2);
                         }
                         else
                         {
-                            ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value2));
+                            ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, valuetemp);
                         }
 
                     }
@@ -2761,7 +2868,79 @@ namespace TrOCR
                 {
                     MessageBox.Show("Paddle-OCR不存在或不完整，请确认模型文件夹和文件后，重新初始化！");
                 }
+                value27 = IniHelper.GetValue("OCR2", "padding");
+                if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
+                {
+                    padding2 = 0;
+                }
+                else
+                {
+                    padding2 = valuetemp;
+                }
+                value27 = IniHelper.GetValue("OCR2", "maxSideLen");
+                if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
+                {
+                    maxSideLen2 = 1024;
+                }
+                else
+                {
+                    maxSideLen2 = valuetemp;
+                }
+                value27 = IniHelper.GetValue("OCR2", "boxScoreThresh");
+                if (value27 == "发生错误" || !float.TryParse(value27, out valuetempf))
+                {
+                    boxScoreThresh2 = 0.700f;
+                }
+                else
+                {
+                    boxScoreThresh2 = valuetempf;
+                }
+                value27 = IniHelper.GetValue("OCR2", "boxThresh");
+                if (value27 == "发生错误" || !float.TryParse(value27, out valuetempf))
+                {
+                    boxThresh2 = 0.300f;
+                }
+                else
+                {
+                    boxThresh = valuetempf;
+                }
+                value27 = IniHelper.GetValue("OCR2", "unClipRatio");
+                if (value27 == "发生错误" || !float.TryParse(value27, out valuetempf))
+                {
+                    unClipRatio2 = 1.5f;
+                }
+                else
+                {
+                    unClipRatio2 =valuetempf;
+                }
 
+                value27 = IniHelper.GetValue("OCR2", "doAngle");
+                if (value27 == "发生错误" )
+                {
+                    doAngle2 = true;
+                }
+                if (value27 == "0")
+                {
+                    doAngle2 = false;
+                }
+                else
+                {
+                    doAngle2 = true;
+                }
+
+                value27 = IniHelper.GetValue("OCR2", "mostAngle");
+                if (value27 == "发生错误")
+                {
+                    mostAngle2 = true;
+                }
+                if (value27 == "0")
+                {
+                    mostAngle2 = false;
+                }
+                else
+                {
+                    mostAngle2 = true;
+                }
 
             }
 

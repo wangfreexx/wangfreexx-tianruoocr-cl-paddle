@@ -1417,7 +1417,6 @@ namespace TrOCR
         private void button2_Click(object sender, EventArgs e)
         {
 			Process.Start("https://api.fanyi.baidu.com/");
-
 		}
     }
 }

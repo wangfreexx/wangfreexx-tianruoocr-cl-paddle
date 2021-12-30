@@ -18,7 +18,9 @@ namespace TrOCR
         [STAThread]
         public static void Main(string[] args)
         {
-            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            Application.ThreadException += Application_ThreadException;
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
             var programStarted = new EventWaitHandle(false, EventResetMode.AutoReset, "天若OCR文字识别", out var needNew);
             if (!needNew)
             {
@@ -48,10 +50,16 @@ namespace TrOCR
             Application.Run(new FmMain());
         }
 
-        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Console.WriteLine(e.ExceptionObject.ToString());
-            MessageBox.Show(e.ExceptionObject.ToString());
+            Exception ex = e.ExceptionObject as Exception;
+            MessageBox.Show(string.Format("捕获到未处理异常：{0}\r\n异常信息：{1}\r\n异常堆栈：{2}\r\nCLR即将退出：{3}", ex.GetType(), ex.Message, ex.StackTrace, e.IsTerminating));
+        }
+
+        static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            Exception ex = e.Exception;
+            MessageBox.Show(string.Format("捕获到未处理异常：{0}\r\n异常信息：{1}\r\n异常堆栈：{2}", ex.GetType(), ex.Message, ex.StackTrace));
         }
 
         public static void CheckUpdate()
@@ -101,15 +109,15 @@ namespace TrOCR
 
         private static bool CheckVersion(string newVersion, string curVersion)
         {
-            var arr1 = newVersion.Split('.');
-            var arr2 = curVersion.Split('.');
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                if (Convert.ToInt32(arr1[i]) > Convert.ToInt32(arr2[i]))
-                {
-                    return true;
-                }
-            }
+            //var arr1 = newVersion.Split('.');
+            //var arr2 = curVersion.Split('.');
+            //for (int i = 0; i < arr1.Length; i++)
+            //{
+            //    if (Convert.ToInt32(arr1[i]) > Convert.ToInt32(arr2[i]))
+            //    {
+            //        return true;
+            //    }
+            //}
             return false;
         }
 
