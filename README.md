@@ -32,12 +32,12 @@
 
 
 ## 注意
-1. 编译的话需要引用onnxruntime，如果是为了win7能用可以引用我编译好的（在dll和runtime文件夹），也可以自己编译，需要把对应onnxruntime.dll放在运行文件夹中。如果不使用win7，可以直接使用nuget安装即可。
+1. 编译的话需要引用Microsoft.ML.OnnxRuntime.dll，如果是为了win7能用可以引用我编译好的（在dll和runtime文件夹），也可以自己编译，需要把对应onnxruntime.dll放在运行文件夹中。如果不使用win7，可以直接使用nuget安装即可。
 2. 由于我也是白小白，编译的话可能需要在本项目根目录和tianruoocr-master下各放置一个packages，不然OcrLiteLib无法识别到tianruoocr-master里面的packages...
 ## 问题汇总
 1. ~~win7无法使用，基本无解~~（V1.3 win7已经可以用了）
 2. 如果出现`Exception from HRESULT: 0x8007007E`可以使用dx修复工具进行修复，一般能够启动
-3. 请尝试安装vc++运行库
+3. 请尝试安装vc++运行库，net4.7.2
 
 
 下载地址
