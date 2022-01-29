@@ -8,7 +8,7 @@ namespace TrOCR.Helper
 
 	public static class IniHelper
 	{
-
+		//[DllImport("kernel32", CharSet = CharSet.Unicode)]
 		[DllImport("kernel32")]
 		public static extern int GetPrivateProfileString(string sectionName, string key, string defaultValue, byte[] returnBuffer, int size, string filePath);
 

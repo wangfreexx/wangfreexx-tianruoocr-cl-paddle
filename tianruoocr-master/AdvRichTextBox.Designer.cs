@@ -448,7 +448,7 @@ namespace TrOCR
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
 
-        private string ProcessText(string str)
+        public string ProcessText(string str)
         {
             //string str = str1;
 
@@ -1020,19 +1020,25 @@ namespace TrOCR
         public void readIniFile()
         {
             string value = IniHelper.GetValue("工具栏", "顶置");
-            if (IniHelper.GetValue("工具栏", "顶置") == "发生错误")
+            bool tempvalue;
+            if (value == "发生错误" || bool.TryParse(value, out tempvalue))
             {
                 IniHelper.SetValue("工具栏", "顶置", "False");
+                this.topmost_flag = false;
             }
-            try
-            {
-                this.topmost_flag = bool.Parse(value);
+            else {
+                this.topmost_flag = tempvalue;
             }
-            catch
-            {
-                IniHelper.SetValue("工具栏", "顶置", "True");
-                this.topmost_flag = true;
-            }
+            //try
+            //{
+            //    this.topmost_flag = bool.Parse(value);
+            //}
+            //catch
+            //{
+            //    IniHelper.SetValue("工具栏", "顶置", "True");
+            //    this.topmost_flag = true;
+            //}
+
             ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(AdvRichTextBox));
             if (this.topmost_flag)
             {

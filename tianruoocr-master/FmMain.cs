@@ -36,9 +36,9 @@ namespace TrOCR
 
     public sealed partial class FmMain
     {
-        private OcrLite ocrEngin;
+        public OcrLite ocrEngin;
 
-        private Ocr ocrEngin2;
+        public Ocr ocrEngin2 ;
         public FmMain()
         {
             set_merge = false;
@@ -1982,13 +1982,13 @@ namespace TrOCR
             if (bool.Parse(IniHelper.GetValue("工具栏", "拆分")) || set_split)
             {
                 set_split = false;
-                RichBoxBody.Text = split_txt;
+                //RichBoxBody.Text = split_txt;
             }
             if (bool.Parse(IniHelper.GetValue("工具栏", "合并")) || set_merge)
             {
                 set_merge = false;
-                RichBoxBody.Text = text.Replace("\n", "").Replace("\r", "");
-                //RichBoxBody.Text = ProcessText(text);
+                //RichBoxBody.Text = "123";
+                RichBoxBody.Text = ProcessText(RichBoxBody.Text);
             }
             var timeSpan = new TimeSpan(DateTime.Now.Ticks);
             var timeSpan2 = timeSpan.Subtract(ts).Duration();
@@ -1996,8 +1996,7 @@ namespace TrOCR
             {
                 timeSpan2.Seconds.ToString(),
                 ".",
-                Convert.ToInt32(timeSpan2.TotalMilliseconds).ToString(),
-                "秒"
+                Convert.ToInt32(timeSpan2.TotalMilliseconds).ToString(),"秒"
             });
             if (RichBoxBody.Text != null)
             {
@@ -2083,14 +2082,14 @@ namespace TrOCR
             }
             if (bool.Parse(IniHelper.GetValue("工具栏", "检查")))
             {
-                try
-                {
-                    RichBoxBody.Find = "";
-                }
-                catch
-                {
-                    //
-                }
+                //try
+                //{
+                //    RichBoxBody.Find = "";
+                //}
+                //catch
+                //{
+                //    //
+                //}
             }
             if (IniHelper.GetValue("快捷键", "翻译文本") != "请按下快捷键")
             {
@@ -2121,15 +2120,7 @@ namespace TrOCR
                     if (str[counter].ToString() == "." || str[counter].ToString() == "。") continue;
 
                     //去除换行
-                    try
-                    {
-                        str = str.Remove(counter + 1, 2);
-                    }
-                    catch
-                    {
-                        str = str.Remove(counter + 1, 1);
-                    }
-
+                    str = str.Remove(counter + 1, 1);
 
                     //判断英文单词或,结尾,则加一个空格
                     if (Regex.IsMatch(str[counter].ToString(), "[a-zA-Z]") || str[counter].ToString() == ",")
