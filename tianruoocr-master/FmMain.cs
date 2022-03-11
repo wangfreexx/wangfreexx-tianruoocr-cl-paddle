@@ -2790,15 +2790,15 @@ namespace TrOCR
             {
                 string appPath = AppDomain.CurrentDomain.BaseDirectory;
                 string modelsDir = appPath + "models" + "\\" + "paddle-ocr";
-                string clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
+                string clsPath = modelsDir + "\\" + "cls_infer.onnx";
                 value27 = IniHelper.GetValue("paddle模型", "模型");
                 string detPath;
                 string recPath;
                 string keysPath;
                 if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
                 {
-                    detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                    recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                    detPath = modelsDir + "\\" + "det_infer.onnx";
+                    recPath = modelsDir + "\\" + "rec_infer.onnx";
                     keysPath = modelsDir + "\\" + "ppocr_keys.txt";
                 }
                 else
@@ -2806,23 +2806,23 @@ namespace TrOCR
                     switch (valuetemp)
                     {
                         case 1:
-                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                            detPath = modelsDir + "\\" + "det_infer.onnx";
+                            recPath = modelsDir + "\\" + "rec_infer.onnx";
                             keysPath = modelsDir + "\\" + "ppocr_keys.txt";
                             break;
                         case 2:
-                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                            detPath = modelsDir + "\\" + "det_infer.onnx";
                             recPath = modelsDir + "\\" + "en_number_mobile_v2.0_rec_infer.onnx";
                             keysPath = modelsDir + "\\" + "en_dict.txt";
                             break;
                         case 3:
-                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
+                            detPath = modelsDir + "\\" + "det_infer.onnx";
                             recPath = modelsDir + "\\" + "japan_rec_crnn.onnx";
                             keysPath = modelsDir + "\\" + "japan_dict.txt";
                             break;
                         default:
-                            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-                            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
+                            detPath = modelsDir + "\\" + "det_infer.onnx";
+                            recPath = modelsDir + "\\" + "rec_infer.onnx";
                             keysPath = modelsDir + "\\" + "ppocr_keys.txt";
                             break;
                     }
