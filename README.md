@@ -34,6 +34,7 @@
 ## 注意
 1. 编译的话需要引用Microsoft.ML.OnnxRuntime.dll，如果是为了win7能用可以引用我编译好的（在dll和runtime文件夹），也可以自己编译，需要把对应onnxruntime.dll放在运行文件夹中。如果不使用win7，可以直接使用nuget安装即可。
 2. 更改nuget包管理为PackageReference，应该不要packages了，编译之前请先安装nuget的一堆包
+3. 编译的话注意AdvRichTextBox.Designer.cs文件，必须重写，这个文件在切换的过程中有可能会被系统自动覆盖，需要复制回来
 ## 问题汇总
 1. ~~win7无法使用，基本无解~~（V1.3 win7已经可以用了）
 2. 如果出现`Exception from HRESULT: 0x8007007E`可以使用dx修复工具进行修复，一般能够启动

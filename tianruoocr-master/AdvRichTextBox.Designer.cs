@@ -404,35 +404,35 @@ namespace TrOCR
 
         public void toolStripButtonFence_Click(object sender, EventArgs e)
         {
-            if (!File.Exists("cvextern.dll"))
-            {
-                //MessageBox.Show("请从蓝奏网盘中下载cvextern.dll大小约25m，点击确定自动弹出网页。\r\n将下载后的文件与 天若OCR文字识别.exe 这个文件放在一起。");
-                //Process.Start("https://www.lanzous.com/i1ab3vg");
-                return;
-            }
-            HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
-            if (File.Exists("Data\\分栏预览图.jpg"))
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = "Data\\分栏预览图.jpg";
-                process.StartInfo.Arguments = "rundl132.exe C://WINDOWS//system32//shimgvw.dll,ImageView";
-                process.Start();
-                process.Close();
-            }
+            /*            if (!File.Exists("cvextern.dll"))
+                        {
+                            //MessageBox.Show("请从蓝奏网盘中下载cvextern.dll大小约25m，点击确定自动弹出网页。\r\n将下载后的文件与 天若OCR文字识别.exe 这个文件放在一起。");
+                            //Process.Start("https://www.lanzous.com/i1ab3vg");
+                            return;
+                        }
+                        HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
+                        if (File.Exists("Data\\分栏预览图.jpg"))
+                        {
+                            Process process = new Process();
+                            process.StartInfo.FileName = "Data\\分栏预览图.jpg";
+                            process.StartInfo.Arguments = "rundl132.exe C://WINDOWS//system32//shimgvw.dll,ImageView";
+                            process.Start();
+                            process.Close();
+                        }*/
         }
 
         public void toolStripButtonSplit_Click(object sender, EventArgs e)
         {
-            this.richTextBox1.Text = StaticValue.v_Split;
-            Application.DoEvents();
-            HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
+            //this.richTextBox1.Text = StaticValue.v_Split;
+            //Application.DoEvents();
+            //HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
 
         public void toolStripButtoncheck_Click(object sender, EventArgs e)
         {
-            HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
-            new Thread(new ThreadStart(this.错别字检查API)).Start();
-            HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
+            //HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
+            //new Thread(new ThreadStart(this.错别字检查API)).Start();
+            //HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
 
         public void toolStripButtonIndent_Click(object sender, EventArgs e)
@@ -462,7 +462,7 @@ namespace TrOCR
             });
             if (text.Split(Environment.NewLine.ToCharArray()).Length > 1)
             {
-                string[] array = text.Split(Environment.NewLine.ToCharArray());
+                /*string[] array = text.Split(Environment.NewLine.ToCharArray());
                 string text2 = "";
                 for (int i = 0; i < array.Length - 1; i++)
                 {
@@ -486,13 +486,62 @@ namespace TrOCR
                 else
                 {
                     text2 += array[array.Length - 1];
-                }
-                this.richTextBox1.Text = text2;
+                }*/
+                this.richTextBox1.Text = ProcessText(text);
             }
             Application.DoEvents();
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
 
+
+        public string ProcessText(string text)
+        {
+            // 去掉 CAJ viewer 造成的莫名的空格符号
+            text = text.Replace("", "");
+            if (text.Length > 1)
+            {
+                for (var counter = 0; counter < text.Length; ++counter)
+                {
+                    // 合并换行
+                    if (counter >= 0 && text[counter].ToString() == "\r" || text[counter].ToString() == "\n")
+                    {
+                        if (counter > 0)
+                        {
+                            // 如果检测到句号结尾,则不去掉换行
+                            if (text[counter - 1] == '。' ) continue;
+                            if (text[counter - 1] == '.' ) continue;
+                        }
+
+                        // 去除换行
+                        try
+                        {
+                            text = text.Remove(counter, 1);
+                        }
+                        catch
+                        {
+                            text = text.Remove(counter, 2);
+                        }
+
+                        --counter;
+
+                        // 判断 非负数越界 或 句末
+                        if (counter >= 0 && counter != text.Length - 1)
+                            // 判断 非中文 结尾, 则加一个空格
+                            if (!Regex.IsMatch(text[counter].ToString(), "[\n ，。？！《》\u4e00-\u9fa5]"))
+                                text = text.Insert(counter + 1, " ");
+                    }
+
+                    // 去除空格
+                    if (counter >= 0 && text[counter] == ' ')
+                    {
+                        text = text.Remove(counter, 1);
+                        --counter;
+                    }
+                }
+            }
+            return text;
+
+        }
         public void toolStripButtonVoice_Click(object sender, EventArgs e)
         {
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);

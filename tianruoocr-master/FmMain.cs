@@ -1982,6 +1982,7 @@ namespace TrOCR
             if (bool.Parse(IniHelper.GetValue("工具栏", "拆分")) || set_split)
             {
                 set_split = false;
+                //Console.WriteLine("123");
                 //RichBoxBody.Text = split_txt;
             }
             if (bool.Parse(IniHelper.GetValue("工具栏", "合并")) || set_merge)
