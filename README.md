@@ -10,7 +10,7 @@
 推荐paddle-ocr识别，可以在识别结果里面切换接口
 
 
-主要fork了以下仓库：
+本软件离不开以下仓库、软件的帮助，在此表达崇高的感谢：
 > https://gitee.com/ZZK-1989/tianruoocr
 
 > https://github.com/DayBreak-u/chineseocr_lite/tree/onnx/dotnet_projects/OcrLiteOnnxCs
@@ -19,9 +19,8 @@
 
 
 
-添加了ocr设置
 
-64位系统使用，需要.net4.7.2
+软件为64位系统使用，win10/win7都行，没有测试win11，需要.net4.7.2
 
 本程序主要靠粘贴复制，要是有大佬帮忙改改就好了
 
@@ -29,6 +28,7 @@
 
 线程设的4，可以修改
 
+本软件不具备任何捐赠的地方，也欢迎大家传播使用，软件作者是机械专业学生，不具备太多编程能力，大部分问题都是自己百度谷歌解决，有问题欢迎交流。
 
 
 ## 注意
@@ -43,9 +43,9 @@
 
 下载地址
 > https://gitee.com/wanglifree/tianruoocr-cl/releases
+> https://github.com/wangfreexx/wangfreexx-tianruoocr-cl-paddle/releases
 
-
-## 版本更新
+## 版本更新说明
 ### v1.3.3（2022.8.7）
 1. 更新了paddle为v3模型，与RapidOCR一致，
 2. 关于之前反馈的模型识别率更低了的问题，我自认为解决了
@@ -91,7 +91,7 @@
 ### V1.0
 1. 添加了Chineseocr-lite支持，使用原来搜狗的接口选项
 
-## 更新说明
+## 一些碎碎念
 ### v1.3.3
 win7编译后需要手动替换onnxruntime.dll，版本为1.6，vs nuget中的不支持win7，github上下载的支持。尝试解决读取ini文件的问题，本来想改成utf8格式读取，但是试了很久都不行，用了大概3天一无所获，不过今天用了别人的库一下就没问题了...........还是crtlv好用
 ### v1.3
