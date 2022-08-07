@@ -271,6 +271,9 @@
     <PackageReference Include="Emgu.CV.UI">
       <Version>4.5.5.4823</Version>
     </PackageReference>
+    <PackageReference Include="ini-parser">
+      <Version>2.5.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

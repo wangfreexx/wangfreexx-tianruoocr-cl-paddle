@@ -2,7 +2,8 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
-
+using IniParser;
+using IniParser.Model;
 namespace TrOCR.Helper
 {
 
@@ -19,20 +20,35 @@ namespace TrOCR.Helper
 		{
 			var text = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
 			var flag = !File.Exists(text);
-			var flag2 = flag;
-			var flag3 = flag2;
-			var flag4 = flag3;
-			var flag5 = flag4;
-			var flag6 = flag5;
-			if (flag6)
+			if (flag)
 			{
 				using (File.Create(text))
 				{
 				}
 			}
 			var array = new byte[2048];
-			var privateProfileString = GetPrivateProfileString(sectionName, key, "发生错误", array, 999, text);
-			return Encoding.Default.GetString(array, 0, privateProfileString);
+			var parser = new FileIniDataParser();
+			IniData data = parser.ReadFile(text,Encoding.Unicode);
+            //var privateProfileString = GetPrivateProfileString(sectionName, key, "发生错误", array, 999, text);
+            //return Encoding.Default.GetString(array, 0, privateProfileString);
+            try
+            {
+				string useFullScreenStr = data[sectionName][key];
+				if(useFullScreenStr != null)
+                {
+return useFullScreenStr;
+                }
+                else
+                {
+					return "发生错误";
+                }
+            }
+            catch (Exception)
+            {
+				return "发生错误";
+				throw;
+            }
+			
 		}
 
 		public static bool SetValue(string sectionName, string key, string value)
@@ -50,44 +66,23 @@ namespace TrOCR.Helper
 				{
 				}
 			}
-			bool result;
+			bool result=true;
+			var parser = new FileIniDataParser();
+			IniData data = parser.ReadFile(text, Encoding.Unicode);
 			try
 			{
-				result = ((int)WritePrivateProfileString(sectionName, key, value, text) > 0);
+				data[sectionName][key] =value;
+				parser.WriteFile(text, data, Encoding.Unicode);
 			}
 			catch (Exception ex)
 			{
+
+				result = false;
 				throw ex;
 			}
 			return result;
 		}
 
-		public static bool RemoveSection(string sectionName, string filePath)
-		{
-			bool result;
-			try
-			{
-				result = ((int)WritePrivateProfileString(sectionName, null, "", filePath) > 0);
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-			return result;
-		}
 
-		public static bool RemoveKey(string sectionName, string key, string filePath)
-		{
-			bool result;
-			try
-			{
-				result = ((int)WritePrivateProfileString(sectionName, key, null, filePath) > 0);
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-			return result;
-		}
 	}
 }
