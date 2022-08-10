@@ -493,54 +493,39 @@ namespace TrOCR
             HelpWin32.SetForegroundWindow(StaticValue.mainHandle);
         }
 
-
-        public string ProcessText(string text)
+        private string ProcessText(string str)
         {
-            // 去掉 CAJ viewer 造成的莫名的空格符号
-            text = text.Replace("", "");
-            if (text.Length > 1)
+            //string str = str1;
+
+            //合并换行
+
+            for (var counter = 0; counter < str.Length - 1; counter++)
             {
-                for (var counter = 0; counter < text.Length; ++counter)
+
+                //合并换行
+                if (str[counter + 1].ToString() == "\r" || str[counter + 1].ToString() == "\r\n" || str[counter + 1].ToString() == "\n")
                 {
-                    // 合并换行
-                    if (counter >= 0 && text[counter].ToString() == "\r" || text[counter].ToString() == "\n")
-                    {
-                        if (counter > 0)
-                        {
-                            // 如果检测到句号结尾,则不去掉换行
-                            if (text[counter - 1] == '。' ) continue;
-                            if (text[counter - 1] == '.' ) continue;
-                        }
+                    //如果检测到句号结尾,则不去掉换行
+                    if (str[counter].ToString() == "." || str[counter].ToString() == "。") continue;
 
-                        // 去除换行
-                        try
-                        {
-                            text = text.Remove(counter, 1);
-                        }
-                        catch
-                        {
-                            text = text.Remove(counter, 2);
-                        }
+                    //去除换行
+                    str = str.Remove(counter + 1, 1);
 
-                        --counter;
+                    //判断英文单词或,结尾,则加一个空格
+                    if (Regex.IsMatch(str[counter].ToString(), "[a-zA-Z]") || str[counter].ToString() == ",")
+                        str = str.Insert(counter + 1, " ");
 
-                        // 判断 非负数越界 或 句末
-                        if (counter >= 0 && counter != text.Length - 1)
-                            // 判断 非中文 结尾, 则加一个空格
-                            if (!Regex.IsMatch(text[counter].ToString(), "[\n ，。？！《》\u4e00-\u9fa5]"))
-                                text = text.Insert(counter + 1, " ");
-                    }
-
-                    // 去除空格
-                    if (counter >= 0 && text[counter] == ' ')
-                    {
-                        text = text.Remove(counter, 1);
-                        --counter;
-                    }
+                    //判断"-"结尾,且前一个字符为英文单词,则去除"-"
+                    if (str[counter].ToString() == "-" && Regex.IsMatch(str[counter - 1].ToString(), "[a-zA-Z]"))
+                        str = str.Remove(counter, 1);
+                }
+                //检测到中文时去除空格
+                if (Regex.IsMatch(str, @"[\u4e00-\u9fa5]") && str[counter].ToString() == " ")
+                {
+                    str = str.Remove(counter, 1);
                 }
             }
-            return text;
-
+            return str;
         }
         public void toolStripButtonVoice_Click(object sender, EventArgs e)
         {

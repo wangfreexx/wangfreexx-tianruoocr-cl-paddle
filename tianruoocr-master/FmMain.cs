@@ -85,264 +85,9 @@ namespace TrOCR
             split_txt = "";
             MinimumSize = new Size((int)font_base.Width * 23, (int)font_base.Height * 24);
             speak_copy = false;
-            OCR_foreach("");
-
-            //模型1初始化 Chinese-lite
-            //string appPath = AppDomain.CurrentDomain.BaseDirectory;
-            ////string appDir = Directory.GetParent(appPath).FullName;
-            //string modelsDir = appPath + "models" + "\\" + "cl-ocr";
-            //string detPath = modelsDir + "\\" + "dbnet.onnx";
-            //string clsPath = modelsDir + "\\" + "angle_net.onnx";
-            //string recPath = modelsDir + "\\" + "crnn_lite_lstm.onnx";
-            //string keysPath = modelsDir + "\\" + "keys.txt";
-            //bool isDetExists = File.Exists(detPath);
-            //bool isClsExists = File.Exists(clsPath);
-            //bool isRecExists = File.Exists(recPath);
-            //bool isKeysExists = File.Exists(keysPath);
-            //if (isDetExists && isClsExists && isRecExists && isKeysExists)
-            //{
-            //    var value1 = IniHelper.GetValue("OCR", "numThread");
-            //    ocrEngin = new OcrLite();
-            //    try
-            //    {
-            //        if (value1 == "发生错误")
-            //        {
-            //            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, 2);
-            //        }
-            //        else
-            //        {
-            //            ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value1));
-            //        }
-
-            //    }
-            //    catch (Exception)
-            //    {
-            //        MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
-            //        throw;
-            //    }
+            //OCR_foreach("");
 
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Chineseocr-lite初始化失败，请确认模型文件夹和文件后，重新初始化！");
-            //}
-
-            //模型2初始化,从配置文件载入模型名字
-
-
-
-
-            //modelsDir = appPath + "models" + "\\" + "paddle-ocr";
-            //clsPath = modelsDir + "\\" + "ch_ppocr_mobile_v2.0_cls_infer.onnx";
-            //var strvalue = IniHelper.GetValue("paddle模型", "模型");
-            //if (strvalue == "发生错误")
-            //{
-            //    detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-            //    recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-            //    keysPath = modelsDir + "\\" + "ppocr_keys.txt";
-            //}
-            //else
-            //{
-            //    switch (int.Parse(strvalue))
-            //    {
-            //        case 1:
-            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-            //            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-            //            keysPath = modelsDir + "\\" + "ppocr_keys.txt";
-            //            break;
-            //        case 2:
-            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-            //            recPath = modelsDir + "\\" + "en_number_mobile_v2.0_rec_infer.onnx";
-            //            keysPath = modelsDir + "\\" + "en_dict.txt";
-            //            break;
-            //        case 3:
-            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-            //            recPath = modelsDir + "\\" + "japan_rec_crnn.onnx";
-            //            keysPath = modelsDir + "\\" + "japan_dict.txt";
-            //            break;
-            //        default:
-            //            detPath = modelsDir + "\\" + "ch_PP-OCRv2_det_infer.onnx";
-            //            recPath = modelsDir + "\\" + "ch_mobile_v2.0_rec_infer.onnx";
-            //            keysPath = modelsDir + "\\" + "ppocr_keys.txt";
-            //            break;
-            //    }
-            //}
-
-            //isDetExists = File.Exists(detPath);
-            //isClsExists = File.Exists(clsPath);
-            //isRecExists = File.Exists(recPath);
-            //isKeysExists = File.Exists(keysPath);
-            //if (isDetExists && isClsExists && isRecExists && isKeysExists)
-            //{
-            //    var value2 = IniHelper.GetValue("OCR2", "numThread");
-            //    ocrEngin2 = new Ocr();
-            //    if (value2 == "发生错误")
-            //    {
-            //        ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, 2);
-            //    }
-            //    else
-            //    {
-            //        ocrEngin2.InitModels(detPath, clsPath, recPath, keysPath, int.Parse(value2));
-            //    }
-            //    //ocrEngin = new OcrLite();
-            //    //ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, (int)numThreadNumeric.Value);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Paddle-OCR初始化失败，请确认模型文件夹和文件后，重新初始化！");
-            //}
-
-
-            //模型1数据读入
-            //var value27 = IniHelper.GetValue("OCR", "padding");
-            //if (value27 == "发生错误")
-            //{
-            //    padding = 50;
-            //}
-            //else
-            //{
-            //    padding = int.Parse(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR", "maxSideLen");
-            //if (value27 == "发生错误")
-            //{
-            //    maxSideLen = 1024;
-            //}
-            //else
-            //{
-            //    maxSideLen = int.Parse(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR", "boxScoreThresh");
-            //if (value27 == "发生错误")
-            //{
-            //    boxScoreThresh = 0.618f;
-            //}
-            //else
-            //{
-            //    boxScoreThresh = Convert.ToSingle(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR", "boxThresh");
-            //if (value27 == "发生错误")
-            //{
-            //    boxThresh = 0.300f;
-            //}
-            //else
-            //{
-            //    boxThresh = Convert.ToSingle(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR", "unClipRatio");
-            //if (value27 == "发生错误")
-            //{
-            //    unClipRatio = 2.0f;
-            //}
-            //else
-            //{
-            //    unClipRatio = Convert.ToSingle(value27);
-            //}
-
-            //value27 = IniHelper.GetValue("OCR", "doAngle");
-            //if (value27 == "发生错误")
-            //{
-            //    doAngle = true;
-            //}
-            //if (value27 == "0")
-            //{
-            //    doAngle = false;
-            //}
-            //else
-            //{
-            //    doAngle = true;
-            //}
-
-            //value27 = IniHelper.GetValue("OCR", "mostAngle");
-            //if (value27 == "发生错误")
-            //{
-            //    mostAngle = true;
-            //}
-            //if (value27 == "0")
-            //{
-            //    mostAngle = false;
-            //}
-            //else
-            //{
-            //    mostAngle = true;
-            //}
-
-            //模型2数据读入
-            //value27 = IniHelper.GetValue("OCR2", "padding");
-            //if (value27 == "发生错误")
-            //{
-            //    padding2 = 0;
-            //}
-            //else
-            //{
-            //    padding2 = int.Parse(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR2", "maxSideLen");
-            //if (value27 == "发生错误")
-            //{
-            //    maxSideLen2 = 1024;
-            //}
-            //else
-            //{
-            //    maxSideLen2 = int.Parse(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR2", "boxScoreThresh");
-            //if (value27 == "发生错误")
-            //{
-            //    boxScoreThresh2 = 0.700f;
-            //}
-            //else
-            //{
-            //    boxScoreThresh2 = Convert.ToSingle(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR2", "boxThresh");
-            //if (value27 == "发生错误")
-            //{
-            //    boxThresh2 = 0.300f;
-            //}
-            //else
-            //{
-            //    boxThresh = Convert.ToSingle(value27);
-            //}
-            //value27 = IniHelper.GetValue("OCR2", "unClipRatio");
-            //if (value27 == "发生错误")
-            //{
-            //    unClipRatio2 = 1.5f;
-            //}
-            //else
-            //{
-            //    unClipRatio2 = Convert.ToSingle(value27);
-            //}
-
-            //value27 = IniHelper.GetValue("OCR2", "doAngle");
-            //if (value27 == "发生错误")
-            //{
-            //    doAngle2 = true;
-            //}
-            //if (value27 == "0")
-            //{
-            //    doAngle2 = false;
-            //}
-            //else
-            //{
-            //    doAngle2 = true;
-            //}
-
-            //value27 = IniHelper.GetValue("OCR2", "mostAngle");
-            //if (value27 == "发生错误")
-            //{
-            //    mostAngle2 = true;
-            //}
-            //if (value27 == "0")
-            //{
-            //    mostAngle2 = false;
-            //}
-            //else
-            //{
-            //    mostAngle2 = true;
-            //}
 
         }
 
@@ -682,14 +427,15 @@ namespace TrOCR
             {
                 ClearMemory();
 
-                //todo  cl
+                //todo
+                //paddle
                 if (ocrEngin2 == null)
                 {
                     MessageBox.Show("未初始化，无法执行!");
                     return;
                 }
 
-                OcrLib.OcrResult ocrResult2 = ocrEngin2.Detect(((Bitmap)image_screen).ToImage<Bgr, Byte>().Mat, padding, maxSideLen, boxScoreThresh, boxThresh, unClipRatio, doAngle, mostAngle);
+                OcrLib.OcrResult ocrResult2 = ocrEngin2.Detect(((Bitmap)image_screen).ToImage<Bgr, Byte>().Mat, padding2, maxSideLen2, boxScoreThresh2, boxThresh2, unClipRatio2, doAngle2, mostAngle2);
                 RichBoxBody.Text = ocrResult2.StrRes;
 
                 //OcrResult ocrResult = ocrEngin.Detect();
@@ -2395,7 +2141,7 @@ namespace TrOCR
             try
             {
                 ClearMemory();
-                //todo
+                //todo cl
                 if (ocrEngin == null)
                 {
                     MessageBox.Show("未初始化，无法执行!");
@@ -2671,6 +2417,7 @@ namespace TrOCR
             string value27;
             int valuetemp;
             float valuetempf;
+            //MessageBox.Show("ok");
             if (mode == 0)
             {
                 string appPath = AppDomain.CurrentDomain.BaseDirectory;
