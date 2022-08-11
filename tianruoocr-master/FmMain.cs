@@ -2610,7 +2610,7 @@ namespace TrOCR
                 value27 = IniHelper.GetValue("OCR2", "padding");
                 if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
                 {
-                    padding2 = 0;
+                    padding2 = 50;
                 }
                 else
                 {
@@ -2628,7 +2628,7 @@ namespace TrOCR
                 value27 = IniHelper.GetValue("OCR2", "boxScoreThresh");
                 if (value27 == "发生错误" || !float.TryParse(value27, out valuetempf))
                 {
-                    boxScoreThresh2 = 0.700f;
+                    boxScoreThresh2 = 0.650f;
                 }
                 else
                 {

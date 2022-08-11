@@ -40,8 +40,14 @@
 2. 如果出现`Exception from HRESULT: 0x8007007E`可以使用dx修复工具进行修复，一般能够启动
 3. 请尝试安装vc++运行库，net4.7.2
 
+## 目前模型
+|模型名称|det模型|rec模型|cls模型|
+|:---:|:---:|:---:|:---:|
+|Chinese-lite|默认|默认|默认|
+|paddle-ocr|ch_PP-OCRv3_det_infer.onnx|ch_PP-OCRv2_rec_infer.onnx|ch_ppocr_mobile_v2.0_cls|
 
-下载地址
+
+## 下载地址
 > https://gitee.com/wanglifree/tianruoocr-cl/releases
 > https://github.com/wangfreexx/wangfreexx-tianruoocr-cl-paddle/releases
 

@@ -139,6 +139,7 @@ namespace TrOCR
                 IniHelper.SetValue("配置", "开机自启", "True");
                 IniHelper.SetValue("配置", "快速翻译", "True");
                 IniHelper.SetValue("配置", "识别弹窗", "True");
+                
                 IniHelper.SetValue("配置", "窗体动画", "窗体");
                 IniHelper.SetValue("配置", "记录数目", "20");
                 IniHelper.SetValue("配置", "自动保存", "True");
@@ -180,9 +181,9 @@ namespace TrOCR
                 IniHelper.SetValue("OCR", "mostAngle", "1");
                 IniHelper.SetValue("OCR", "numThread", "4");
 
-                IniHelper.SetValue("OCR2", "padding", "0");
+                IniHelper.SetValue("OCR2", "padding", "50");
                 IniHelper.SetValue("OCR2", "maxSideLen", "1024");
-                IniHelper.SetValue("OCR2", "boxScoreThresh", "0.700");
+                IniHelper.SetValue("OCR2", "boxScoreThresh", "0.650");
                 IniHelper.SetValue("OCR2", "boxThresh", "0.300");
                 IniHelper.SetValue("OCR2", "unClipRatio", "1.5");
                 IniHelper.SetValue("OCR2", "doAngle", "1");
@@ -438,7 +439,7 @@ namespace TrOCR
             //模型2
             if (IniHelper.GetValue("OCR2", "padding") == "发生错误")
             {
-                IniHelper.SetValue("OCR2", "padding", "0");
+                IniHelper.SetValue("OCR2", "padding", "50");
             }
             if (IniHelper.GetValue("OCR2", "maxSideLen") == "发生错误")
             {
@@ -446,7 +447,7 @@ namespace TrOCR
             }
             if (IniHelper.GetValue("OCR2", "boxScoreThresh") == "发生错误")
             {
-                IniHelper.SetValue("OCR2", "boxScoreThresh", "0.700");
+                IniHelper.SetValue("OCR2", "boxScoreThresh", "0.650");
             }
             if (IniHelper.GetValue("OCR2", "boxThresh") == "发生错误")
             {
