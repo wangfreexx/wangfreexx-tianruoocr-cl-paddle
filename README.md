@@ -52,6 +52,9 @@
 > https://github.com/wangfreexx/wangfreexx-tianruoocr-cl-paddle/releases
 
 ## 版本更新说明
+### v1.3.5（2022.8.14）（非重要更新，非区域问题可不下载）
+1. 彻底抛弃ini结构，采用xml结构utf8储存配置，适应不同语言环境（非unicode语言为中文以外的情况）
+2. 修改paddle默认参数适应小框识别的问题 [I5LRD0](https://gitee.com/wanglifree/tianruoocr-cl/issues/I5LRD0)
 ### v1.3.4（2022.8.10）
 1. 彻底解决paddle识别率不高的bug
 2. 不再使用fody合并dll

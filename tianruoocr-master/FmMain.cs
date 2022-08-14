@@ -567,7 +567,7 @@ namespace TrOCR
             {
                 OCR_foreach(interface_flag);
             }
-            var filePath = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
+            //var filePath = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
             if (IniHelper.GetValue("快捷键", "文字识别") != "请按下快捷键")
             {
                 var value = IniHelper.GetValue("快捷键", "文字识别");
@@ -596,13 +596,13 @@ namespace TrOCR
                 var text8 = "F11";
                 SetHotkey(text7, text8, value4, 235);
             }
-            StaticValue.BD_API_ID = HelpWin32.IniFileHelper.GetValue("密钥_百度", "secret_id", filePath);
-            if (HelpWin32.IniFileHelper.GetValue("密钥_百度", "secret_id", filePath) == "发生错误")
+            StaticValue.BD_API_ID = IniHelper.GetValue("密钥_百度", "secret_id");
+            if (IniHelper.GetValue("密钥_百度", "secret_id") == "发生错误")
             {
                 StaticValue.BD_API_ID = "请输入secret_id";
             }
-            StaticValue.BD_API_KEY = HelpWin32.IniFileHelper.GetValue("密钥_百度", "secret_key", filePath);
-            if (HelpWin32.IniFileHelper.GetValue("密钥_百度", "secret_key", filePath) == "发生错误")
+            StaticValue.BD_API_KEY = IniHelper.GetValue("密钥_百度", "secret_key");
+            if (IniHelper.GetValue("密钥_百度", "secret_key") == "发生错误")
             {
                 StaticValue.BD_API_KEY = "请输入secret_key";
             }
@@ -638,17 +638,17 @@ namespace TrOCR
             fmSetting.ShowDialog();
             if (fmSetting.DialogResult == DialogResult.OK)
             {
-                var filePath = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
-                try
-                {
-                    StaticValue.NoteCount = Convert.ToInt32(HelpWin32.IniFileHelper.GetValue("配置", "记录数目", filePath));
-                }
-                catch (Exception)
-                {
-                    StaticValue.NoteCount = 20;
-                    throw;
-                }
-               
+                //var filePath = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
+                //try
+                //{
+                //    StaticValue.NoteCount = Convert.ToInt32(HelpWin32.IniFileHelper.GetValue("配置", "记录数目", filePath));
+                //}
+                //catch (Exception)
+                //{
+                //    
+                //    throw;
+                //}
+               StaticValue.NoteCount = 20;
                 pubnote = new string[StaticValue.NoteCount];
                 for (var i = 0; i < StaticValue.NoteCount; i++)
                 {
@@ -2327,7 +2327,7 @@ namespace TrOCR
 
         private void OCR_foreach(string name)
         {
-            var filePath = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
+            //var filePath = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
             switch (name)
             {
 
@@ -2409,7 +2409,7 @@ namespace TrOCR
 
             }
 
-            HelpWin32.IniFileHelper.SetValue("配置", "接口", interface_flag, filePath);
+            IniHelper.SetValue("配置", "接口", interface_flag);
         }
         //初始化模型，现在放在这里
         private void Init_model(int mode)

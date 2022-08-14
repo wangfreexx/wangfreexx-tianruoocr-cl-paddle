@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -27,6 +30,7 @@ namespace TrOCR
                 programStarted.Set();
                 CommonHelper.ShowHelpMsg("软件已经运行");
                 return;
+                
             }
             InitConfig();
             DealErrorConfig();
@@ -123,17 +127,19 @@ namespace TrOCR
 
         private static void InitConfig()
         {
-            var path = AppDomain.CurrentDomain.BaseDirectory + "Data\\config.ini";
+            var path = AppDomain.CurrentDomain.BaseDirectory + "Data\\my.Config";
             if (!Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "Data"))
             {
                 Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "Data");
             }
 
+
+
+            //IniHelper.CreatConfig();
             if (!File.Exists(path))
             {
-                using (File.Create(path))
-                {
-                }
+                IniHelper.CreatConfig();
+
 
                 IniHelper.SetValue("配置", "接口", "搜狗");
                 IniHelper.SetValue("配置", "开机自启", "True");
@@ -193,9 +199,6 @@ namespace TrOCR
                 IniHelper.SetValue("paddle模型", "模型", "1");
 
                 IniHelper.SetValue("翻译API_百度", "secret_id", "");
-
-
-
                 IniHelper.SetValue("翻译API_百度", "secret_key", "");
 
             }

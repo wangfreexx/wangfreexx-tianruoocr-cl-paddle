@@ -1043,33 +1043,60 @@ namespace TrOCR
             if (IniHelper.GetValue("工具栏", "合并") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "合并", "False");
+                this.mergecolor = false;
             }
-            this.mergecolor = bool.Parse(IniHelper.GetValue("工具栏", "合并"));
+            else
+            {
+this.mergecolor = bool.Parse(IniHelper.GetValue("工具栏", "合并"));
+            }
+            
             if (IniHelper.GetValue("工具栏", "拆分") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "拆分", "False");
+                this.splitcolor=false;
             }
-            this.splitcolor = bool.Parse(IniHelper.GetValue("工具栏", "拆分"));
+            else {this.splitcolor = bool.Parse(IniHelper.GetValue("工具栏", "拆分")); }
+            
             if (IniHelper.GetValue("工具栏", "检查") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "检查", "False");
+                this.checkcolor=false;
             }
-            this.checkcolor = bool.Parse(IniHelper.GetValue("工具栏", "检查"));
+            else
+            {
+this.checkcolor = bool.Parse(IniHelper.GetValue("工具栏", "检查"));
+            }
+            
             if (IniHelper.GetValue("工具栏", "翻译") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "翻译", "False");
+                this.transcolor = false;
             }
-            this.transcolor = bool.Parse(IniHelper.GetValue("工具栏", "翻译"));
+            else
+            {
+this.transcolor = bool.Parse(IniHelper.GetValue("工具栏", "翻译"));
+            }
+            
             if (IniHelper.GetValue("工具栏", "分段") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "分段", "False");
+                this.Paragraphcolor=false;
             }
-            this.Paragraphcolor = bool.Parse(IniHelper.GetValue("工具栏", "分段"));
+            else
+            {
+this.Paragraphcolor = bool.Parse(IniHelper.GetValue("工具栏", "分段"));
+            }
+            
             if (IniHelper.GetValue("工具栏", "分栏") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "分栏", "False");
+                this.Fencecolor=false;
             }
-            this.Fencecolor = bool.Parse(IniHelper.GetValue("工具栏", "分栏"));
+            else
+            {
+this.Fencecolor = bool.Parse(IniHelper.GetValue("工具栏", "分栏"));
+            }
+            
             if (this.Fencecolor)
             {
                 this.toolStripButtonFence.Image = (Image)componentResourceManager.GetObject("toolStripButtonFence2.Image");
