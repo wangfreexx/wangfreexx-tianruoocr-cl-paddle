@@ -29,6 +29,7 @@ using ZXing.QrCode;
 using Timer = System.Windows.Forms.Timer;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using System.Net.Http;
 // ReSharper disable StringLiteralTypo
 
 namespace TrOCR
@@ -1846,9 +1847,10 @@ namespace TrOCR
                 SetHotkey(text6, text7, value3, 205);
             }
             HelpWin32.UnregisterHotKey(Handle, 222);
+            RichBoxBody.Text = RichBoxBody.Text.TrimEnd('\r', '\n') ;
             RichBoxBody.Refresh();
+            RichBoxBody.font_微软雅黑c(null,null);
 
-            RichBoxBody.Text = RichBoxBody.Text;
         }
         //合并文字
         private string ProcessText(string str)
@@ -3883,7 +3885,15 @@ namespace TrOCR
                 {
                     return "翻译超时，请检查网络，或更换翻译平台。";
                 }
-                return result.trans_result[0].dst;
+                string result_temp="";
+                foreach(var trans_result_temp in result.trans_result)
+                {
+                    result_temp+= trans_result_temp.dst+Environment.NewLine;
+                }
+                return result_temp.TrimEnd('\r', '\n'); ;
+
+
+
 
             }
             catch (Exception)
@@ -3892,6 +3902,9 @@ namespace TrOCR
             }
             return text;
         }
+
+
+        
 
         // 计算MD5值
         public static string EncryptString(string str)
