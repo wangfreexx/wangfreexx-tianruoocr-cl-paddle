@@ -353,9 +353,20 @@ namespace TrOCR
             }
             set
             {
-                this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
+                try
+                {
+                this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
                 this.richTextBox1.Text = value;
-                this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
+                this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
+                }
+                catch (Exception)
+                {
+
+                    this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
+                    this.richTextBox1.Text = value;
+                    this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
+                }
+
             }
         }
 

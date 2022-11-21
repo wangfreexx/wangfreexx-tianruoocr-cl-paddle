@@ -15,6 +15,87 @@
 
 		private void InitializeComponent()
 		{
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label_版本号 = new System.Windows.Forms.Label();
+            this.label_更新日期 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txt_更新说明 = new System.Windows.Forms.TextBox();
+            this.Page_翻译API = new System.Windows.Forms.TabPage();
+            this.彩云翻译api_id = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.翻译api_key = new System.Windows.Forms.TextBox();
+            this.翻译api_id = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.腾讯翻译api_key = new System.Windows.Forms.TextBox();
+            this.腾讯翻译api_id = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.彩云翻译api_token = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label38 = new System.Windows.Forms.Label();
+            this.离线翻译网址 = new System.Windows.Forms.TextBox();
+            this.Page_OCR设置2 = new System.Windows.Forms.TabPage();
+            this.参数说明2 = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.ocrNum12 = new System.Windows.Forms.NumericUpDown();
+            this.ocrNum9 = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
+            this.ocrNum8 = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.ocrNum7 = new System.Windows.Forms.NumericUpDown();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.ocrNum10 = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.ocrNum11 = new System.Windows.Forms.NumericUpDown();
+            this.doAngleCheckBox2 = new System.Windows.Forms.CheckBox();
+            this.mostAngleCheckBox2 = new System.Windows.Forms.CheckBox();
+            this.Page_OCR设置 = new System.Windows.Forms.TabPage();
+            this.参数说明1 = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.ocrNum6 = new System.Windows.Forms.NumericUpDown();
+            this.ocrNum3 = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ocrNum2 = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.ocrNum1 = new System.Windows.Forms.NumericUpDown();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.ocrNum4 = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.ocrNum5 = new System.Windows.Forms.NumericUpDown();
+            this.doAngleCheckBox = new System.Windows.Forms.CheckBox();
+            this.mostAngleCheckBox = new System.Windows.Forms.CheckBox();
+            this.Page_反馈 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.反馈Button = new System.Windows.Forms.Button();
+            this.txt_问题反馈 = new System.Windows.Forms.TextBox();
+            this.Page_更新 = new System.Windows.Forms.TabPage();
+            this.更新Button_check = new System.Windows.Forms.Button();
+            this.更新Button = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numbox_间隔时间 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox_更新间隔 = new System.Windows.Forms.CheckBox();
+            this.check_检查更新 = new System.Windows.Forms.CheckBox();
             this.Page_代理 = new System.Windows.Forms.TabPage();
             this.代理Button = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -82,74 +163,37 @@
             this.cbBox_翻译 = new System.Windows.Forms.CheckBox();
             this.cbBox_开机 = new System.Windows.Forms.CheckBox();
             this.tab_标签 = new System.Windows.Forms.TabControl();
-            this.Page_更新 = new System.Windows.Forms.TabPage();
-            this.更新Button_check = new System.Windows.Forms.Button();
-            this.更新Button = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numbox_间隔时间 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox_更新间隔 = new System.Windows.Forms.CheckBox();
-            this.check_检查更新 = new System.Windows.Forms.CheckBox();
-            this.Page_反馈 = new System.Windows.Forms.TabPage();
-            this.label21 = new System.Windows.Forms.Label();
-            this.反馈Button = new System.Windows.Forms.Button();
-            this.txt_问题反馈 = new System.Windows.Forms.TextBox();
-            this.Page_OCR设置 = new System.Windows.Forms.TabPage();
-            this.参数说明1 = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.ocrNum6 = new System.Windows.Forms.NumericUpDown();
-            this.ocrNum3 = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.ocrNum2 = new System.Windows.Forms.NumericUpDown();
-            this.label22 = new System.Windows.Forms.Label();
-            this.ocrNum1 = new System.Windows.Forms.NumericUpDown();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.ocrNum4 = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
-            this.ocrNum5 = new System.Windows.Forms.NumericUpDown();
-            this.doAngleCheckBox = new System.Windows.Forms.CheckBox();
-            this.mostAngleCheckBox = new System.Windows.Forms.CheckBox();
-            this.Page_OCR设置2 = new System.Windows.Forms.TabPage();
-            this.参数说明2 = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label28 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.ocrNum12 = new System.Windows.Forms.NumericUpDown();
-            this.ocrNum9 = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
-            this.ocrNum8 = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
-            this.ocrNum7 = new System.Windows.Forms.NumericUpDown();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.ocrNum10 = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
-            this.ocrNum11 = new System.Windows.Forms.NumericUpDown();
-            this.doAngleCheckBox2 = new System.Windows.Forms.CheckBox();
-            this.mostAngleCheckBox2 = new System.Windows.Forms.CheckBox();
-            this.Page_翻译API = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.翻译api_key = new System.Windows.Forms.TextBox();
-            this.翻译api_id = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label_版本号 = new System.Windows.Forms.Label();
-            this.label_更新日期 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.txt_更新说明 = new System.Windows.Forms.TextBox();
+            this.Page_其他特性 = new System.Windows.Forms.TabPage();
+            this.cbBox_是否复制 = new System.Windows.Forms.CheckBox();
+            this.cbBox_静默识别 = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.Page_翻译API.SuspendLayout();
+            this.彩云翻译api_id.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.Page_OCR设置2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).BeginInit();
+            this.Page_OCR设置.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum5)).BeginInit();
+            this.Page_反馈.SuspendLayout();
+            this.Page_更新.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_间隔时间)).BeginInit();
             this.Page_代理.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.Page_密钥.SuspendLayout();
@@ -169,32 +213,1035 @@
             ((System.ComponentModel.ISupportInitialize)(this.numbox_记录)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tab_标签.SuspendLayout();
-            this.Page_更新.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numbox_间隔时间)).BeginInit();
-            this.Page_反馈.SuspendLayout();
-            this.Page_OCR设置.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum5)).BeginInit();
-            this.Page_OCR设置2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).BeginInit();
-            this.Page_翻译API.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.Page_其他特性.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Location = new System.Drawing.Point(117, 14);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(255, 83);
+            this.groupBox8.TabIndex = 4;
+            this.groupBox8.TabStop = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(13, 56);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(141, 17);
+            this.label19.TabIndex = 5;
+            // 
+            // label_版本号
+            // 
+            this.label_版本号.AutoSize = true;
+            this.label_版本号.Location = new System.Drawing.Point(13, 13);
+            this.label_版本号.Name = "label_版本号";
+            this.label_版本号.Size = new System.Drawing.Size(95, 12);
+            this.label_版本号.TabIndex = 4;
+            // 
+            // label_更新日期
+            // 
+            this.label_更新日期.AutoSize = true;
+            this.label_更新日期.Location = new System.Drawing.Point(13, 34);
+            this.label_更新日期.Name = "label_更新日期";
+            this.label_更新日期.Size = new System.Drawing.Size(125, 12);
+            this.label_更新日期.TabIndex = 6;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.White;
+            this.pictureBox6.Image = global::TrOCR.Properties.Resources.头像;
+            this.pictureBox6.Location = new System.Drawing.Point(12, 15);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(84, 82);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 5;
+            this.pictureBox6.TabStop = false;
+            // 
+            // txt_更新说明
+            // 
+            this.txt_更新说明.BackColor = System.Drawing.Color.White;
+            this.txt_更新说明.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_更新说明.Location = new System.Drawing.Point(6, 20);
+            this.txt_更新说明.Multiline = true;
+            this.txt_更新说明.Name = "txt_更新说明";
+            this.txt_更新说明.Size = new System.Drawing.Size(366, 155);
+            this.txt_更新说明.TabIndex = 4;
+            // 
+            // Page_翻译API
+            // 
+            this.Page_翻译API.Controls.Add(this.彩云翻译api_id);
+            this.Page_翻译API.Location = new System.Drawing.Point(4, 22);
+            this.Page_翻译API.Name = "Page_翻译API";
+            this.Page_翻译API.Size = new System.Drawing.Size(390, 329);
+            this.Page_翻译API.TabIndex = 11;
+            this.Page_翻译API.Text = "翻译API";
+            this.Page_翻译API.UseVisualStyleBackColor = true;
+            // 
+            // 彩云翻译api_id
+            // 
+            this.彩云翻译api_id.Controls.Add(this.tabPage1);
+            this.彩云翻译api_id.Controls.Add(this.tabPage2);
+            this.彩云翻译api_id.Controls.Add(this.tabPage3);
+            this.彩云翻译api_id.Controls.Add(this.tabPage4);
+            this.彩云翻译api_id.Location = new System.Drawing.Point(9, 3);
+            this.彩云翻译api_id.Name = "彩云翻译api_id";
+            this.彩云翻译api_id.SelectedIndex = 0;
+            this.彩云翻译api_id.Size = new System.Drawing.Size(378, 135);
+            this.彩云翻译api_id.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.翻译api_key);
+            this.tabPage1.Controls.Add(this.翻译api_id);
+            this.tabPage1.Controls.Add(this.label35);
+            this.tabPage1.Controls.Add(this.label36);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(370, 109);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "百度翻译接口";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(241, 83);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "接口申请";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // 翻译api_key
+            // 
+            this.翻译api_key.BackColor = System.Drawing.Color.White;
+            this.翻译api_key.Location = new System.Drawing.Point(56, 55);
+            this.翻译api_key.Name = "翻译api_key";
+            this.翻译api_key.Size = new System.Drawing.Size(260, 21);
+            this.翻译api_key.TabIndex = 3;
+            // 
+            // 翻译api_id
+            // 
+            this.翻译api_id.BackColor = System.Drawing.Color.White;
+            this.翻译api_id.Location = new System.Drawing.Point(56, 20);
+            this.翻译api_id.Name = "翻译api_id";
+            this.翻译api_id.Size = new System.Drawing.Size(260, 21);
+            this.翻译api_id.TabIndex = 2;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(18, 58);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(35, 12);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "KEY：";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(18, 23);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(29, 12);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "ID：";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.腾讯翻译api_key);
+            this.tabPage2.Controls.Add(this.腾讯翻译api_id);
+            this.tabPage2.Controls.Add(this.label37);
+            this.tabPage2.Controls.Add(this.label39);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(370, 109);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "腾讯翻译接口";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(246, 85);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "接口申请";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // 腾讯翻译api_key
+            // 
+            this.腾讯翻译api_key.BackColor = System.Drawing.Color.White;
+            this.腾讯翻译api_key.Location = new System.Drawing.Point(61, 57);
+            this.腾讯翻译api_key.Name = "腾讯翻译api_key";
+            this.腾讯翻译api_key.Size = new System.Drawing.Size(260, 21);
+            this.腾讯翻译api_key.TabIndex = 14;
+            // 
+            // 腾讯翻译api_id
+            // 
+            this.腾讯翻译api_id.BackColor = System.Drawing.Color.White;
+            this.腾讯翻译api_id.Location = new System.Drawing.Point(61, 22);
+            this.腾讯翻译api_id.Name = "腾讯翻译api_id";
+            this.腾讯翻译api_id.Size = new System.Drawing.Size(260, 21);
+            this.腾讯翻译api_id.TabIndex = 13;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(23, 60);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(35, 12);
+            this.label37.TabIndex = 12;
+            this.label37.Text = "KEY：";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(23, 25);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(29, 12);
+            this.label39.TabIndex = 11;
+            this.label39.Text = "ID：";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.彩云翻译api_token);
+            this.tabPage3.Controls.Add(this.label41);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(370, 109);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "彩云翻译接口";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(244, 83);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "接口申请";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // 彩云翻译api_token
+            // 
+            this.彩云翻译api_token.BackColor = System.Drawing.Color.White;
+            this.彩云翻译api_token.Location = new System.Drawing.Point(59, 20);
+            this.彩云翻译api_token.Name = "彩云翻译api_token";
+            this.彩云翻译api_token.Size = new System.Drawing.Size(260, 21);
+            this.彩云翻译api_token.TabIndex = 13;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(15, 23);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(47, 12);
+            this.label41.TabIndex = 11;
+            this.label41.Text = "TOKEN：";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label38);
+            this.tabPage4.Controls.Add(this.离线翻译网址);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(370, 109);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "离线翻译";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("宋体", 10F);
+            this.label38.Location = new System.Drawing.Point(2, 47);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(77, 14);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "翻译地址：";
+            // 
+            // 离线翻译网址
+            // 
+            this.离线翻译网址.BackColor = System.Drawing.Color.White;
+            this.离线翻译网址.Location = new System.Drawing.Point(85, 44);
+            this.离线翻译网址.Name = "离线翻译网址";
+            this.离线翻译网址.Size = new System.Drawing.Size(283, 21);
+            this.离线翻译网址.TabIndex = 5;
+            // 
+            // Page_OCR设置2
+            // 
+            this.Page_OCR设置2.Controls.Add(this.参数说明2);
+            this.Page_OCR设置2.Controls.Add(this.groupBox7);
+            this.Page_OCR设置2.Controls.Add(this.label28);
+            this.Page_OCR设置2.Controls.Add(this.button3);
+            this.Page_OCR设置2.Controls.Add(this.tableLayoutPanel2);
+            this.Page_OCR设置2.Location = new System.Drawing.Point(4, 22);
+            this.Page_OCR设置2.Name = "Page_OCR设置2";
+            this.Page_OCR设置2.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_OCR设置2.Size = new System.Drawing.Size(390, 329);
+            this.Page_OCR设置2.TabIndex = 10;
+            this.Page_OCR设置2.Text = "PA-OCR设置";
+            this.Page_OCR设置2.UseVisualStyleBackColor = true;
+            // 
+            // 参数说明2
+            // 
+            this.参数说明2.Location = new System.Drawing.Point(221, 282);
+            this.参数说明2.Name = "参数说明2";
+            this.参数说明2.Size = new System.Drawing.Size(73, 23);
+            this.参数说明2.TabIndex = 17;
+            this.参数说明2.Text = "参数说明";
+            this.参数说明2.UseVisualStyleBackColor = true;
+            this.参数说明2.Click += new System.EventHandler(this.button参数说明_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.radioButton3);
+            this.groupBox7.Controls.Add(this.radioButton2);
+            this.groupBox7.Controls.Add(this.radioButton1);
+            this.groupBox7.Location = new System.Drawing.Point(233, 39);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(125, 127);
+            this.groupBox7.TabIndex = 16;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "模型选择";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(14, 83);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(47, 16);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "日文";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(14, 54);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(77, 16);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "英文/数字";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(14, 27);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 16);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "中文";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(219, 250);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(161, 12);
+            this.label28.TabIndex = 15;
+            this.label28.Text = "参数修改需要切换模型或重启";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(309, 282);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "重启";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label30, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum8, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum7, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label32, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label33, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum10, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label34, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.ocrNum11, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.doAngleCheckBox2, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.mostAngleCheckBox2, 1, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 24);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(169, 281);
+            this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(5, 226);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(59, 12);
+            this.label29.TabIndex = 28;
+            this.label29.Text = "numThread";
+            // 
+            // ocrNum12
+            // 
+            this.ocrNum12.Location = new System.Drawing.Point(87, 229);
+            this.ocrNum12.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.ocrNum12.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum12.Name = "ocrNum12";
+            this.ocrNum12.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum12.TabIndex = 29;
+            this.ocrNum12.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // ocrNum9
+            // 
+            this.ocrNum9.DecimalPlaces = 3;
+            this.ocrNum9.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum9.Location = new System.Drawing.Point(87, 69);
+            this.ocrNum9.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum9.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.ocrNum9.Name = "ocrNum9";
+            this.ocrNum9.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum9.TabIndex = 13;
+            this.ocrNum9.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            65536});
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(5, 66);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(71, 24);
+            this.label30.TabIndex = 12;
+            this.label30.Text = "boxScoreThresh";
+            // 
+            // ocrNum8
+            // 
+            this.ocrNum8.Location = new System.Drawing.Point(87, 37);
+            this.ocrNum8.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.ocrNum8.Name = "ocrNum8";
+            this.ocrNum8.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum8.TabIndex = 10;
+            this.ocrNum8.Value = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(5, 34);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "maxSideLen";
+            // 
+            // ocrNum7
+            // 
+            this.ocrNum7.Location = new System.Drawing.Point(87, 5);
+            this.ocrNum7.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.ocrNum7.Name = "ocrNum7";
+            this.ocrNum7.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum7.TabIndex = 7;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(5, 2);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(47, 12);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "padding";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(5, 98);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(59, 12);
+            this.label33.TabIndex = 14;
+            this.label33.Text = "boxThresh";
+            // 
+            // ocrNum10
+            // 
+            this.ocrNum10.DecimalPlaces = 3;
+            this.ocrNum10.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum10.Location = new System.Drawing.Point(87, 101);
+            this.ocrNum10.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum10.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.ocrNum10.Name = "ocrNum10";
+            this.ocrNum10.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum10.TabIndex = 15;
+            this.ocrNum10.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            65536});
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(5, 130);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(71, 12);
+            this.label34.TabIndex = 21;
+            this.label34.Text = "unClipRatio";
+            // 
+            // ocrNum11
+            // 
+            this.ocrNum11.DecimalPlaces = 1;
+            this.ocrNum11.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum11.Location = new System.Drawing.Point(87, 133);
+            this.ocrNum11.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.ocrNum11.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum11.Name = "ocrNum11";
+            this.ocrNum11.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum11.TabIndex = 22;
+            this.ocrNum11.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            65536});
+            // 
+            // doAngleCheckBox2
+            // 
+            this.doAngleCheckBox2.AutoSize = true;
+            this.doAngleCheckBox2.Checked = true;
+            this.doAngleCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.doAngleCheckBox2.Location = new System.Drawing.Point(5, 165);
+            this.doAngleCheckBox2.Name = "doAngleCheckBox2";
+            this.doAngleCheckBox2.Size = new System.Drawing.Size(66, 16);
+            this.doAngleCheckBox2.TabIndex = 26;
+            this.doAngleCheckBox2.Text = "doAngle";
+            this.doAngleCheckBox2.UseVisualStyleBackColor = true;
+            // 
+            // mostAngleCheckBox2
+            // 
+            this.mostAngleCheckBox2.AutoSize = true;
+            this.mostAngleCheckBox2.Location = new System.Drawing.Point(87, 165);
+            this.mostAngleCheckBox2.Name = "mostAngleCheckBox2";
+            this.mostAngleCheckBox2.Size = new System.Drawing.Size(78, 16);
+            this.mostAngleCheckBox2.TabIndex = 27;
+            this.mostAngleCheckBox2.Text = "mostAngle";
+            this.mostAngleCheckBox2.UseVisualStyleBackColor = true;
+            // 
+            // Page_OCR设置
+            // 
+            this.Page_OCR设置.Controls.Add(this.参数说明1);
+            this.Page_OCR设置.Controls.Add(this.label27);
+            this.Page_OCR设置.Controls.Add(this.button1);
+            this.Page_OCR设置.Controls.Add(this.tableLayoutPanel1);
+            this.Page_OCR设置.Location = new System.Drawing.Point(4, 22);
+            this.Page_OCR设置.Name = "Page_OCR设置";
+            this.Page_OCR设置.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_OCR设置.Size = new System.Drawing.Size(390, 329);
+            this.Page_OCR设置.TabIndex = 9;
+            this.Page_OCR设置.Text = "CL-OCR设置";
+            this.Page_OCR设置.UseVisualStyleBackColor = true;
+            // 
+            // 参数说明1
+            // 
+            this.参数说明1.Location = new System.Drawing.Point(218, 280);
+            this.参数说明1.Name = "参数说明1";
+            this.参数说明1.Size = new System.Drawing.Size(73, 23);
+            this.参数说明1.TabIndex = 13;
+            this.参数说明1.Text = "参数说明";
+            this.参数说明1.UseVisualStyleBackColor = true;
+            this.参数说明1.Click += new System.EventHandler(this.button参数说明_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(216, 248);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(161, 12);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "参数修改需要切换模型或重启";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(309, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "重启";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label23, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label24, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum4, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label25, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ocrNum5, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.doAngleCheckBox, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.mostAngleCheckBox, 1, 5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 22);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(169, 281);
+            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(5, 226);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(59, 12);
+            this.label26.TabIndex = 28;
+            this.label26.Text = "numThread";
+            // 
+            // ocrNum6
+            // 
+            this.ocrNum6.Location = new System.Drawing.Point(87, 229);
+            this.ocrNum6.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.ocrNum6.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum6.Name = "ocrNum6";
+            this.ocrNum6.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum6.TabIndex = 29;
+            this.ocrNum6.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // ocrNum3
+            // 
+            this.ocrNum3.DecimalPlaces = 3;
+            this.ocrNum3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum3.Location = new System.Drawing.Point(87, 69);
+            this.ocrNum3.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.ocrNum3.Name = "ocrNum3";
+            this.ocrNum3.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum3.TabIndex = 13;
+            this.ocrNum3.Value = new decimal(new int[] {
+            618,
+            0,
+            0,
+            196608});
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(5, 66);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(71, 24);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "boxScoreThresh";
+            // 
+            // ocrNum2
+            // 
+            this.ocrNum2.Location = new System.Drawing.Point(87, 37);
+            this.ocrNum2.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.ocrNum2.Name = "ocrNum2";
+            this.ocrNum2.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum2.TabIndex = 10;
+            this.ocrNum2.Value = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(5, 34);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(65, 12);
+            this.label22.TabIndex = 9;
+            this.label22.Text = "maxSideLen";
+            // 
+            // ocrNum1
+            // 
+            this.ocrNum1.Location = new System.Drawing.Point(87, 5);
+            this.ocrNum1.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.ocrNum1.Name = "ocrNum1";
+            this.ocrNum1.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum1.TabIndex = 7;
+            this.ocrNum1.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(5, 2);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(47, 12);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "padding";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(5, 98);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 12);
+            this.label24.TabIndex = 14;
+            this.label24.Text = "boxThresh";
+            // 
+            // ocrNum4
+            // 
+            this.ocrNum4.DecimalPlaces = 3;
+            this.ocrNum4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum4.Location = new System.Drawing.Point(87, 101);
+            this.ocrNum4.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ocrNum4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.ocrNum4.Name = "ocrNum4";
+            this.ocrNum4.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum4.TabIndex = 15;
+            this.ocrNum4.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            65536});
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(5, 130);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(71, 12);
+            this.label25.TabIndex = 21;
+            this.label25.Text = "unClipRatio";
+            // 
+            // ocrNum5
+            // 
+            this.ocrNum5.DecimalPlaces = 1;
+            this.ocrNum5.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum5.Location = new System.Drawing.Point(87, 133);
+            this.ocrNum5.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.ocrNum5.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ocrNum5.Name = "ocrNum5";
+            this.ocrNum5.Size = new System.Drawing.Size(74, 21);
+            this.ocrNum5.TabIndex = 22;
+            this.ocrNum5.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            65536});
+            // 
+            // doAngleCheckBox
+            // 
+            this.doAngleCheckBox.AutoSize = true;
+            this.doAngleCheckBox.Checked = true;
+            this.doAngleCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.doAngleCheckBox.Location = new System.Drawing.Point(5, 165);
+            this.doAngleCheckBox.Name = "doAngleCheckBox";
+            this.doAngleCheckBox.Size = new System.Drawing.Size(66, 16);
+            this.doAngleCheckBox.TabIndex = 26;
+            this.doAngleCheckBox.Text = "doAngle";
+            this.doAngleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // mostAngleCheckBox
+            // 
+            this.mostAngleCheckBox.AutoSize = true;
+            this.mostAngleCheckBox.Checked = true;
+            this.mostAngleCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mostAngleCheckBox.Location = new System.Drawing.Point(87, 165);
+            this.mostAngleCheckBox.Name = "mostAngleCheckBox";
+            this.mostAngleCheckBox.Size = new System.Drawing.Size(78, 16);
+            this.mostAngleCheckBox.TabIndex = 27;
+            this.mostAngleCheckBox.Text = "mostAngle";
+            this.mostAngleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Page_反馈
+            // 
+            this.Page_反馈.BackColor = System.Drawing.Color.White;
+            this.Page_反馈.Controls.Add(this.label21);
+            this.Page_反馈.Controls.Add(this.反馈Button);
+            this.Page_反馈.Controls.Add(this.txt_问题反馈);
+            this.Page_反馈.Location = new System.Drawing.Point(4, 22);
+            this.Page_反馈.Name = "Page_反馈";
+            this.Page_反馈.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_反馈.Size = new System.Drawing.Size(390, 329);
+            this.Page_反馈.TabIndex = 8;
+            this.Page_反馈.Text = "反馈";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(7, 151);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(0, 12);
+            this.label21.TabIndex = 12;
+            // 
+            // 反馈Button
+            // 
+            this.反馈Button.BackColor = System.Drawing.Color.White;
+            this.反馈Button.Location = new System.Drawing.Point(309, 146);
+            this.反馈Button.Name = "反馈Button";
+            this.反馈Button.Size = new System.Drawing.Size(75, 23);
+            this.反馈Button.TabIndex = 11;
+            this.反馈Button.Text = "提交";
+            this.反馈Button.UseVisualStyleBackColor = false;
+            this.反馈Button.Click += new System.EventHandler(this.反馈Button_Click);
+            // 
+            // txt_问题反馈
+            // 
+            this.txt_问题反馈.BackColor = System.Drawing.Color.White;
+            this.txt_问题反馈.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_问题反馈.ImeMode = System.Windows.Forms.ImeMode.HangulFull;
+            this.txt_问题反馈.Location = new System.Drawing.Point(6, 6);
+            this.txt_问题反馈.Multiline = true;
+            this.txt_问题反馈.Name = "txt_问题反馈";
+            this.txt_问题反馈.Size = new System.Drawing.Size(378, 134);
+            this.txt_问题反馈.TabIndex = 5;
+            // 
+            // Page_更新
+            // 
+            this.Page_更新.BackColor = System.Drawing.Color.White;
+            this.Page_更新.Controls.Add(this.更新Button_check);
+            this.Page_更新.Controls.Add(this.更新Button);
+            this.Page_更新.Controls.Add(this.groupBox5);
+            this.Page_更新.Location = new System.Drawing.Point(4, 22);
+            this.Page_更新.Name = "Page_更新";
+            this.Page_更新.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_更新.Size = new System.Drawing.Size(390, 329);
+            this.Page_更新.TabIndex = 5;
+            this.Page_更新.Text = "更新";
+            this.Page_更新.UseVisualStyleBackColor = true;
+            // 
+            // 更新Button_check
+            // 
+            this.更新Button_check.BackColor = System.Drawing.Color.White;
+            this.更新Button_check.Location = new System.Drawing.Point(6, 83);
+            this.更新Button_check.Name = "更新Button_check";
+            this.更新Button_check.Size = new System.Drawing.Size(75, 23);
+            this.更新Button_check.TabIndex = 11;
+            this.更新Button_check.Text = "检查更新";
+            this.更新Button_check.UseVisualStyleBackColor = false;
+            // 
+            // 更新Button
+            // 
+            this.更新Button.BackColor = System.Drawing.Color.White;
+            this.更新Button.Location = new System.Drawing.Point(309, 83);
+            this.更新Button.Name = "更新Button";
+            this.更新Button.Size = new System.Drawing.Size(75, 23);
+            this.更新Button.TabIndex = 10;
+            this.更新Button.Text = "恢复默认";
+            this.更新Button.UseVisualStyleBackColor = false;
+            this.更新Button.Click += new System.EventHandler(this.更新Button_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.numbox_间隔时间);
+            this.groupBox5.Controls.Add(this.checkBox_更新间隔);
+            this.groupBox5.Controls.Add(this.check_检查更新);
+            this.groupBox5.Location = new System.Drawing.Point(6, 14);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(378, 65);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(98, 31);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 12);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "小时";
+            // 
+            // numbox_间隔时间
+            // 
+            this.numbox_间隔时间.Location = new System.Drawing.Point(54, 27);
+            this.numbox_间隔时间.Name = "numbox_间隔时间";
+            this.numbox_间隔时间.Size = new System.Drawing.Size(37, 21);
+            this.numbox_间隔时间.TabIndex = 2;
+            this.numbox_间隔时间.ValueChanged += new System.EventHandler(this.numbox_间隔时间_ValueChanged);
+            // 
+            // checkBox_更新间隔
+            // 
+            this.checkBox_更新间隔.AutoSize = true;
+            this.checkBox_更新间隔.Location = new System.Drawing.Point(6, 31);
+            this.checkBox_更新间隔.Name = "checkBox_更新间隔";
+            this.checkBox_更新间隔.Size = new System.Drawing.Size(48, 16);
+            this.checkBox_更新间隔.TabIndex = 1;
+            this.checkBox_更新间隔.Text = "每隔";
+            this.checkBox_更新间隔.UseVisualStyleBackColor = true;
+            this.checkBox_更新间隔.CheckedChanged += new System.EventHandler(this.checkBox_更新间隔_CheckedChanged);
+            // 
+            // check_检查更新
+            // 
+            this.check_检查更新.AutoSize = true;
+            this.check_检查更新.BackColor = System.Drawing.Color.White;
+            this.check_检查更新.Location = new System.Drawing.Point(6, 0);
+            this.check_检查更新.Name = "check_检查更新";
+            this.check_检查更新.Size = new System.Drawing.Size(108, 16);
+            this.check_检查更新.TabIndex = 0;
+            this.check_检查更新.Text = "启动时检查更新";
+            this.check_检查更新.UseVisualStyleBackColor = false;
+            this.check_检查更新.CheckedChanged += new System.EventHandler(this.check_检查更新_CheckedChanged);
             // 
             // Page_代理
             // 
@@ -925,6 +1972,7 @@
             this.tab_标签.Controls.Add(this.Page_OCR设置);
             this.tab_标签.Controls.Add(this.Page_OCR设置2);
             this.tab_标签.Controls.Add(this.Page_翻译API);
+            this.tab_标签.Controls.Add(this.Page_其他特性);
             this.tab_标签.Location = new System.Drawing.Point(10, 2);
             this.tab_标签.Name = "tab_标签";
             this.tab_标签.SelectedIndex = 0;
@@ -932,900 +1980,37 @@
             this.tab_标签.TabIndex = 0;
             this.tab_标签.SelectedIndexChanged += new System.EventHandler(this.tab_标签_SelectedIndexChanged);
             // 
-            // Page_更新
-            // 
-            this.Page_更新.BackColor = System.Drawing.Color.White;
-            this.Page_更新.Controls.Add(this.更新Button_check);
-            this.Page_更新.Controls.Add(this.更新Button);
-            this.Page_更新.Controls.Add(this.groupBox5);
-            this.Page_更新.Location = new System.Drawing.Point(4, 22);
-            this.Page_更新.Name = "Page_更新";
-            this.Page_更新.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_更新.Size = new System.Drawing.Size(390, 329);
-            this.Page_更新.TabIndex = 5;
-            this.Page_更新.Text = "更新";
-            this.Page_更新.UseVisualStyleBackColor = true;
-            // 
-            // 更新Button_check
-            // 
-            this.更新Button_check.BackColor = System.Drawing.Color.White;
-            this.更新Button_check.Location = new System.Drawing.Point(6, 83);
-            this.更新Button_check.Name = "更新Button_check";
-            this.更新Button_check.Size = new System.Drawing.Size(75, 23);
-            this.更新Button_check.TabIndex = 11;
-            this.更新Button_check.Text = "检查更新";
-            this.更新Button_check.UseVisualStyleBackColor = false;
-            // 
-            // 更新Button
-            // 
-            this.更新Button.BackColor = System.Drawing.Color.White;
-            this.更新Button.Location = new System.Drawing.Point(309, 83);
-            this.更新Button.Name = "更新Button";
-            this.更新Button.Size = new System.Drawing.Size(75, 23);
-            this.更新Button.TabIndex = 10;
-            this.更新Button.Text = "恢复默认";
-            this.更新Button.UseVisualStyleBackColor = false;
-            this.更新Button.Click += new System.EventHandler(this.更新Button_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.numbox_间隔时间);
-            this.groupBox5.Controls.Add(this.checkBox_更新间隔);
-            this.groupBox5.Controls.Add(this.check_检查更新);
-            this.groupBox5.Location = new System.Drawing.Point(6, 14);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(378, 65);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(98, 31);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 12);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "小时";
-            // 
-            // numbox_间隔时间
-            // 
-            this.numbox_间隔时间.Location = new System.Drawing.Point(54, 27);
-            this.numbox_间隔时间.Name = "numbox_间隔时间";
-            this.numbox_间隔时间.Size = new System.Drawing.Size(37, 21);
-            this.numbox_间隔时间.TabIndex = 2;
-            this.numbox_间隔时间.ValueChanged += new System.EventHandler(this.numbox_间隔时间_ValueChanged);
-            // 
-            // checkBox_更新间隔
-            // 
-            this.checkBox_更新间隔.AutoSize = true;
-            this.checkBox_更新间隔.Location = new System.Drawing.Point(6, 31);
-            this.checkBox_更新间隔.Name = "checkBox_更新间隔";
-            this.checkBox_更新间隔.Size = new System.Drawing.Size(48, 16);
-            this.checkBox_更新间隔.TabIndex = 1;
-            this.checkBox_更新间隔.Text = "每隔";
-            this.checkBox_更新间隔.UseVisualStyleBackColor = true;
-            this.checkBox_更新间隔.CheckedChanged += new System.EventHandler(this.checkBox_更新间隔_CheckedChanged);
-            // 
-            // check_检查更新
-            // 
-            this.check_检查更新.AutoSize = true;
-            this.check_检查更新.BackColor = System.Drawing.Color.White;
-            this.check_检查更新.Location = new System.Drawing.Point(6, 0);
-            this.check_检查更新.Name = "check_检查更新";
-            this.check_检查更新.Size = new System.Drawing.Size(108, 16);
-            this.check_检查更新.TabIndex = 0;
-            this.check_检查更新.Text = "启动时检查更新";
-            this.check_检查更新.UseVisualStyleBackColor = false;
-            this.check_检查更新.CheckedChanged += new System.EventHandler(this.check_检查更新_CheckedChanged);
-            // 
-            // Page_反馈
-            // 
-            this.Page_反馈.BackColor = System.Drawing.Color.White;
-            this.Page_反馈.Controls.Add(this.label21);
-            this.Page_反馈.Controls.Add(this.反馈Button);
-            this.Page_反馈.Controls.Add(this.txt_问题反馈);
-            this.Page_反馈.Location = new System.Drawing.Point(4, 22);
-            this.Page_反馈.Name = "Page_反馈";
-            this.Page_反馈.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_反馈.Size = new System.Drawing.Size(390, 329);
-            this.Page_反馈.TabIndex = 8;
-            this.Page_反馈.Text = "反馈";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(7, 151);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(0, 12);
-            this.label21.TabIndex = 12;
-            // 
-            // 反馈Button
-            // 
-            this.反馈Button.BackColor = System.Drawing.Color.White;
-            this.反馈Button.Location = new System.Drawing.Point(309, 146);
-            this.反馈Button.Name = "反馈Button";
-            this.反馈Button.Size = new System.Drawing.Size(75, 23);
-            this.反馈Button.TabIndex = 11;
-            this.反馈Button.Text = "提交";
-            this.反馈Button.UseVisualStyleBackColor = false;
-            this.反馈Button.Click += new System.EventHandler(this.反馈Button_Click);
-            // 
-            // txt_问题反馈
-            // 
-            this.txt_问题反馈.BackColor = System.Drawing.Color.White;
-            this.txt_问题反馈.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_问题反馈.ImeMode = System.Windows.Forms.ImeMode.HangulFull;
-            this.txt_问题反馈.Location = new System.Drawing.Point(6, 6);
-            this.txt_问题反馈.Multiline = true;
-            this.txt_问题反馈.Name = "txt_问题反馈";
-            this.txt_问题反馈.Size = new System.Drawing.Size(378, 134);
-            this.txt_问题反馈.TabIndex = 5;
-            // 
-            // Page_OCR设置
-            // 
-            this.Page_OCR设置.Controls.Add(this.参数说明1);
-            this.Page_OCR设置.Controls.Add(this.label27);
-            this.Page_OCR设置.Controls.Add(this.button1);
-            this.Page_OCR设置.Controls.Add(this.tableLayoutPanel1);
-            this.Page_OCR设置.Location = new System.Drawing.Point(4, 22);
-            this.Page_OCR设置.Name = "Page_OCR设置";
-            this.Page_OCR设置.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_OCR设置.Size = new System.Drawing.Size(390, 329);
-            this.Page_OCR设置.TabIndex = 9;
-            this.Page_OCR设置.Text = "CL-OCR设置";
-            this.Page_OCR设置.UseVisualStyleBackColor = true;
-            // 
-            // 参数说明1
-            // 
-            this.参数说明1.Location = new System.Drawing.Point(218, 280);
-            this.参数说明1.Name = "参数说明1";
-            this.参数说明1.Size = new System.Drawing.Size(73, 23);
-            this.参数说明1.TabIndex = 13;
-            this.参数说明1.Text = "参数说明";
-            this.参数说明1.UseVisualStyleBackColor = true;
-            this.参数说明1.Click += new System.EventHandler(this.button参数说明_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(216, 248);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(161, 12);
-            this.label27.TabIndex = 12;
-            this.label27.Text = "参数修改需要切换模型或重启";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(309, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "重启";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label23, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label24, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label25, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.ocrNum5, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.doAngleCheckBox, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.mostAngleCheckBox, 1, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 22);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(169, 281);
-            this.tableLayoutPanel1.TabIndex = 3;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(5, 226);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(59, 12);
-            this.label26.TabIndex = 28;
-            this.label26.Text = "numThread";
-            // 
-            // ocrNum6
-            // 
-            this.ocrNum6.Location = new System.Drawing.Point(87, 229);
-            this.ocrNum6.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.ocrNum6.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ocrNum6.Name = "ocrNum6";
-            this.ocrNum6.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum6.TabIndex = 29;
-            this.ocrNum6.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            // 
-            // ocrNum3
-            // 
-            this.ocrNum3.DecimalPlaces = 3;
-            this.ocrNum3.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum3.Location = new System.Drawing.Point(87, 69);
-            this.ocrNum3.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ocrNum3.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.ocrNum3.Name = "ocrNum3";
-            this.ocrNum3.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum3.TabIndex = 13;
-            this.ocrNum3.Value = new decimal(new int[] {
-            618,
-            0,
-            0,
-            196608});
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(5, 66);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 24);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "boxScoreThresh";
-            // 
-            // ocrNum2
-            // 
-            this.ocrNum2.Location = new System.Drawing.Point(87, 37);
-            this.ocrNum2.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.ocrNum2.Name = "ocrNum2";
-            this.ocrNum2.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum2.TabIndex = 10;
-            this.ocrNum2.Value = new decimal(new int[] {
-            1024,
-            0,
-            0,
-            0});
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(5, 34);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(65, 12);
-            this.label22.TabIndex = 9;
-            this.label22.Text = "maxSideLen";
-            // 
-            // ocrNum1
-            // 
-            this.ocrNum1.Location = new System.Drawing.Point(87, 5);
-            this.ocrNum1.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.ocrNum1.Name = "ocrNum1";
-            this.ocrNum1.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum1.TabIndex = 7;
-            this.ocrNum1.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(5, 2);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(47, 12);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "padding";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(5, 98);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 12);
-            this.label24.TabIndex = 14;
-            this.label24.Text = "boxThresh";
-            // 
-            // ocrNum4
-            // 
-            this.ocrNum4.DecimalPlaces = 3;
-            this.ocrNum4.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum4.Location = new System.Drawing.Point(87, 101);
-            this.ocrNum4.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ocrNum4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.ocrNum4.Name = "ocrNum4";
-            this.ocrNum4.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum4.TabIndex = 15;
-            this.ocrNum4.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            65536});
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(5, 130);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(71, 12);
-            this.label25.TabIndex = 21;
-            this.label25.Text = "unClipRatio";
-            // 
-            // ocrNum5
-            // 
-            this.ocrNum5.DecimalPlaces = 1;
-            this.ocrNum5.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum5.Location = new System.Drawing.Point(87, 133);
-            this.ocrNum5.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.ocrNum5.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum5.Name = "ocrNum5";
-            this.ocrNum5.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum5.TabIndex = 22;
-            this.ocrNum5.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            65536});
-            // 
-            // doAngleCheckBox
-            // 
-            this.doAngleCheckBox.AutoSize = true;
-            this.doAngleCheckBox.Checked = true;
-            this.doAngleCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.doAngleCheckBox.Location = new System.Drawing.Point(5, 165);
-            this.doAngleCheckBox.Name = "doAngleCheckBox";
-            this.doAngleCheckBox.Size = new System.Drawing.Size(66, 16);
-            this.doAngleCheckBox.TabIndex = 26;
-            this.doAngleCheckBox.Text = "doAngle";
-            this.doAngleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // mostAngleCheckBox
-            // 
-            this.mostAngleCheckBox.AutoSize = true;
-            this.mostAngleCheckBox.Checked = true;
-            this.mostAngleCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.mostAngleCheckBox.Location = new System.Drawing.Point(87, 165);
-            this.mostAngleCheckBox.Name = "mostAngleCheckBox";
-            this.mostAngleCheckBox.Size = new System.Drawing.Size(78, 16);
-            this.mostAngleCheckBox.TabIndex = 27;
-            this.mostAngleCheckBox.Text = "mostAngle";
-            this.mostAngleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // Page_OCR设置2
-            // 
-            this.Page_OCR设置2.Controls.Add(this.参数说明2);
-            this.Page_OCR设置2.Controls.Add(this.groupBox7);
-            this.Page_OCR设置2.Controls.Add(this.label28);
-            this.Page_OCR设置2.Controls.Add(this.button3);
-            this.Page_OCR设置2.Controls.Add(this.tableLayoutPanel2);
-            this.Page_OCR设置2.Location = new System.Drawing.Point(4, 22);
-            this.Page_OCR设置2.Name = "Page_OCR设置2";
-            this.Page_OCR设置2.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_OCR设置2.Size = new System.Drawing.Size(390, 329);
-            this.Page_OCR设置2.TabIndex = 10;
-            this.Page_OCR设置2.Text = "PA-OCR设置";
-            this.Page_OCR设置2.UseVisualStyleBackColor = true;
-            // 
-            // 参数说明2
-            // 
-            this.参数说明2.Location = new System.Drawing.Point(221, 282);
-            this.参数说明2.Name = "参数说明2";
-            this.参数说明2.Size = new System.Drawing.Size(73, 23);
-            this.参数说明2.TabIndex = 17;
-            this.参数说明2.Text = "参数说明";
-            this.参数说明2.UseVisualStyleBackColor = true;
-            this.参数说明2.Click += new System.EventHandler(this.button参数说明_Click);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.radioButton3);
-            this.groupBox7.Controls.Add(this.radioButton2);
-            this.groupBox7.Controls.Add(this.radioButton1);
-            this.groupBox7.Location = new System.Drawing.Point(233, 39);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(125, 127);
-            this.groupBox7.TabIndex = 16;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "模型选择";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(14, 83);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(47, 16);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "日文";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(14, 54);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(77, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "英文/数字";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(14, 27);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "中文";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(219, 250);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(161, 12);
-            this.label28.TabIndex = 15;
-            this.label28.Text = "参数修改需要切换模型或重启";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(309, 282);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "重启";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label30, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.ocrNum8, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.ocrNum7, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label32, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label33, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.ocrNum10, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label34, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.ocrNum11, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.doAngleCheckBox2, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.mostAngleCheckBox2, 1, 5);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 24);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 8;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(169, 281);
-            this.tableLayoutPanel2.TabIndex = 13;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(5, 226);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(59, 12);
-            this.label29.TabIndex = 28;
-            this.label29.Text = "numThread";
-            // 
-            // ocrNum12
-            // 
-            this.ocrNum12.Location = new System.Drawing.Point(87, 229);
-            this.ocrNum12.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.ocrNum12.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ocrNum12.Name = "ocrNum12";
-            this.ocrNum12.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum12.TabIndex = 29;
-            this.ocrNum12.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            // 
-            // ocrNum9
-            // 
-            this.ocrNum9.DecimalPlaces = 3;
-            this.ocrNum9.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum9.Location = new System.Drawing.Point(87, 69);
-            this.ocrNum9.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ocrNum9.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.ocrNum9.Name = "ocrNum9";
-            this.ocrNum9.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum9.TabIndex = 13;
-            this.ocrNum9.Value = new decimal(new int[] {
-            7,
-            0,
-            0,
-            65536});
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(5, 66);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(71, 24);
-            this.label30.TabIndex = 12;
-            this.label30.Text = "boxScoreThresh";
-            // 
-            // ocrNum8
-            // 
-            this.ocrNum8.Location = new System.Drawing.Point(87, 37);
-            this.ocrNum8.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.ocrNum8.Name = "ocrNum8";
-            this.ocrNum8.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum8.TabIndex = 10;
-            this.ocrNum8.Value = new decimal(new int[] {
-            1024,
-            0,
-            0,
-            0});
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(5, 34);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(65, 12);
-            this.label31.TabIndex = 9;
-            this.label31.Text = "maxSideLen";
-            // 
-            // ocrNum7
-            // 
-            this.ocrNum7.Location = new System.Drawing.Point(87, 5);
-            this.ocrNum7.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.ocrNum7.Name = "ocrNum7";
-            this.ocrNum7.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum7.TabIndex = 7;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(5, 2);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(47, 12);
-            this.label32.TabIndex = 6;
-            this.label32.Text = "padding";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(5, 98);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(59, 12);
-            this.label33.TabIndex = 14;
-            this.label33.Text = "boxThresh";
-            // 
-            // ocrNum10
-            // 
-            this.ocrNum10.DecimalPlaces = 3;
-            this.ocrNum10.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum10.Location = new System.Drawing.Point(87, 101);
-            this.ocrNum10.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ocrNum10.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.ocrNum10.Name = "ocrNum10";
-            this.ocrNum10.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum10.TabIndex = 15;
-            this.ocrNum10.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            65536});
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(5, 130);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(71, 12);
-            this.label34.TabIndex = 21;
-            this.label34.Text = "unClipRatio";
-            // 
-            // ocrNum11
-            // 
-            this.ocrNum11.DecimalPlaces = 1;
-            this.ocrNum11.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum11.Location = new System.Drawing.Point(87, 133);
-            this.ocrNum11.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.ocrNum11.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ocrNum11.Name = "ocrNum11";
-            this.ocrNum11.Size = new System.Drawing.Size(74, 21);
-            this.ocrNum11.TabIndex = 22;
-            this.ocrNum11.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            65536});
-            // 
-            // doAngleCheckBox2
-            // 
-            this.doAngleCheckBox2.AutoSize = true;
-            this.doAngleCheckBox2.Checked = true;
-            this.doAngleCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.doAngleCheckBox2.Location = new System.Drawing.Point(5, 165);
-            this.doAngleCheckBox2.Name = "doAngleCheckBox2";
-            this.doAngleCheckBox2.Size = new System.Drawing.Size(66, 16);
-            this.doAngleCheckBox2.TabIndex = 26;
-            this.doAngleCheckBox2.Text = "doAngle";
-            this.doAngleCheckBox2.UseVisualStyleBackColor = true;
-            // 
-            // mostAngleCheckBox2
-            // 
-            this.mostAngleCheckBox2.AutoSize = true;
-            this.mostAngleCheckBox2.Location = new System.Drawing.Point(87, 165);
-            this.mostAngleCheckBox2.Name = "mostAngleCheckBox2";
-            this.mostAngleCheckBox2.Size = new System.Drawing.Size(78, 16);
-            this.mostAngleCheckBox2.TabIndex = 27;
-            this.mostAngleCheckBox2.Text = "mostAngle";
-            this.mostAngleCheckBox2.UseVisualStyleBackColor = true;
-            // 
-            // Page_翻译API
-            // 
-            this.Page_翻译API.Controls.Add(this.tabControl1);
-            this.Page_翻译API.Location = new System.Drawing.Point(4, 22);
-            this.Page_翻译API.Name = "Page_翻译API";
-            this.Page_翻译API.Size = new System.Drawing.Size(390, 329);
-            this.Page_翻译API.TabIndex = 11;
-            this.Page_翻译API.Text = "翻译API";
-            this.Page_翻译API.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(9, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(378, 135);
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.翻译api_key);
-            this.tabPage1.Controls.Add(this.翻译api_id);
-            this.tabPage1.Controls.Add(this.label35);
-            this.tabPage1.Controls.Add(this.label36);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(370, 109);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "百度翻译接口";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(241, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "接口申请";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // 翻译api_key
-            // 
-            this.翻译api_key.BackColor = System.Drawing.Color.White;
-            this.翻译api_key.Location = new System.Drawing.Point(56, 55);
-            this.翻译api_key.Name = "翻译api_key";
-            this.翻译api_key.Size = new System.Drawing.Size(260, 21);
-            this.翻译api_key.TabIndex = 3;
-            // 
-            // 翻译api_id
-            // 
-            this.翻译api_id.BackColor = System.Drawing.Color.White;
-            this.翻译api_id.Location = new System.Drawing.Point(56, 20);
-            this.翻译api_id.Name = "翻译api_id";
-            this.翻译api_id.Size = new System.Drawing.Size(260, 21);
-            this.翻译api_id.TabIndex = 2;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(18, 58);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(35, 12);
-            this.label35.TabIndex = 1;
-            this.label35.Text = "KEY：";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(18, 23);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(29, 12);
-            this.label36.TabIndex = 0;
-            this.label36.Text = "ID：";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Location = new System.Drawing.Point(117, 14);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(255, 83);
-            this.groupBox8.TabIndex = 4;
-            this.groupBox8.TabStop = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(13, 56);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(141, 17);
-            this.label19.TabIndex = 5;
-            // 
-            // label_版本号
-            // 
-            this.label_版本号.AutoSize = true;
-            this.label_版本号.Location = new System.Drawing.Point(13, 13);
-            this.label_版本号.Name = "label_版本号";
-            this.label_版本号.Size = new System.Drawing.Size(95, 12);
-            this.label_版本号.TabIndex = 4;
-            // 
-            // label_更新日期
-            // 
-            this.label_更新日期.AutoSize = true;
-            this.label_更新日期.Location = new System.Drawing.Point(13, 34);
-            this.label_更新日期.Name = "label_更新日期";
-            this.label_更新日期.Size = new System.Drawing.Size(125, 12);
-            this.label_更新日期.TabIndex = 6;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Image = global::TrOCR.Properties.Resources.头像;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 15);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(84, 82);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            // 
-            // txt_更新说明
-            // 
-            this.txt_更新说明.BackColor = System.Drawing.Color.White;
-            this.txt_更新说明.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_更新说明.Location = new System.Drawing.Point(6, 20);
-            this.txt_更新说明.Multiline = true;
-            this.txt_更新说明.Name = "txt_更新说明";
-            this.txt_更新说明.Size = new System.Drawing.Size(366, 155);
-            this.txt_更新说明.TabIndex = 4;
+            // Page_其他特性
+            // 
+            this.Page_其他特性.Controls.Add(this.cbBox_是否复制);
+            this.Page_其他特性.Controls.Add(this.cbBox_静默识别);
+            this.Page_其他特性.Location = new System.Drawing.Point(4, 22);
+            this.Page_其他特性.Name = "Page_其他特性";
+            this.Page_其他特性.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_其他特性.Size = new System.Drawing.Size(390, 329);
+            this.Page_其他特性.TabIndex = 12;
+            this.Page_其他特性.Text = "其他特性";
+            this.Page_其他特性.UseVisualStyleBackColor = true;
+            // 
+            // cbBox_是否复制
+            // 
+            this.cbBox_是否复制.AutoSize = true;
+            this.cbBox_是否复制.Location = new System.Drawing.Point(17, 38);
+            this.cbBox_是否复制.Name = "cbBox_是否复制";
+            this.cbBox_是否复制.Size = new System.Drawing.Size(252, 16);
+            this.cbBox_是否复制.TabIndex = 4;
+            this.cbBox_是否复制.Text = "识别结果始终放入粘贴板（和上面不冲突）";
+            this.cbBox_是否复制.UseVisualStyleBackColor = true;
+            // 
+            // cbBox_静默识别
+            // 
+            this.cbBox_静默识别.AutoSize = true;
+            this.cbBox_静默识别.Location = new System.Drawing.Point(17, 16);
+            this.cbBox_静默识别.Name = "cbBox_静默识别";
+            this.cbBox_静默识别.Size = new System.Drawing.Size(348, 16);
+            this.cbBox_静默识别.TabIndex = 3;
+            this.cbBox_静默识别.Text = "静默识别（识别不显示主窗口，翻译结果处理后放入粘贴板）";
+            this.cbBox_静默识别.UseVisualStyleBackColor = true;
             // 
             // FmSetting
             // 
@@ -1839,9 +2024,48 @@
             this.MinimizeBox = false;
             this.Name = "FmSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "设置";
+            this.Text = "设置（version 1.3.7）";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.Page_翻译API.ResumeLayout(false);
+            this.彩云翻译api_id.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.Page_OCR设置2.ResumeLayout(false);
+            this.Page_OCR设置2.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).EndInit();
+            this.Page_OCR设置.ResumeLayout(false);
+            this.Page_OCR设置.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ocrNum5)).EndInit();
+            this.Page_反馈.ResumeLayout(false);
+            this.Page_反馈.PerformLayout();
+            this.Page_更新.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_间隔时间)).EndInit();
             this.Page_代理.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1869,223 +2093,38 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tab_标签.ResumeLayout(false);
-            this.Page_更新.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numbox_间隔时间)).EndInit();
-            this.Page_反馈.ResumeLayout(false);
-            this.Page_反馈.PerformLayout();
-            this.Page_OCR设置.ResumeLayout(false);
-            this.Page_OCR设置.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum5)).EndInit();
-            this.Page_OCR设置2.ResumeLayout(false);
-            this.Page_OCR设置2.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocrNum11)).EndInit();
-            this.Page_翻译API.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.Page_其他特性.ResumeLayout(false);
+            this.Page_其他特性.PerformLayout();
             this.ResumeLayout(false);
 
 		}
 
 		private global::System.ComponentModel.IContainer components;
-
-		private global::System.Windows.Forms.TabPage Page_代理;
-
-		private global::System.Windows.Forms.TabPage Page_密钥;
-
-		private global::System.Windows.Forms.TabPage Page_快捷键;
-
-		private global::System.Windows.Forms.TabPage page_常规;
-
-		private global::System.Windows.Forms.PictureBox pic_help;
-
-		private global::System.Windows.Forms.Button 常规Button;
-
-		private global::System.Windows.Forms.GroupBox groupBox2;
-
-		private global::System.Windows.Forms.NumericUpDown numbox_记录;
-
-		private global::System.Windows.Forms.Label label3;
-
-		private global::System.Windows.Forms.ComboBox cobBox_动画;
-
-		private global::System.Windows.Forms.Label label2;
-
-		private global::System.Windows.Forms.GroupBox groupBox1;
-
-		private global::System.Windows.Forms.CheckBox cbBox_开机;
-
-		private global::System.Windows.Forms.TabControl tab_标签;
-
-		private global::System.Windows.Forms.TabPage Page_更新;
-
-		private global::System.Windows.Forms.GroupBox groupBox3;
-
-		private global::System.Windows.Forms.PictureBox pictureBox_翻译文本;
-
-		private global::System.Windows.Forms.PictureBox pictureBox_文字识别;
-
-		private global::System.Windows.Forms.TextBox txtBox_识别界面;
-
-		private global::System.Windows.Forms.TextBox txtBox_记录界面;
-
-		private global::System.Windows.Forms.TextBox txtBox_翻译文本;
-
-		private global::System.Windows.Forms.TextBox txtBox_文字识别;
-
-		private global::System.Windows.Forms.Label label7;
-
-		private global::System.Windows.Forms.Label label6;
-
-		private global::System.Windows.Forms.Label label5;
-
-		private global::System.Windows.Forms.Label label4;
-
-		private global::System.Windows.Forms.PictureBox pictureBox_识别界面;
-
-		private global::System.Windows.Forms.PictureBox pictureBox_记录界面;
-
-		private global::System.Windows.Forms.Label label8;
-
-		private global::System.Windows.Forms.CheckBox cbBox_翻译;
-
-		private global::System.Windows.Forms.TabControl tabControl2;
-
-		private global::System.Windows.Forms.TabPage inPage_百度接口;
-
-		private global::System.Windows.Forms.TextBox text_baidupassword;
-
-		private global::System.Windows.Forms.TextBox text_baiduaccount;
-
-		private global::System.Windows.Forms.Label label10;
-
-		private global::System.Windows.Forms.Label label9;
-
-		private global::System.Windows.Forms.Button 快捷键Button;
-
-		private global::System.Windows.Forms.Button 密钥Button_apply;
-
-		private global::System.Windows.Forms.Button 密钥Button;
-
-		private global::System.Windows.Forms.GroupBox groupBox4;
-
-		private global::System.Windows.Forms.ComboBox combox_代理;
-
-		private global::System.Windows.Forms.Label label11;
-
-		private global::System.Windows.Forms.Button 代理Button;
-
-		private global::System.Windows.Forms.CheckBox chbox_代理服务器;
-
-		private global::System.Windows.Forms.TextBox text_密码;
-
-		private global::System.Windows.Forms.TextBox text_端口;
-
-		private global::System.Windows.Forms.Label label15;
-
-		private global::System.Windows.Forms.TextBox text_账号;
-
-		private global::System.Windows.Forms.TextBox text_服务器;
-
-		private global::System.Windows.Forms.Label label14;
-
-		private global::System.Windows.Forms.Label label13;
-
-		private global::System.Windows.Forms.Label label12;
-
-		private global::System.Windows.Forms.Button 更新Button_check;
-
-		private global::System.Windows.Forms.Button 更新Button;
-
-		private global::System.Windows.Forms.GroupBox groupBox5;
-
-		private global::System.Windows.Forms.Label label16;
-
-		private global::System.Windows.Forms.NumericUpDown numbox_间隔时间;
-
-		private global::System.Windows.Forms.CheckBox checkBox_更新间隔;
-
-		private global::System.Windows.Forms.CheckBox check_检查更新;
-
-		private global::System.Windows.Forms.CheckBox cbBox_弹窗;
-
-		private global::System.Windows.Forms.GroupBox groupBox6;
-
-		private global::System.Windows.Forms.TextBox textBox_path;
-
-		private global::System.Windows.Forms.Label label1;
-
-		private global::System.Windows.Forms.CheckBox cbBox_保存;
-
-		private global::System.Windows.Forms.Button btn_浏览;
-
-		private global::System.Windows.Forms.Button 百度_btn;
-
-		private global::System.Windows.Forms.GroupBox groupBox10;
-
-		private global::System.Windows.Forms.Button btn_音效;
-
-		private global::System.Windows.Forms.TextBox text_音效path;
-
-		private global::System.Windows.Forms.Label label18;
-
-		private global::System.Windows.Forms.CheckBox chbox_save;
-
-		private global::System.Windows.Forms.CheckBox chbox_copy;
-
-		private global::System.Windows.Forms.Label label20;
-
-		private global::System.Windows.Forms.Button btn_音效路径;
-
-		private global::System.Windows.Forms.CheckBox chbox_取色;
-        private System.Windows.Forms.TabPage Page_反馈;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button 反馈Button;
-        private System.Windows.Forms.TextBox txt_问题反馈;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label_版本号;
         private System.Windows.Forms.Label label_更新日期;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox txt_更新说明;
-        private System.Windows.Forms.TabPage Page_OCR设置;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.NumericUpDown ocrNum3;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown ocrNum2;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.NumericUpDown ocrNum1;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.NumericUpDown ocrNum4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.NumericUpDown ocrNum5;
-        private System.Windows.Forms.CheckBox doAngleCheckBox;
-        private System.Windows.Forms.CheckBox mostAngleCheckBox;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.NumericUpDown ocrNum6;
+        private System.Windows.Forms.TabPage Page_翻译API;
+        private System.Windows.Forms.TabControl 彩云翻译api_id;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox 翻译api_key;
+        private System.Windows.Forms.TextBox 翻译api_id;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox 离线翻译网址;
         private System.Windows.Forms.TabPage Page_OCR设置2;
+        private System.Windows.Forms.Button 参数说明2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -2103,19 +2142,114 @@
         private System.Windows.Forms.NumericUpDown ocrNum11;
         private System.Windows.Forms.CheckBox doAngleCheckBox2;
         private System.Windows.Forms.CheckBox mostAngleCheckBox2;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TabPage Page_翻译API;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox 翻译api_key;
-        private System.Windows.Forms.TextBox 翻译api_id;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage Page_OCR设置;
         private System.Windows.Forms.Button 参数说明1;
-        private System.Windows.Forms.Button 参数说明2;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.NumericUpDown ocrNum6;
+        private System.Windows.Forms.NumericUpDown ocrNum3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown ocrNum2;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.NumericUpDown ocrNum1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.NumericUpDown ocrNum4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.NumericUpDown ocrNum5;
+        private System.Windows.Forms.CheckBox doAngleCheckBox;
+        private System.Windows.Forms.CheckBox mostAngleCheckBox;
+        private System.Windows.Forms.TabPage Page_反馈;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button 反馈Button;
+        private System.Windows.Forms.TextBox txt_问题反馈;
+        private System.Windows.Forms.TabPage Page_更新;
+        private System.Windows.Forms.Button 更新Button_check;
+        private System.Windows.Forms.Button 更新Button;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown numbox_间隔时间;
+        private System.Windows.Forms.CheckBox checkBox_更新间隔;
+        private System.Windows.Forms.CheckBox check_检查更新;
+        private System.Windows.Forms.TabPage Page_代理;
+        private System.Windows.Forms.Button 代理Button;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox chbox_代理服务器;
+        private System.Windows.Forms.TextBox text_密码;
+        private System.Windows.Forms.TextBox text_端口;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox text_账号;
+        private System.Windows.Forms.TextBox text_服务器;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox combox_代理;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabPage Page_密钥;
+        private System.Windows.Forms.Button 百度_btn;
+        private System.Windows.Forms.Button 密钥Button_apply;
+        private System.Windows.Forms.Button 密钥Button;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage inPage_百度接口;
+        private System.Windows.Forms.TextBox text_baidupassword;
+        private System.Windows.Forms.TextBox text_baiduaccount;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage Page_快捷键;
+        private System.Windows.Forms.Button 快捷键Button;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox_识别界面;
+        private System.Windows.Forms.PictureBox pictureBox_记录界面;
+        private System.Windows.Forms.PictureBox pictureBox_翻译文本;
+        private System.Windows.Forms.PictureBox pictureBox_文字识别;
+        private System.Windows.Forms.TextBox txtBox_识别界面;
+        private System.Windows.Forms.TextBox txtBox_记录界面;
+        private System.Windows.Forms.TextBox txtBox_翻译文本;
+        private System.Windows.Forms.TextBox txtBox_文字识别;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage page_常规;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.CheckBox chbox_save;
+        private System.Windows.Forms.CheckBox chbox_copy;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btn_音效路径;
+        private System.Windows.Forms.Button btn_音效;
+        private System.Windows.Forms.TextBox text_音效path;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btn_浏览;
+        private System.Windows.Forms.TextBox textBox_path;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbBox_保存;
+        private System.Windows.Forms.PictureBox pic_help;
+        private System.Windows.Forms.Button 常规Button;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.NumericUpDown numbox_记录;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cobBox_动画;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chbox_取色;
+        private System.Windows.Forms.CheckBox cbBox_弹窗;
+        private System.Windows.Forms.CheckBox cbBox_翻译;
+        private System.Windows.Forms.CheckBox cbBox_开机;
+        private System.Windows.Forms.TabControl tab_标签;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox 腾讯翻译api_key;
+        private System.Windows.Forms.TextBox 腾讯翻译api_id;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox 彩云翻译api_token;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TabPage Page_其他特性;
+        private System.Windows.Forms.CheckBox cbBox_静默识别;
+        private System.Windows.Forms.CheckBox cbBox_是否复制;
     }
 }

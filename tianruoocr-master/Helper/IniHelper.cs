@@ -102,7 +102,7 @@ namespace TrOCR.Helper
             xNode = xDoc.SelectSingleNode(str);
             if (xNode == null)
             {
-                MessageBox.Show("配置文件出现问题，请删除app.config重启，程序即将自动退出2");
+                MessageBox.Show("配置文件出现问题，请删除my.config重启，程序即将自动退出-2");
                 System.Environment.Exit(0);
                 return "发生错误";
             }
@@ -172,7 +172,11 @@ namespace TrOCR.Helper
             string str = "//" + sectionName;
 
             xNode = xDoc.SelectSingleNode(str);
-
+            if (xNode == null)
+            {
+                MessageBox.Show("配置文件出现问题，请删除my.config重启，程序即将自动退出-2");
+                System.Environment.Exit(0);
+            }
             xElem1 = (XmlElement)xNode.SelectSingleNode(str + "//add[@key='" + key + "']");
 
             if (xElem1 != null) xElem1.SetAttribute("value", value);
@@ -344,21 +348,28 @@ namespace TrOCR.Helper
             b.SetAttribute("key", "测试");
             b.SetAttribute("value", "0"); paddle模型.AppendChild(b);
 
-            XmlElement 翻译API_百度 = doc.CreateElement("翻译API_百度");
-            root.AppendChild(翻译API_百度);
+            XmlElement 翻译API = doc.CreateElement("翻译API");
+            root.AppendChild(翻译API);
             b = doc.CreateElement("add");
             b.SetAttribute("key", "测试");
             b.SetAttribute("value", "0");
-            翻译API_百度.AppendChild(b);
+            翻译API.AppendChild(b);
 
             XmlElement 特殊 = doc.CreateElement("特殊");
             root.AppendChild(特殊);
             b = doc.CreateElement("add");
 
             b.SetAttribute("key", "测试");
-            b.SetAttribute("value", "0"); 特殊.AppendChild(b);
+            b.SetAttribute("value", "0"); 
+            特殊.AppendChild(b);
 
+            XmlElement 其他特性 = doc.CreateElement("其他特性");
+            root.AppendChild(其他特性);
+            b = doc.CreateElement("add");
 
+            b.SetAttribute("key", "测试");
+            b.SetAttribute("value", "0");
+            其他特性.AppendChild(b);
 
             doc.Save(file);
         }

@@ -524,7 +524,7 @@ namespace TrOCR
 
 			//翻译接口
 
-			value27 = IniHelper.GetValue("翻译API_百度", "secret_id");
+			value27 = IniHelper.GetValue("翻译API", "BDsecret_id");
 			//自定义模型
 			if (value27 == "发生错误")
 			{
@@ -533,7 +533,7 @@ namespace TrOCR
 			else {
 				翻译api_id.Text = value27;
 			}
-			value27 = IniHelper.GetValue("翻译API_百度", "secret_key");
+			value27 = IniHelper.GetValue("翻译API", "BDsecret_key");
 			//自定义模型
 			if (value27 == "发生错误")
 			{
@@ -543,13 +543,77 @@ namespace TrOCR
 			{
 				翻译api_key.Text = value27;
 			}
+            value27 = IniHelper.GetValue("翻译API", "TXsecret_id");
+            //自定义模型
+            if (value27 == "发生错误")
+            {
+                腾讯翻译api_id.Text = "";
+            }
+            else
+            {
+                腾讯翻译api_id.Text = value27;
+            }
+            value27 = IniHelper.GetValue("翻译API", "TXsecret_key");
+            if (value27 == "发生错误")
+            {
+                腾讯翻译api_key.Text = "";
+            }
+            else
+            {
+                腾讯翻译api_key.Text = value27;
+            }
+
+            value27 = IniHelper.GetValue("翻译API", "CYsecret_token");
+            if (value27 == "发生错误")
+            {
+                彩云翻译api_token.Text = "";
+            }
+            else
+            {
+                彩云翻译api_token.Text = value27;
+            }
+            value27 = IniHelper.GetValue("翻译API", "offline_url");
+            if (value27 == "发生错误")
+            {
+                离线翻译网址.Text = "";
+            }
+            else
+            {
+                离线翻译网址.Text = value27;
+            }
+            value27 = IniHelper.GetValue("其他特性", "静默识别");
+            if (value27 == "发生错误")
+            {
+                cbBox_静默识别.Checked = true;
+            }
+            try
+            {
+				//Console.WriteLine(value27);
+                cbBox_静默识别.Checked = Convert.ToBoolean(value27);
+            }
+            catch
+            {
+                cbBox_静默识别.Checked = true;
+            }
+
+            value27 = IniHelper.GetValue("其他特性", "始终复制");
+            if (value27 == "发生错误")
+            {
+                cbBox_是否复制.Checked = true;
+            }
+            try
+            {
+                //Console.WriteLine(value27);
+                cbBox_是否复制.Checked = Convert.ToBoolean(value27);
+            }
+            catch
+            {
+                cbBox_是否复制.Checked = true;
+            }
 
 
 
-
-
-
-		}
+        }
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
@@ -628,32 +692,37 @@ namespace TrOCR
 				tab_标签.Height = (int)(355 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
-			if (tab_标签.SelectedTab == Page_快捷键)
+			else if (tab_标签.SelectedTab == Page_快捷键)
 			{
 				tab_标签.Height = (int)(225.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
-			if (tab_标签.SelectedTab == Page_OCR设置)
+            else if (tab_标签.SelectedTab == Page_OCR设置)
 			{
 				tab_标签.Height = (int)(355.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
-			if (tab_标签.SelectedTab == Page_OCR设置2)
+            else if (tab_标签.SelectedTab == Page_OCR设置2)
 			{
 				tab_标签.Height = (int)(355.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
-			if (tab_标签.SelectedTab == Page_翻译API)
+            else if (tab_标签.SelectedTab == Page_翻译API)
 			{
 				tab_标签.Height = (int)(200.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
-			if (tab_标签.SelectedTab == Page_密钥)
+            else if (tab_标签.SelectedTab == Page_密钥)
 			{
 				tab_标签.Height = (int)(200.0 * Program.Factor);
 				Height = tab_标签.Height + 50;
 			}
-		}
+            else if (tab_标签.SelectedTab == Page_其他特性)
+            {
+                tab_标签.Height = (int)(100.0 * Program.Factor);
+                Height = tab_标签.Height + 50;
+            }
+        }
 
 		private void pic_help_Click(object sender, EventArgs e)
 		{
@@ -1083,9 +1152,20 @@ namespace TrOCR
 			}
 
 			//翻译接口
-			IniHelper.SetValue("翻译API_百度", "secret_id", 翻译api_id.Text);
-			IniHelper.SetValue("翻译API_百度", "secret_key", 翻译api_key.Text);
-			DialogResult = DialogResult.OK;
+			IniHelper.SetValue("翻译API", "BDsecret_id", 翻译api_id.Text);
+			IniHelper.SetValue("翻译API", "BDsecret_key", 翻译api_key.Text);
+
+            IniHelper.SetValue("翻译API", "TXsecret_id", 腾讯翻译api_id.Text);
+            IniHelper.SetValue("翻译API", "TXsecret_key", 腾讯翻译api_key.Text);
+
+            IniHelper.SetValue("翻译API", "CYsecret_token", 彩云翻译api_token.Text);
+
+            IniHelper.SetValue("翻译API", "offline_url", 离线翻译网址.Text);
+
+            IniHelper.SetValue("其他特性", "静默识别", cbBox_静默识别.Checked.ToString());
+
+            IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
+            DialogResult = DialogResult.OK;
 		}
 
 		public static void AutoStart(bool isAuto)
@@ -1282,10 +1362,19 @@ namespace TrOCR
 			}
 
 			//翻译接口
-			IniHelper.SetValue("翻译API_百度", "secret_id", 翻译api_id.Text);
-			IniHelper.SetValue("翻译API_百度", "secret_key", 翻译api_key.Text);
+			IniHelper.SetValue("翻译API", "BDsecret_id", 翻译api_id.Text);
+			IniHelper.SetValue("翻译API", "BDsecret_key", 翻译api_key.Text);
 
-			Process.Start(Application.ExecutablePath);
+            IniHelper.SetValue("翻译API", "TXsecret_id", 腾讯翻译api_id.Text);
+            IniHelper.SetValue("翻译API", "TXsecret_key", 腾讯翻译api_key.Text);
+
+            IniHelper.SetValue("翻译API", "CYsecret_token", 彩云翻译api_token.Text);
+            IniHelper.SetValue("翻译API", "offline_url", 离线翻译网址.Text);
+
+            IniHelper.SetValue("其他特性", "静默识别", cbBox_静默识别.Checked.ToString());
+            IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
+
+            Process.Start(Application.ExecutablePath);
 
 			//关闭当前实例
 			Process.GetCurrentProcess().Kill();
@@ -1404,11 +1493,19 @@ namespace TrOCR
 			}
 
 			//翻译接口
-			IniHelper.SetValue("翻译API_百度", "secret_id", 翻译api_id.Text);
-			IniHelper.SetValue("翻译API_百度", "secret_key", 翻译api_key.Text);
+			IniHelper.SetValue("翻译API", "BDsecret_id", 翻译api_id.Text);
+			IniHelper.SetValue("翻译API", "BDsecret_key", 翻译api_key.Text);
 
+            IniHelper.SetValue("翻译API", "TXsecret_id", 腾讯翻译api_id.Text);
+            IniHelper.SetValue("翻译API", "TXsecret_key", 腾讯翻译api_key.Text);
 
-			Process.Start(Application.ExecutablePath);
+            IniHelper.SetValue("翻译API", "CYsecret_token", 彩云翻译api_token.Text);
+
+            IniHelper.SetValue("翻译API", "offline_url", 离线翻译网址.Text);
+
+            IniHelper.SetValue("其他特性", "静默识别", cbBox_静默识别.Checked.ToString());
+            IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
+            Process.Start(Application.ExecutablePath);
 
 			//关闭当前实例
 			Process.GetCurrentProcess().Kill();
@@ -1418,5 +1515,12 @@ namespace TrOCR
         {
 			Process.Start("https://api.fanyi.baidu.com/");
 		}
-    }
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+            Process.Start("https://cloud.tencent.com/product/tmt#featuresV2");
+        
+
+        }
+	}
 }

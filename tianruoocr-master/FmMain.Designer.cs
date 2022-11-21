@@ -25,7 +25,9 @@
 			this.trans_google = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.trans_baidu = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.trans_tencent = new global::System.Windows.Forms.ToolStripMenuItem();
-			this.baidu_table = new global::System.Windows.Forms.ToolStripMenuItem();
+            this.trans_chaiyun = new global::System.Windows.Forms.ToolStripMenuItem();
+            this.trans_offline = new global::System.Windows.Forms.ToolStripMenuItem();
+            this.baidu_table = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.ali_table = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.ocr_table = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.menu = new global::System.Windows.Forms.ContextMenuStrip();
@@ -111,9 +113,13 @@
 			this.trans_google.Click += new global::System.EventHandler(this.Trans_google_Click);
 			this.trans_baidu.Text = "百度";
 			this.trans_baidu.Click += new global::System.EventHandler(this.Trans_baidu_Click);
-			this.trans_tencent.Text = "保留段落谷歌翻译";
+			this.trans_tencent.Text = "腾讯";
 			this.trans_tencent.Click += new global::System.EventHandler(this.Trans_tencent_Click);
-			this.menu_copy.Items.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+            this.trans_chaiyun.Text = "彩云";
+            this.trans_chaiyun.Click += new global::System.EventHandler(this.Trans_chaiyun_Click);
+            this.trans_offline.Text = "离线翻译";
+            this.trans_offline.Click += new global::System.EventHandler(this.Trans_offline_Click);
+            this.menu_copy.Items.AddRange(new global::System.Windows.Forms.ToolStripItem[]
 			{
 				this.Trans_copy,
 				this.Trans_paste,
@@ -126,8 +132,10 @@
 			{
 				this.trans_google,
 				this.trans_baidu,
-				this.trans_tencent
-			});
+				this.trans_tencent,
+				this.trans_chaiyun,
+                this.trans_offline
+            });
 			this.menu_copy.Font = new global::System.Drawing.Font("微软雅黑", 9f / global::TrOCR.Helper.StaticValue.DpiFactor, global::System.Drawing.FontStyle.Regular);
 			this.Main_copy.Text = "复制";
 			this.Main_copy.Click += new global::System.EventHandler(this.MainCopyClick);
@@ -391,7 +399,11 @@
 
 		private global::System.Windows.Forms.ToolStripMenuItem trans_tencent;
 
-		private global::System.Windows.Forms.ToolStripMenuItem ocr_table;
+        private global::System.Windows.Forms.ToolStripMenuItem trans_chaiyun;
+
+        private global::System.Windows.Forms.ToolStripMenuItem trans_offline;
+
+        private global::System.Windows.Forms.ToolStripMenuItem ocr_table;
 
 		private global::System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 

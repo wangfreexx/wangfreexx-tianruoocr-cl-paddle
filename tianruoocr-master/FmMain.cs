@@ -30,7 +30,13 @@ using Timer = System.Windows.Forms.Timer;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Net.Http;
+using TencentCloud.Common;
+using TencentCloud.Common.Profile;
+using System.Security.Policy;
+using System.Web.UI.WebControls.WebParts;
 // ReSharper disable StringLiteralTypo
+
+
 
 namespace TrOCR
 {
@@ -39,7 +45,7 @@ namespace TrOCR
     {
         public OcrLite ocrEngin;
 
-        public Ocr ocrEngin2 ;
+        public Ocr ocrEngin2;
         public FmMain()
         {
             set_merge = false;
@@ -52,14 +58,15 @@ namespace TrOCR
             imagelist = new List<Image>();
             var noteCount = IniHelper.GetValue("配置", "记录数目");
             int valuetemp;
-            if (noteCount == "发生错误" || !int.TryParse(noteCount, out valuetemp)) {
+            if (noteCount == "发生错误" || !int.TryParse(noteCount, out valuetemp))
+            {
                 StaticValue.NoteCount = 20;
             }
             else
             {
                 StaticValue.NoteCount = valuetemp;
             }
-            
+
 
             baidu_flags = "";
             esc = "";
@@ -87,7 +94,10 @@ namespace TrOCR
             MinimumSize = new Size((int)font_base.Width * 23, (int)font_base.Height * 24);
             speak_copy = false;
             //OCR_foreach("");
-
+            if (IniHelper.GetValue("配置", "翻译接口") != "发生错误")
+            {
+                Trans_foreach(IniHelper.GetValue("配置", "翻译接口"));
+            }
 
 
         }
@@ -404,8 +414,10 @@ namespace TrOCR
 
         private void MainCopyClick(object sender, EventArgs e)
         {
+            //todo
             RichBoxBody.Focus();
-            RichBoxBody.richTextBox1.Copy();
+            //RichBoxBody.richTextBox1.Copy();
+            Clipboard.SetDataObject(RichBoxBody.Text);
         }
 
         private void Main_SelectAll_Click(object sender, EventArgs e)
@@ -607,6 +619,71 @@ namespace TrOCR
             {
                 StaticValue.BD_API_KEY = "请输入secret_key";
             }
+
+            StaticValue.BD_T_API_ID = IniHelper.GetValue("翻译API", "BDsecret_id");
+            if (StaticValue.BD_T_API_ID == "发生错误")
+            {
+                StaticValue.BD_T_API_ID = "";
+            }
+
+            StaticValue.BD_T_API_KEY = IniHelper.GetValue("翻译API", "BDsecret_key");
+            if (StaticValue.BD_T_API_KEY == "发生错误")
+            {
+                StaticValue.BD_T_API_KEY = "";
+            }
+
+            StaticValue.TX_T_API_ID = IniHelper.GetValue("翻译API", "TXsecret_id");
+            if (StaticValue.TX_T_API_ID == "发生错误")
+            {
+                StaticValue.TX_T_API_ID = "";
+            }
+
+            StaticValue.TX_T_API_KEY = IniHelper.GetValue("翻译API", "TXsecret_key");
+            if (StaticValue.TX_T_API_KEY == "发生错误")
+            {
+                StaticValue.TX_T_API_KEY = "";
+            }
+
+            StaticValue.CY_T_API_TOKEN = IniHelper.GetValue("翻译API", "CYsecret_token");
+            if (StaticValue.CY_T_API_TOKEN == "发生错误")
+            {
+                StaticValue.CY_T_API_TOKEN = "";
+            }
+
+            StaticValue.OFFLINE_URL = IniHelper.GetValue("翻译API", "offline_url");
+            if (StaticValue.OFFLINE_URL == "发生错误")
+            {
+                StaticValue.OFFLINE_URL = "";
+            }
+
+            var value27 = IniHelper.GetValue("其他特性", "静默识别");
+            if (value27 == "发生错误")
+            {
+                StaticValue.set_静默识别 = true;
+            }
+            try
+            {
+                StaticValue.set_静默识别 = Convert.ToBoolean(value27);
+            }
+            catch
+            {
+                StaticValue.set_静默识别 = true;
+            }
+
+            value27 = IniHelper.GetValue("其他特性", "始终复制");
+            if (value27 == "发生错误")
+            {
+                StaticValue.set_始终复制 = true;
+            }
+            try
+            {
+                StaticValue.set_始终复制 = Convert.ToBoolean(value27);
+            }
+            catch
+            {
+                StaticValue.set_始终复制 = true;
+            }
+
         }
 
         public static string check_ch_en(string text)
@@ -649,7 +726,7 @@ namespace TrOCR
                 //    
                 //    throw;
                 //}
-               StaticValue.NoteCount = 20;
+                StaticValue.NoteCount = 20;
                 pubnote = new string[StaticValue.NoteCount];
                 for (var i = 0; i < StaticValue.NoteCount; i++)
                 {
@@ -688,6 +765,69 @@ namespace TrOCR
                 }
                 StaticValue.BD_API_ID = IniHelper.GetValue("密钥_百度", "secret_id");
                 StaticValue.BD_API_KEY = IniHelper.GetValue("密钥_百度", "secret_key");
+
+                StaticValue.BD_T_API_ID = IniHelper.GetValue("翻译API", "BDsecret_id");
+                if (StaticValue.BD_T_API_ID == "发生错误")
+                {
+                    StaticValue.BD_T_API_ID = "";
+                }
+
+                StaticValue.BD_T_API_KEY = IniHelper.GetValue("翻译API", "BDsecret_key");
+                if (StaticValue.BD_T_API_KEY == "发生错误")
+                {
+                    StaticValue.BD_T_API_KEY = "";
+                }
+
+                StaticValue.TX_T_API_ID = IniHelper.GetValue("翻译API", "TXsecret_id");
+                if (StaticValue.TX_T_API_ID == "发生错误")
+                {
+                    StaticValue.TX_T_API_ID = "";
+                }
+
+                StaticValue.TX_T_API_KEY = IniHelper.GetValue("翻译API", "TXsecret_key");
+                if (StaticValue.TX_T_API_KEY == "发生错误")
+                {
+                    StaticValue.TX_T_API_KEY = "";
+                }
+
+                StaticValue.CY_T_API_TOKEN = IniHelper.GetValue("翻译API", "CYsecret_token");
+                if (StaticValue.CY_T_API_TOKEN == "发生错误")
+                {
+                    StaticValue.CY_T_API_TOKEN = "";
+                }
+
+                StaticValue.OFFLINE_URL = IniHelper.GetValue("翻译API", "offline_url");
+                if (StaticValue.OFFLINE_URL == "发生错误")
+                {
+                    StaticValue.OFFLINE_URL = "";
+                }
+
+                var value27 = IniHelper.GetValue("其他特性", "静默识别");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.set_静默识别 = true;
+                }
+                try
+                {
+                    StaticValue.set_静默识别 = Convert.ToBoolean(value27);
+                }
+                catch
+                {
+                    StaticValue.set_静默识别 = true;
+                }
+                value27 = IniHelper.GetValue("其他特性", "始终复制");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.set_始终复制 = true;
+                }
+                try
+                {
+                    StaticValue.set_始终复制 = Convert.ToBoolean(value27);
+                }
+                catch
+                {
+                    StaticValue.set_始终复制 = true;
+                }
             }
         }
 
@@ -819,13 +959,21 @@ namespace TrOCR
                 {
                     googleTranslate_txt = Translate_Google(typeset_txt);
                 }
-                if (IniHelper.GetValue("配置", "翻译接口") == "百度")
+                else if (IniHelper.GetValue("配置", "翻译接口") == "百度")
                 {
                     googleTranslate_txt = TranslateBaidu(typeset_txt);
                 }
-                if (IniHelper.GetValue("配置", "翻译接口") == "腾讯")
+                else if (IniHelper.GetValue("配置", "翻译接口") == "腾讯")
                 {
                     googleTranslate_txt = Translate_Tencent(typeset_txt);
+                }
+                else if (IniHelper.GetValue("配置", "翻译接口") == "彩云")
+                {
+                    googleTranslate_txt = Translate_chaiyun(typeset_txt);
+                }
+                else if (IniHelper.GetValue("配置", "翻译接口") == "离线翻译")
+                {
+                    googleTranslate_txt = Translate_offline(typeset_txt);
                 }
             }
             PictureBox1.Visible = false;
@@ -1703,11 +1851,7 @@ namespace TrOCR
 
         public void Main_OCR_Thread_last()
         {
-            //var text1=RichBoxBody.Text;
-            //Console.WriteLine(text1);
-            //RichBoxBody.Text = "";
-            //RichBoxBody.Refresh();
-            //RichBoxBody.Text = text1;
+
             image_screen.Dispose();
             StaticValue.IsCapture = false;
             var text = typeset_txt;
@@ -1773,7 +1917,7 @@ namespace TrOCR
             {
                 RichBoxBody.Text = shupai_Left_txt;
             }
-            Clipboard.SetDataObject(RichBoxBody.Text);
+            //Clipboard.SetDataObject(RichBoxBody.Text);
             if (baidu_flags == "百度")
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
@@ -1809,12 +1953,8 @@ namespace TrOCR
                 HelpWin32.UnregisterHotKey(Handle, 222);
                 return;
             }
-            FormBorderStyle = FormBorderStyle.Sizable;
-            Visible = true;
-            Show();
-            WindowState = FormWindowState.Normal;
-            Size = new Size(form_width, form_height);
-            HelpWin32.SetForegroundWindow(Handle);
+
+
             StaticValue.v_googleTranslate_txt = RichBoxBody.Text;
             if (bool.Parse(IniHelper.GetValue("工具栏", "翻译")))
             {
@@ -1847,18 +1987,36 @@ namespace TrOCR
                 SetHotkey(text6, text7, value3, 205);
             }
             HelpWin32.UnregisterHotKey(Handle, 222);
-            RichBoxBody.Text = RichBoxBody.Text.TrimEnd('\r', '\n') ;
+            RichBoxBody.Text = RichBoxBody.Text.TrimEnd('\r', '\n');
             RichBoxBody.Refresh();
-            RichBoxBody.font_微软雅黑c(null,null);
+            //RichBoxBody.font_微软雅黑c(null,null);
+
+            if (StaticValue.set_静默识别 == true)
+            {
+                Clipboard.SetDataObject(ProcessText(RichBoxBody.Text));
+            }
+            else
+            {
+                if (StaticValue.set_始终复制 == true)
+                {
+                    Clipboard.SetDataObject(ProcessText(RichBoxBody.Text));
+                }
+                //显示窗口在这里
+                FormBorderStyle = FormBorderStyle.Sizable;
+                Visible = true;
+                Show();
+
+                WindowState = FormWindowState.Normal;
+                Size = new Size(form_width, form_height);
+                HelpWin32.SetForegroundWindow(Handle);
+            }
 
         }
         //合并文字
         private string ProcessText(string str)
         {
             //string str = str1;
-
             //合并换行
-
             for (var counter = 0; counter < str.Length - 1; counter++)
             {
 
@@ -2435,11 +2593,11 @@ namespace TrOCR
                 bool isKeysExists = File.Exists(keysPath);
                 if (isDetExists && isClsExists && isRecExists && isKeysExists)
                 {
-                    value27= IniHelper.GetValue("OCR", "numThread");
+                    value27 = IniHelper.GetValue("OCR", "numThread");
                     ocrEngin = new OcrLite();
                     try
                     {
-                        if (value27 == "发生错误"|| !int.TryParse(value27, out valuetemp))
+                        if (value27 == "发生错误" || !int.TryParse(value27, out valuetemp))
                         {
                             ocrEngin.InitModels(detPath, clsPath, recPath, keysPath, 2);
                         }
@@ -2509,7 +2667,7 @@ namespace TrOCR
                 }
 
                 value27 = IniHelper.GetValue("OCR", "doAngle");
-                if (value27 == "发生错误" )
+                if (value27 == "发生错误")
                 {
                     doAngle = true;
                 }
@@ -2523,7 +2681,7 @@ namespace TrOCR
                 }
 
                 value27 = IniHelper.GetValue("OCR", "mostAngle");
-                if (value27 == "发生错误" )
+                if (value27 == "发生错误")
                 {
                     mostAngle = true;
                 }
@@ -2652,11 +2810,11 @@ namespace TrOCR
                 }
                 else
                 {
-                    unClipRatio2 =valuetempf;
+                    unClipRatio2 = valuetempf;
                 }
 
                 value27 = IniHelper.GetValue("OCR2", "doAngle");
-                if (value27 == "发生错误" )
+                if (value27 == "发生错误")
                 {
                     doAngle2 = true;
                 }
@@ -3430,13 +3588,21 @@ namespace TrOCR
                     {
                         data = Translate_Google(trans_hotkey);
                     }
-                    if (IniHelper.GetValue("配置", "翻译接口") == "百度")
+                    else if (IniHelper.GetValue("配置", "翻译接口") == "百度")
                     {
                         data = TranslateBaidu(trans_hotkey);
                     }
-                    if (IniHelper.GetValue("配置", "翻译接口") == "腾讯")
+                    else if (IniHelper.GetValue("配置", "翻译接口") == "腾讯")
                     {
                         data = Translate_Tencent(trans_hotkey);
+                    }
+                    else if (IniHelper.GetValue("配置", "翻译接口") == "彩云")
+                    {
+                        data = Translate_chaiyun(trans_hotkey);
+                    }
+                    else if (IniHelper.GetValue("配置", "翻译接口") == "离线翻译")
+                    {
+                        data = Translate_offline(trans_hotkey);
                     }
                     Clipboard.SetData(DataFormats.UnicodeText, data);
                     SendKeys.SendWait("^v");
@@ -3741,29 +3907,64 @@ namespace TrOCR
             Trans_foreach("百度");
         }
 
+        public void Trans_chaiyun_Click(object sender, EventArgs e)
+        {
+            Trans_foreach("彩云");
+        }
+
+        public void Trans_offline_Click(object sender, EventArgs e)
+        {
+            Trans_foreach("离线翻译");
+        }
+
         private void Trans_foreach(string name)
         {
             if (name == "百度")
             {
                 trans_baidu.Text = "百度√";
                 trans_google.Text = "谷歌";
-                trans_tencent.Text = "无";
+                trans_tencent.Text = "腾讯";
+                trans_chaiyun.Text = "彩云";
+                trans_offline.Text = "离线翻译";
                 IniHelper.SetValue("配置", "翻译接口", "百度");
             }
-            if (name == "谷歌")
+            else if (name == "谷歌")
             {
                 trans_baidu.Text = "百度";
                 trans_google.Text = "谷歌√";
-                trans_tencent.Text = "无";
+                trans_tencent.Text = "腾讯";
+                trans_chaiyun.Text = "彩云";
+                trans_offline.Text = "离线翻译";
                 IniHelper.SetValue("配置", "翻译接口", "谷歌");
             }
-            if (name == "腾讯")
+            else if (name == "腾讯")
             {
                 trans_google.Text = "谷歌";
                 trans_baidu.Text = "百度";
-                trans_tencent.Text = "无√";
+                trans_tencent.Text = "腾讯√";
+                trans_chaiyun.Text = "彩云";
+                trans_offline.Text = "离线翻译";
                 IniHelper.SetValue("配置", "翻译接口", "腾讯");
             }
+            else if (name == "彩云")
+            {
+                trans_google.Text = "谷歌";
+                trans_baidu.Text = "百度";
+                trans_tencent.Text = "腾讯";
+                trans_chaiyun.Text = "彩云√";
+                trans_offline.Text = "离线翻译";
+                IniHelper.SetValue("配置", "翻译接口", "彩云");
+            }
+            else if (name == "离线翻译")
+            {
+                trans_google.Text = "谷歌";
+                trans_baidu.Text = "百度";
+                trans_tencent.Text = "腾讯";
+                trans_chaiyun.Text = "彩云";
+                trans_offline.Text = "离线翻译√";
+                IniHelper.SetValue("配置", "翻译接口", "离线翻译");
+            }
+
         }
 
         private string TranslateBaidu(string content)
@@ -3819,30 +4020,8 @@ namespace TrOCR
                         text3 = "kor";
                     }
                 }
-                var value1 = IniHelper.GetValue("翻译API_百度", "secret_id");
-                //自定义模型
-                string appId = "";
-                if (value1 == "发生错误")
-                {
-                    appId = "";
-                }
-                else
-                {
-                    appId = value1;
-                }
-                value1 = IniHelper.GetValue("翻译API_百度", "secret_key");
-                //自定义模型
-                var secretKey = "";
-                if (value1 == "发生错误")
-                {
-                    secretKey = "";
-                }
-                else
-                {
-                    secretKey = value1;
-                }
 
-                if (secretKey == "" && appId == "")
+                if (StaticValue.BD_T_API_ID == "" || StaticValue.BD_T_API_KEY == "")
                 {
                     return "未输入ID和KEY";
                 }
@@ -3850,12 +4029,12 @@ namespace TrOCR
 
                 var rd = new Random();
                 var salt = rd.Next(100000).ToString();
-                var sign = EncryptString(appId + content + salt + secretKey);
+                var sign = EncryptString(StaticValue.BD_T_API_ID + content + salt + StaticValue.BD_T_API_KEY);
                 var url = "http://api.fanyi.baidu.com/api/trans/vip/translate?";
                 url += "q=" + HttpUtility.UrlEncode(content);
                 url += "&from=" + text2;
                 url += "&to=" + text3;
-                url += "&appid=" + appId;
+                url += "&appid=" + StaticValue.BD_T_API_ID;
                 url += "&salt=" + salt;
                 url += "&sign=" + sign;
                 var request = (HttpWebRequest)WebRequest.Create(url);
@@ -3885,10 +4064,10 @@ namespace TrOCR
                 {
                     return "翻译超时，请检查网络，或更换翻译平台。";
                 }
-                string result_temp="";
-                foreach(var trans_result_temp in result.trans_result)
+                string result_temp = "";
+                foreach (var trans_result_temp in result.trans_result)
                 {
-                    result_temp+= trans_result_temp.dst+Environment.NewLine;
+                    result_temp += trans_result_temp.dst + Environment.NewLine;
                 }
                 return result_temp.TrimEnd('\r', '\n'); ;
 
@@ -3904,7 +4083,7 @@ namespace TrOCR
         }
 
 
-        
+
 
         // 计算MD5值
         public static string EncryptString(string str)
@@ -3933,29 +4112,263 @@ namespace TrOCR
             return string.Concat("&source=", from, "&target=", to, "&sourceText=", HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
         }
 
-        //现在变成保留段落谷歌翻译
-        private string Translate_Tencent(string strTrans)
+        //腾讯翻译
+
+        private string Translate_Tencent(string content)
         {
-            //var text = "";
-            //try
-            //{
-            //    //todo
-            //    string[] sArray = strTrans.Split('\n');
-            //    foreach (var ss in sArray)
-            //    {
-            //        Task.Delay(100);
-            //        text += Translate_Google(ss) + Environment.NewLine;
-            //    }
+            if (StaticValue.TX_T_API_ID == "" || StaticValue.TX_T_API_KEY == "")
+            {
+                return "未输入ID和KEY";
+            }
+            string text = "";
+            var text2 = "auto";
+            var text3 = "en";
+            if (StaticValue.ZH2EN)
+            {
+                if (ch_count(content.Trim()) > en_count(content.Trim()) || (en_count(content.Trim()) == 1 && ch_count(content.Trim()) == 1))
+                {
+                    text2 = "zh";
+                    text3 = "en";
+                    text = text.Replace(Environment.NewLine, "");
+                    text = text.Replace("\n", "");
+                }
+                else
+                {
+                    text2 = "en";
+                    text3 = "zh";
+                    text = text.Replace(Environment.NewLine, " ");
+                    text = text.Replace("\n", " ");
+                }
+            }
+            else if (StaticValue.ZH2JP)
+            {
+                if (contain_jap(replaceStr(Del_ch(content.Trim()))))
+                {
+                    text2 = "jp";
+                    text3 = "zh";
+                }
+                else
+                {
+                    text2 = "zh";
+                    text3 = "jp";
+                }
+            }
+            else if (StaticValue.ZH2KO)
+            {
+                if (contain_kor(content.Trim()))
+                {
+                    text2 = "ko";
+                    text3 = "zh";
+                }
+                else
+                {
+                    text2 = "zh";
+                    text3 = "ko";
+                }
+            }
+            try
+            {
+                //string SecretId = StaticValue.TX_T_API_ID;
+                //string SecretKey = StaticValue.TX_T_API_KEY;
+                //return "erro";
+                Credential cred = new Credential
+                {
+                    SecretId = StaticValue.TX_T_API_ID,
+                    SecretKey = StaticValue.TX_T_API_KEY
+                };
 
+                ClientProfile clientProfile = new ClientProfile();
+                HttpProfile httpProfile = new HttpProfile();
+                httpProfile.Endpoint = ("tmt.tencentcloudapi.com");
+                clientProfile.HttpProfile = httpProfile;
 
-            //}
-            //catch (Exception)
-            //{
-            //    text = "[接口报错]：\r\n1.接口请求出现问题等待修复。";
-            //}
-            return "无";
+                //注意这句非常重要 不加这句 程序会走await RequestV1(request, actionName);有可能出现签名错误的问题应该使用 await RequestV3(request, actionName);  这样程序就可以同一时间请求翻译
+                clientProfile.SignMethod = ClientProfile.SIGN_TC3SHA256;
+                //   public static string SIGN_TC3SHA256 = "TC3-HMAC-SHA256";
+                TencentCloud.Tmt.V20180321.TmtClient client = new TencentCloud.Tmt.V20180321.TmtClient(cred, "ap-chengdu", clientProfile);
+                TencentCloud.Tmt.V20180321.Models.TextTranslateRequest req = new TencentCloud.Tmt.V20180321.Models.TextTranslateRequest();
+                req.SourceText = content;
+                req.Source = text2;
+
+                req.ProjectId = 0;
+                req.Target = text3;
+                TencentCloud.Tmt.V20180321.Models.TextTranslateResponse resp = client.TextTranslateSync(req);
+
+                //string jsonString = AbstractModel.ToJsonString(resp);
+                return resp.TargetText;
+
+            }
+            catch (Exception)
+            {
+                return "[腾讯接口报错]：\r\n1.接口请求出现问题等待修复。"; ;
+            }
+
+        }
+        //彩云翻译
+        private string Translate_chaiyun(string content)
+        {
+            if (StaticValue.CY_T_API_TOKEN == "")
+            {
+                return "未输入TOKEN";
+            }
+            try
+            {
+                var text2 = "auto";
+                if (StaticValue.ZH2EN)
+                {
+                    if (ch_count(content.Trim()) > en_count(content.Trim()) || (en_count(content.Trim()) == 1 && ch_count(content.Trim()) == 1))
+                    {
+                        text2 = "zh2en";
+                    }
+                    else
+                    {
+                        text2 = "en2zh";
+                    }
+                }
+                else if (StaticValue.ZH2JP)
+                {
+                    if (contain_jap(replaceStr(Del_ch(content.Trim()))))
+                    {
+                        text2 = "ja2zh";
+                    }
+                    else
+                    {
+                        text2 = "zh2ja";
+
+                    }
+                }
+                else if (StaticValue.ZH2KO)
+                {
+                    return "不支持该语言";
+
+                }
+                var url = @"http://api.interpreter.caiyunai.com/v1/translator";
+                var headers = new WebHeaderCollection();
+                headers["Content-Type"] = @"application/x-www-form-urlencoded; charset=UTF-8";
+                headers["user-agent"] = @"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Mobile Safari/537.36";
+                headers["Referer"] = @"https://fanyi.youdao.com/";
+                string querytemp = content.Replace("…", "");
+
+                var dict = new Dictionary<string, string>()
+                            {
+                                {"source",    querytemp},
+                                {"trans_type",text2.ToString()},
+                                {"request_id","demo" },
+                                {"detect","dict" }
+                            };
+                var str = PostInfOld(url, headers, JsonConvert.SerializeObject(dict), StaticValue.CY_T_API_TOKEN);
+
+                //返回的是JSON格式 使用JSON解析它
+                JObject jo = (JObject)JsonConvert.DeserializeObject(str);
+                string result = jo["target"].ToString();
+                return result;
+
+            }
+            catch (Exception)
+            {
+                return "[彩云接口报错]：\r\n1.接口请求出现问题等待修复。"; ;
+            }
+
         }
 
+        //离线翻译
+        private string Translate_offline(string content)
+        {
+            if (StaticValue.OFFLINE_URL == "")
+            {
+                return "未输入离线翻译网址";
+            }
+            try
+            {
+                var text2 = "auto";
+                if (StaticValue.ZH2EN)
+                {
+                    if (ch_count(content.Trim()) > en_count(content.Trim()) || (en_count(content.Trim()) == 1 && ch_count(content.Trim()) == 1))
+                    {
+                        text2 = "zh2en";
+                    }
+                    else
+                    {
+                        text2 = "en2zh";
+                    }
+                }
+                else if (StaticValue.ZH2JP)
+                {
+                    if (contain_jap(replaceStr(Del_ch(content.Trim()))))
+                    {
+                        text2 = "ja2zh";
+                    }
+                    else
+                    {
+                        text2 = "zh2ja";
+
+                    }
+                }
+                else if (StaticValue.ZH2KO)
+                {
+                    return "不支持该语言";
+
+                }
+
+                Dictionary<string, string> dic = new Dictionary<string, string>
+                {
+                    { "mod",text2  },
+                    { "text", content }
+                 };
+                string result = string.Empty;
+                //设置Http的正文
+                FormUrlEncodedContent httpContent = new FormUrlEncodedContent(dic);
+
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    //异步Post
+                    HttpResponseMessage response = httpClient.PostAsync(StaticValue.OFFLINE_URL, httpContent).Result;
+                    //输出Http响应状态码
+                    //确保Http响应成功
+                    if (response.IsSuccessStatusCode)
+                    {
+                        //异步读取json
+                        result = response.Content.ReadAsStringAsync().Result;
+                    }
+                }
+                return result;
+
+            }
+            catch (Exception)
+            {
+                return "[离线接口报错]：\r\n1.接口请求出现问题等待修复。"; ;
+            }
+
+        }
+
+        public static string PostInfOld(string url, WebHeaderCollection headers, string str, string token)
+        {
+
+            //创建HTTP请求
+            var re = WebRequest.Create(url) as HttpWebRequest;
+            //设置请求头
+            //re.Headers = headers;
+            //re.Credentials = cc;
+            // re.PreAuthenticate = true;
+
+            re.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json").ToString();
+            re.Headers.Add("X-Authorization", "token " + token);
+            // re.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36";
+            //设置访问类型为POST
+            re.Method = "POST";
+            // re.PreAuthenticate = true;
+            //写入请求信息
+            using (StreamWriter sw = new StreamWriter(re.GetRequestStream()))
+            {
+                sw.WriteLine(str);
+            }
+            //获取相应内容
+            var ans = re.GetResponse();
+            using (var st = new StreamReader(ans.GetResponseStream()))
+            {
+                return st.ReadToEnd();
+            }
+        }
         public void BdTableOCR()
         {
 

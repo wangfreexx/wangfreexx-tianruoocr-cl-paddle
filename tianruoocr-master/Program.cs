@@ -198,8 +198,8 @@ namespace TrOCR
 
                 IniHelper.SetValue("paddle模型", "模型", "1");
 
-                IniHelper.SetValue("翻译API_百度", "secret_id", "");
-                IniHelper.SetValue("翻译API_百度", "secret_key", "");
+                IniHelper.SetValue("翻译API", "BDsecret_id", "");
+                IniHelper.SetValue("翻译API", "BDsecret_key", "");
 
             }
         }
@@ -480,14 +480,14 @@ namespace TrOCR
                 IniHelper.SetValue("paddle模型", "模型", "1");
             }
             //翻译接口
-            if (IniHelper.GetValue("翻译API_百度", "secret_id") == "发生错误")
+            if (IniHelper.GetValue("翻译API", "BDsecret_id") == "发生错误")
             {
-                IniHelper.SetValue("翻译API_百度", "secret_id", "");
+                IniHelper.SetValue("翻译API", "BDsecret_id", "");
             }
 
-            if (IniHelper.GetValue("翻译API_百度", "secret_key") == "发生错误")
+            if (IniHelper.GetValue("翻译API", "BDsecret_key") == "发生错误")
             {
-                IniHelper.SetValue("翻译API_百度", "secret_key", "");
+                IniHelper.SetValue("翻译API", "BDsecret_key", "");
             }
 
         }
