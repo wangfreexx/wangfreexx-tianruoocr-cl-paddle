@@ -200,7 +200,18 @@ namespace TrOCR
 
                 IniHelper.SetValue("翻译API", "BDsecret_id", "");
                 IniHelper.SetValue("翻译API", "BDsecret_key", "");
+                IniHelper.SetValue("翻译API", "BDsecret_id", "");
+                IniHelper.SetValue("翻译API", "BDsecret_key", "");
 
+                IniHelper.SetValue("翻译API", "TXsecret_id", "");
+                IniHelper.SetValue("翻译API", "TXsecret_key", "");
+
+                IniHelper.SetValue("翻译API", "CYsecret_token", "");
+
+                IniHelper.SetValue("翻译API", "offline_url", "");
+
+                IniHelper.SetValue("其他特性", "静默识别", "True");
+                IniHelper.SetValue("其他特性", "始终复制", "True");
             }
         }
 
@@ -488,6 +499,33 @@ namespace TrOCR
             if (IniHelper.GetValue("翻译API", "BDsecret_key") == "发生错误")
             {
                 IniHelper.SetValue("翻译API", "BDsecret_key", "");
+            }
+            if (IniHelper.GetValue("翻译API", "TXsecret_id") == "发生错误")
+            {
+                IniHelper.SetValue("翻译API", "TXsecret_id", "");
+            }
+
+            if (IniHelper.GetValue("翻译API", "TXsecret_key") == "发生错误")
+            {
+                IniHelper.SetValue("翻译API", "TXsecret_key", "");
+            }
+
+            if (IniHelper.GetValue("翻译API", "CYsecret_token") == "发生错误")
+            {
+                IniHelper.SetValue("翻译API", "CYsecret_token", "");
+            }
+
+            if (IniHelper.GetValue("翻译API", "offline_url") == "发生错误")
+            {
+                IniHelper.SetValue("翻译API", "offline_url", "");
+            }
+            if (IniHelper.GetValue("其他特性", "始终复制") == "发生错误")
+            {
+                IniHelper.SetValue("其他特性", "始终复制", "True");
+            }
+            if (IniHelper.GetValue("其他特性", "静默识别") == "发生错误")
+            {
+                IniHelper.SetValue("其他特性", "静默识别", "True");
             }
 
         }

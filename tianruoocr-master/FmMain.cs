@@ -1664,6 +1664,7 @@ namespace TrOCR
                                     }
                                     CommonHelper.ShowHelpMsg("已复制截图");
                                 }
+
                                 else if (modeFlag == "自动保存" && IniHelper.GetValue("配置", "自动保存") == "True")
                                 {
                                     var filename = IniHelper.GetValue("配置", "截图位置") + "\\" + ReFileName(IniHelper.GetValue("配置", "截图位置"), "图片.Png");
