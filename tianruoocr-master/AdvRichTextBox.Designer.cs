@@ -30,7 +30,8 @@ namespace TrOCR
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
     public class AdvRichTextBox : UserControl
     {
-        public float 放大倍数 = 0f;
+        public float 放大倍数 = 1.0f;
+        public float 文字放大倍数 = 1.0f;
         protected override void Dispose(bool disposing)
         {
             if (disposing && this.components != null)
@@ -51,6 +52,16 @@ namespace TrOCR
             else
             {
                 放大倍数 = (float)Convert.ToSingle(value27);
+            }
+
+            value27 = IniHelper.GetValue("其他特性", "文字缩放倍数");
+            if (value27 == "发生错误")
+            {
+                文字放大倍数 = 1;
+            }
+            else
+            {
+                文字放大倍数 = (float)Convert.ToSingle(value27);
             }
 
 
@@ -330,7 +341,7 @@ namespace TrOCR
             this.richTextBox1.SelectionAlignment = HelpRepaint.TextAlign.Justify;
             this.richTextBox1.SetLine = "行高";
 
-            this.richTextBox1.ZoomFactor = 放大倍数;
+            this.richTextBox1.ZoomFactor = 文字放大倍数;
 
             this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
             this.richTextBox1.LanguageOption = RichTextBoxLanguageOptions.UIFonts;
@@ -375,7 +386,7 @@ namespace TrOCR
                 {
                     this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
                     this.richTextBox1.Text = value;
-                    this.richTextBox1.ZoomFactor = 放大倍数;
+                    this.richTextBox1.ZoomFactor = 文字放大倍数 + 0.000001f;
                     this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
                 }
                 catch (Exception)
@@ -383,7 +394,7 @@ namespace TrOCR
 
                     this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
                     this.richTextBox1.Text = value;
-                    this.richTextBox1.ZoomFactor = 放大倍数;
+                    this.richTextBox1.ZoomFactor = 文字放大倍数 + 0.000001f;
                     this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
                 }
 
@@ -723,6 +734,7 @@ namespace TrOCR
             Font font = new Font("宋体", 16f * Program.Factor, GraphicsUnit.Pixel);
             this.richTextBox1.Font = font;
             this.richTextBox1.Text = text;
+            this.richTextBox1.ZoomFactor = 文字放大倍数 + 0.000001f;
         }
 
         public void font_黑体c(object sender, EventArgs e)
@@ -737,6 +749,7 @@ namespace TrOCR
             Font font = new Font("黑体", 16f * Program.Factor, GraphicsUnit.Pixel);
             this.richTextBox1.Font = font;
             this.richTextBox1.Text = text;
+            this.richTextBox1.ZoomFactor = 文字放大倍数 + 0.000001f;
         }
 
         public void font_楷体c(object sender, EventArgs e)
@@ -751,6 +764,7 @@ namespace TrOCR
             Font font = new Font("STKaiti", 16f * Program.Factor, GraphicsUnit.Pixel);
             this.richTextBox1.Font = font;
             this.richTextBox1.Text = text;
+            this.richTextBox1.ZoomFactor = 文字放大倍数 + 0.000001f;
         }
 
         public void font_微软雅黑c(object sender, EventArgs e)
@@ -765,6 +779,7 @@ namespace TrOCR
             Font font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
             this.richTextBox1.Font = font;
             this.richTextBox1.Text = text;
+            this.richTextBox1.ZoomFactor = 文字放大倍数 + 0.000001f;
         }
 
         public void font_新罗马c(object sender, EventArgs e)
@@ -779,6 +794,7 @@ namespace TrOCR
             Font font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
             this.richTextBox1.Font = font;
             this.richTextBox1.Text = text;
+            this.richTextBox1.ZoomFactor = 文字放大倍数 + 0.000001f;
         }
 
         public void indent_two(int fla)

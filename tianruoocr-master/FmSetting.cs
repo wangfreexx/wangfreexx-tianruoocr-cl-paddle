@@ -642,6 +642,21 @@ namespace TrOCR
                 num_zoom.Value = 1.0M;
             }
 
+            value27 = IniHelper.GetValue("其他特性", "文字缩放倍数");
+            if (value27 == "发生错误")
+            {
+                num_zoom_text.Value = 1.0M;
+            }
+            try
+            {
+                //Console.WriteLine(value27);
+                num_zoom_text.Value = Convert.ToDecimal(value27);
+            }
+            catch
+            {
+                num_zoom_text.Value = 1.0M;
+            }
+
 
         }
 
@@ -1202,6 +1217,7 @@ namespace TrOCR
             IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
             IniHelper.SetValue("其他特性", "添加换行", cbBox_是否添加换行.Checked.ToString());
             IniHelper.SetValue("其他特性", "缩放倍数", num_zoom.Value.ToString());
+            IniHelper.SetValue("其他特性", "文字缩放倍数", num_zoom_text.Value.ToString());
             DialogResult = DialogResult.OK;
 		}
 
@@ -1412,6 +1428,7 @@ namespace TrOCR
             IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
             IniHelper.SetValue("其他特性", "添加换行", cbBox_是否添加换行.Checked.ToString());
             IniHelper.SetValue("其他特性", "缩放倍数", num_zoom.Value.ToString());
+            IniHelper.SetValue("其他特性", "文字缩放倍数", num_zoom_text.Value.ToString());
             Process.Start(Application.ExecutablePath);
 
 			//关闭当前实例
@@ -1545,6 +1562,7 @@ namespace TrOCR
             IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
             IniHelper.SetValue("其他特性", "添加换行", cbBox_是否添加换行.Checked.ToString());
             IniHelper.SetValue("其他特性", "缩放倍数", num_zoom.Value.ToString());
+            IniHelper.SetValue("其他特性", "文字缩放倍数", num_zoom_text.Value.ToString());
             Process.Start(Application.ExecutablePath);
 
 			//关闭当前实例

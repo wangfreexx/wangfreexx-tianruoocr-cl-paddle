@@ -6,7 +6,7 @@ namespace TrOCR
 
 	public sealed partial class FmMain : global::System.Windows.Forms.Form
 	{
-        public float 放大倍数 = 0f;
+        public float 放大倍数 = 1.0f;
 
         protected override void Dispose(bool disposing)
 		{

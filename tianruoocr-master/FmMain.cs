@@ -713,6 +713,20 @@ namespace TrOCR
                 StaticValue.缩放倍数 = 1;
             }
 
+            value27 = IniHelper.GetValue("其他特性", "文字缩放倍数");
+            if (value27 == "发生错误")
+            {
+                StaticValue.文字缩放倍数 = 1;
+            }
+            try
+            {
+                StaticValue.文字缩放倍数 = (float)Convert.ToDouble(value27);
+            }
+            catch
+            {
+                StaticValue.文字缩放倍数 = 1;
+            }
+
             value27 = IniHelper.GetValue("代理", "代理类型");
             if (value27 == "发生错误")
             {
@@ -926,6 +940,21 @@ namespace TrOCR
                 {
                     StaticValue.缩放倍数 = 1;
                 }
+
+                value27 = IniHelper.GetValue("其他特性", "文字缩放倍数");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.文字缩放倍数 = 1;
+                }
+                try
+                {
+                    StaticValue.文字缩放倍数 = (float)Convert.ToDouble(value27);
+                }
+                catch
+                {
+                    StaticValue.文字缩放倍数 = 1;
+                }
+
                 value27 = IniHelper.GetValue("代理", "代理类型");
                 if (value27 == "发生错误")
                 {
@@ -1010,7 +1039,7 @@ namespace TrOCR
             RichBoxBody.Dock = DockStyle.None;
             RichBoxBody_T.Dock = DockStyle.None;
             RichBoxBody_T.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            RichBoxBody_T.richTextBox1.ZoomFactor = StaticValue.缩放倍数;
+            RichBoxBody_T.richTextBox1.ZoomFactor = StaticValue.文字缩放倍数+ 0.000001f;
             RichBoxBody_T.Text = "";
             RichBoxBody.Focus();
             if (num_ok == 0)

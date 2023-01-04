@@ -172,6 +172,10 @@
             this.num_zoom = new System.Windows.Forms.NumericUpDown();
             this.cbBox_是否复制 = new System.Windows.Forms.CheckBox();
             this.cbBox_静默识别 = new System.Windows.Forms.CheckBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.num_zoom_text = new System.Windows.Forms.NumericUpDown();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.Page_翻译API.SuspendLayout();
             this.彩云翻译api_id.SuspendLayout();
@@ -221,6 +225,7 @@
             this.tab_标签.SuspendLayout();
             this.Page_其他特性.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_zoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_zoom_text)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox8
@@ -583,7 +588,7 @@
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
@@ -872,7 +877,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
@@ -2009,6 +2014,10 @@
             // 
             // Page_其他特性
             // 
+            this.Page_其他特性.Controls.Add(this.button6);
+            this.Page_其他特性.Controls.Add(this.label45);
+            this.Page_其他特性.Controls.Add(this.label46);
+            this.Page_其他特性.Controls.Add(this.num_zoom_text);
             this.Page_其他特性.Controls.Add(this.cbBox_是否添加换行);
             this.Page_其他特性.Controls.Add(this.label42);
             this.Page_其他特性.Controls.Add(this.label40);
@@ -2036,7 +2045,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(192, 105);
+            this.label42.Location = new System.Drawing.Point(196, 84);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(95, 24);
             this.label42.TabIndex = 11;
@@ -2045,11 +2054,11 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(11, 110);
+            this.label40.Location = new System.Drawing.Point(15, 89);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(89, 12);
             this.label40.TabIndex = 10;
-            this.label40.Text = "整体缩放倍数：";
+            this.label40.Text = "图标缩放倍数：";
             // 
             // num_zoom
             // 
@@ -2059,7 +2068,7 @@
             0,
             0,
             65536});
-            this.num_zoom.Location = new System.Drawing.Point(106, 108);
+            this.num_zoom.Location = new System.Drawing.Point(110, 87);
             this.num_zoom.Maximum = new decimal(new int[] {
             5,
             0,
@@ -2069,7 +2078,7 @@
             1,
             0,
             0,
-            0});
+            65536});
             this.num_zoom.Name = "num_zoom";
             this.num_zoom.Size = new System.Drawing.Size(74, 21);
             this.num_zoom.TabIndex = 8;
@@ -2099,6 +2108,63 @@
             this.cbBox_静默识别.Text = "静默识别（识别不显示主窗口，翻译结果处理后放入粘贴板）";
             this.cbBox_静默识别.UseVisualStyleBackColor = true;
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(196, 120);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(95, 24);
+            this.label45.TabIndex = 15;
+            this.label45.Text = "（建议不高于3）\r\n 重启生效";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(15, 125);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(89, 12);
+            this.label46.TabIndex = 14;
+            this.label46.Text = "文字缩放倍数：";
+            // 
+            // num_zoom_text
+            // 
+            this.num_zoom_text.DecimalPlaces = 1;
+            this.num_zoom_text.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.num_zoom_text.Location = new System.Drawing.Point(110, 123);
+            this.num_zoom_text.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.num_zoom_text.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.num_zoom_text.Name = "num_zoom_text";
+            this.num_zoom_text.Size = new System.Drawing.Size(74, 21);
+            this.num_zoom_text.TabIndex = 13;
+            this.num_zoom_text.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(297, 121);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "重启";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FmSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2111,7 +2177,7 @@
             this.MinimizeBox = false;
             this.Name = "FmSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "设置（version 1.3.8）";
+            this.Text = "设置（version 1.3.8.1）";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -2183,6 +2249,7 @@
             this.Page_其他特性.ResumeLayout(false);
             this.Page_其他特性.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_zoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_zoom_text)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -2345,5 +2412,9 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.NumericUpDown num_zoom;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.NumericUpDown num_zoom_text;
+        private System.Windows.Forms.Button button6;
     }
 }
