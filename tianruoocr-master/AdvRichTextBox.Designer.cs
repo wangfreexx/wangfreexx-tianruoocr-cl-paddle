@@ -30,7 +30,7 @@ namespace TrOCR
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
     public class AdvRichTextBox : UserControl
     {
-
+        public float 放大倍数 = 0f;
         protected override void Dispose(bool disposing)
         {
             if (disposing && this.components != null)
@@ -42,6 +42,19 @@ namespace TrOCR
 
         public void InitializeComponent()
         {
+
+            var value27 = IniHelper.GetValue("其他特性", "缩放倍数");
+            if (value27 == "发生错误")
+            {
+                放大倍数 = 1;
+            }
+            else
+            {
+                放大倍数 = (float)Convert.ToSingle(value27);
+            }
+
+
+
             CheckForIllegalCrossThreadCalls = false;
             ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(AdvRichTextBox));
             this.font_宋体 = new ToolStripMenuItem();
@@ -88,8 +101,10 @@ namespace TrOCR
             this.toolStripToolBar.GripStyle = ToolStripGripStyle.Hidden;
             this.toolStripToolBar.Location = new Point(0, 0);
             this.toolStripToolBar.Name = "toolStripToolBar";
+            this.toolStripToolBar.ImageScalingSize= new Size((int)(16*放大倍数), (int)(16 * 放大倍数));
             this.toolStripToolBar.RenderMode = ToolStripRenderMode.System;
             this.toolStripToolBar.Size = new Size(600, 25);
+            this.toolStripToolBar.LayoutStyle = ToolStripLayoutStyle.Flow;
             this.toolStripToolBar.TabIndex = 1;
             this.toolStripToolBar.Click += this.toolStripToolBar_Click;
             this.toolStripToolBar.Text = "Tool Bar";
@@ -99,7 +114,7 @@ namespace TrOCR
             this.toolStripButtonBold.Image = (Image)componentResourceManager.GetObject("toolStripButtonBold.Image");
             this.toolStripButtonBold.ImageTransparentColor = Color.Magenta;
             this.toolStripButtonBold.Name = "toolStripButtonBold";
-            this.toolStripButtonBold.Size = new Size(23, 22);
+            this.toolStripButtonBold.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonBold.Text = "加粗";
             this.toolStripButtonBold.Click += this.toolStripButtonBold_Click;
             this.toolStripButtonParagraph.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -231,7 +246,7 @@ namespace TrOCR
             this.languagle.DropDownItems.Add(this.zh_en);
             this.languagle.DropDownItems.Add(this.zh_jp);
             this.languagle.DropDownItems.Add(this.zh_ko);
-            this.languagle.AutoSize = false;
+            //this.languagle.AutoSize = false;
             ((ToolStripDropDownMenu)this.languagle.DropDown).ShowImageMargin = false;
             this.languagle.DropDown.BackColor = Color.White;
             this.languagle.DropDown.AutoSize = false;
@@ -259,7 +274,7 @@ namespace TrOCR
             this.Fontstyle.Name = "toolStripButtonclose";
             this.Fontstyle.Size = new Size(23, 22);
             this.Fontstyle.Text = "字体";
-            this.Fontstyle.AutoSize = false;
+            //this.Fontstyle.AutoSize = false;
             ((ToolStripDropDownMenu)this.Fontstyle.DropDown).ShowImageMargin = false;
             this.Fontstyle.DropDown.BackColor = Color.White;
             this.Fontstyle.DropDown.AutoSize = false;
@@ -314,6 +329,9 @@ namespace TrOCR
             this.richTextBox1.DragDrop += this.Form1_DragDrop;
             this.richTextBox1.SelectionAlignment = HelpRepaint.TextAlign.Justify;
             this.richTextBox1.SetLine = "行高";
+
+            this.richTextBox1.ZoomFactor = 放大倍数;
+
             this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
             this.richTextBox1.LanguageOption = RichTextBoxLanguageOptions.UIFonts;
             this.richTextBox1.TextChanged += this.richeditbox_TextChanged;
@@ -355,15 +373,17 @@ namespace TrOCR
             {
                 try
                 {
-                this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
-                this.richTextBox1.Text = value;
-                this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
+                    this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
+                    this.richTextBox1.Text = value;
+                    this.richTextBox1.ZoomFactor = 放大倍数;
+                    this.richTextBox1.Font = new Font("微软雅黑", 16f * Program.Factor, GraphicsUnit.Pixel);
                 }
                 catch (Exception)
                 {
 
                     this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
                     this.richTextBox1.Text = value;
+                    this.richTextBox1.ZoomFactor = 放大倍数;
                     this.richTextBox1.Font = new Font("Times New Roman", 16f * Program.Factor, GraphicsUnit.Pixel);
                 }
 
@@ -1058,26 +1078,26 @@ namespace TrOCR
             }
             else
             {
-this.mergecolor = bool.Parse(IniHelper.GetValue("工具栏", "合并"));
+                this.mergecolor = bool.Parse(IniHelper.GetValue("工具栏", "合并"));
             }
-            
+
             if (IniHelper.GetValue("工具栏", "拆分") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "拆分", "False");
-                this.splitcolor=false;
+                this.splitcolor = false;
             }
-            else {this.splitcolor = bool.Parse(IniHelper.GetValue("工具栏", "拆分")); }
-            
+            else { this.splitcolor = bool.Parse(IniHelper.GetValue("工具栏", "拆分")); }
+
             if (IniHelper.GetValue("工具栏", "检查") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "检查", "False");
-                this.checkcolor=false;
+                this.checkcolor = false;
             }
             else
             {
-this.checkcolor = bool.Parse(IniHelper.GetValue("工具栏", "检查"));
+                this.checkcolor = bool.Parse(IniHelper.GetValue("工具栏", "检查"));
             }
-            
+
             if (IniHelper.GetValue("工具栏", "翻译") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "翻译", "False");
@@ -1085,29 +1105,29 @@ this.checkcolor = bool.Parse(IniHelper.GetValue("工具栏", "检查"));
             }
             else
             {
-this.transcolor = bool.Parse(IniHelper.GetValue("工具栏", "翻译"));
+                this.transcolor = bool.Parse(IniHelper.GetValue("工具栏", "翻译"));
             }
-            
+
             if (IniHelper.GetValue("工具栏", "分段") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "分段", "False");
-                this.Paragraphcolor=false;
+                this.Paragraphcolor = false;
             }
             else
             {
-this.Paragraphcolor = bool.Parse(IniHelper.GetValue("工具栏", "分段"));
+                this.Paragraphcolor = bool.Parse(IniHelper.GetValue("工具栏", "分段"));
             }
-            
+
             if (IniHelper.GetValue("工具栏", "分栏") == "发生错误")
             {
                 IniHelper.SetValue("工具栏", "分栏", "False");
-                this.Fencecolor=false;
+                this.Fencecolor = false;
             }
             else
             {
-this.Fencecolor = bool.Parse(IniHelper.GetValue("工具栏", "分栏"));
+                this.Fencecolor = bool.Parse(IniHelper.GetValue("工具栏", "分栏"));
             }
-            
+
             if (this.Fencecolor)
             {
                 this.toolStripButtonFence.Image = (Image)componentResourceManager.GetObject("toolStripButtonFence2.Image");

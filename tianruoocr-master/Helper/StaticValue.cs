@@ -76,7 +76,11 @@ namespace TrOCR.Helper
 
         public static bool set_静默识别;
         public static bool set_始终复制;
-
+        public static bool set_添加换行;
+        public static float 缩放倍数;
+        public static string 代理类型 = "";
+        public static string 代理网址 = "";
+        public static string 代理端口 = "";
         public static bool IsCapture;
 
         public static bool v_topmost;

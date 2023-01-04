@@ -99,6 +99,8 @@
             this.Page_代理 = new System.Windows.Forms.TabPage();
             this.代理Button = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.chbox_代理服务器 = new System.Windows.Forms.CheckBox();
             this.text_密码 = new System.Windows.Forms.TextBox();
             this.text_端口 = new System.Windows.Forms.TextBox();
@@ -164,6 +166,10 @@
             this.cbBox_开机 = new System.Windows.Forms.CheckBox();
             this.tab_标签 = new System.Windows.Forms.TabControl();
             this.Page_其他特性 = new System.Windows.Forms.TabPage();
+            this.cbBox_是否添加换行 = new System.Windows.Forms.CheckBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.num_zoom = new System.Windows.Forms.NumericUpDown();
             this.cbBox_是否复制 = new System.Windows.Forms.CheckBox();
             this.cbBox_静默识别 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -214,6 +220,7 @@
             this.groupBox1.SuspendLayout();
             this.tab_标签.SuspendLayout();
             this.Page_其他特性.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_zoom)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox8
@@ -576,7 +583,7 @@
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
@@ -865,7 +872,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
@@ -1268,6 +1275,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label44);
+            this.groupBox4.Controls.Add(this.label43);
             this.groupBox4.Controls.Add(this.chbox_代理服务器);
             this.groupBox4.Controls.Add(this.text_密码);
             this.groupBox4.Controls.Add(this.text_端口);
@@ -1285,6 +1294,24 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "代理";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(190, 21);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(173, 12);
+            this.label44.TabIndex = 14;
+            this.label44.Text = "（自定义代理仅针对谷歌翻译）";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(212, 84);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(53, 12);
+            this.label43.TabIndex = 13;
+            this.label43.Text = "（无效）";
             // 
             // chbox_代理服务器
             // 
@@ -1982,6 +2009,10 @@
             // 
             // Page_其他特性
             // 
+            this.Page_其他特性.Controls.Add(this.cbBox_是否添加换行);
+            this.Page_其他特性.Controls.Add(this.label42);
+            this.Page_其他特性.Controls.Add(this.label40);
+            this.Page_其他特性.Controls.Add(this.num_zoom);
             this.Page_其他特性.Controls.Add(this.cbBox_是否复制);
             this.Page_其他特性.Controls.Add(this.cbBox_静默识别);
             this.Page_其他特性.Location = new System.Drawing.Point(4, 22);
@@ -1991,6 +2022,62 @@
             this.Page_其他特性.TabIndex = 12;
             this.Page_其他特性.Text = "其他特性";
             this.Page_其他特性.UseVisualStyleBackColor = true;
+            // 
+            // cbBox_是否添加换行
+            // 
+            this.cbBox_是否添加换行.AutoSize = true;
+            this.cbBox_是否添加换行.Location = new System.Drawing.Point(17, 60);
+            this.cbBox_是否添加换行.Name = "cbBox_是否添加换行";
+            this.cbBox_是否添加换行.Size = new System.Drawing.Size(96, 16);
+            this.cbBox_是否添加换行.TabIndex = 12;
+            this.cbBox_是否添加换行.Text = "末尾添加换行";
+            this.cbBox_是否添加换行.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(192, 105);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(95, 24);
+            this.label42.TabIndex = 11;
+            this.label42.Text = "（建议不高于3）\r\n 重启生效";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(11, 110);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(89, 12);
+            this.label40.TabIndex = 10;
+            this.label40.Text = "整体缩放倍数：";
+            // 
+            // num_zoom
+            // 
+            this.num_zoom.DecimalPlaces = 1;
+            this.num_zoom.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.num_zoom.Location = new System.Drawing.Point(106, 108);
+            this.num_zoom.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.num_zoom.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num_zoom.Name = "num_zoom";
+            this.num_zoom.Size = new System.Drawing.Size(74, 21);
+            this.num_zoom.TabIndex = 8;
+            this.num_zoom.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cbBox_是否复制
             // 
@@ -2024,7 +2111,7 @@
             this.MinimizeBox = false;
             this.Name = "FmSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "设置（version 1.3.7）";
+            this.Text = "设置（version 1.3.8）";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -2095,6 +2182,7 @@
             this.tab_标签.ResumeLayout(false);
             this.Page_其他特性.ResumeLayout(false);
             this.Page_其他特性.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_zoom)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -2251,5 +2339,11 @@
         private System.Windows.Forms.TabPage Page_其他特性;
         private System.Windows.Forms.CheckBox cbBox_静默识别;
         private System.Windows.Forms.CheckBox cbBox_是否复制;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.CheckBox cbBox_是否添加换行;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.NumericUpDown num_zoom;
     }
 }

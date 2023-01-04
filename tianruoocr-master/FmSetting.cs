@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using TrOCR.Helper;
 using TrOCR.Properties;
+using static System.Net.WebRequestMethods;
 
 namespace TrOCR
 {
@@ -582,9 +583,9 @@ namespace TrOCR
                 离线翻译网址.Text = value27;
             }
             value27 = IniHelper.GetValue("其他特性", "静默识别");
-            if (value27 == "发生错误")
-            {
-                cbBox_静默识别.Checked = true;
+			if (value27 == "发生错误")
+			{
+                cbBox_静默识别.Checked = false;
             }
             try
             {
@@ -611,6 +612,35 @@ namespace TrOCR
                 cbBox_是否复制.Checked = true;
             }
 
+            value27 = IniHelper.GetValue("其他特性", "添加换行");
+            if (value27 == "发生错误")
+            {
+                cbBox_是否添加换行.Checked = false;
+            }
+            try
+            {
+                //Console.WriteLine(value27);
+                cbBox_是否添加换行.Checked = Convert.ToBoolean(value27);
+            }
+            catch
+            {
+                cbBox_是否添加换行.Checked = false;
+            }
+
+            value27 = IniHelper.GetValue("其他特性", "缩放倍数");
+            if (value27 == "发生错误")
+            {
+                num_zoom.Value = 1.0M;
+            }
+            try
+            {
+                //Console.WriteLine(value27);
+                num_zoom.Value = Convert.ToDecimal(value27);
+            }
+            catch
+            {
+                num_zoom.Value = 1.0M;
+            }
 
 
         }
@@ -651,7 +681,7 @@ namespace TrOCR
             tab_标签.TabPages.RemoveByKey("Page_更新");
             tab_标签.TabPages.RemoveByKey("Page_反馈");
 			//tab_标签.TabPages.RemoveByKey("Page_密钥");
-			tab_标签.TabPages.RemoveByKey("Page_代理");
+			//tab_标签.TabPages.RemoveByKey("Page_代理");
 		}
 
         private void 百度申请_Click(object sender, EventArgs e)
@@ -719,7 +749,12 @@ namespace TrOCR
 			}
             else if (tab_标签.SelectedTab == Page_其他特性)
             {
-                tab_标签.Height = (int)(100.0 * Program.Factor);
+                tab_标签.Height = (int)(200.0 * Program.Factor);
+                Height = tab_标签.Height + 50;
+            }
+            else if (tab_标签.SelectedTab == Page_代理)
+            {
+                tab_标签.Height = (int)(220.0 * Program.Factor);
                 Height = tab_标签.Height + 50;
             }
         }
@@ -1165,6 +1200,8 @@ namespace TrOCR
             IniHelper.SetValue("其他特性", "静默识别", cbBox_静默识别.Checked.ToString());
 
             IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
+            IniHelper.SetValue("其他特性", "添加换行", cbBox_是否添加换行.Checked.ToString());
+            IniHelper.SetValue("其他特性", "缩放倍数", num_zoom.Value.ToString());
             DialogResult = DialogResult.OK;
 		}
 
@@ -1373,7 +1410,8 @@ namespace TrOCR
 
             IniHelper.SetValue("其他特性", "静默识别", cbBox_静默识别.Checked.ToString());
             IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
-
+            IniHelper.SetValue("其他特性", "添加换行", cbBox_是否添加换行.Checked.ToString());
+            IniHelper.SetValue("其他特性", "缩放倍数", num_zoom.Value.ToString());
             Process.Start(Application.ExecutablePath);
 
 			//关闭当前实例
@@ -1505,6 +1543,8 @@ namespace TrOCR
 
             IniHelper.SetValue("其他特性", "静默识别", cbBox_静默识别.Checked.ToString());
             IniHelper.SetValue("其他特性", "始终复制", cbBox_是否复制.Checked.ToString());
+            IniHelper.SetValue("其他特性", "添加换行", cbBox_是否添加换行.Checked.ToString());
+            IniHelper.SetValue("其他特性", "缩放倍数", num_zoom.Value.ToString());
             Process.Start(Application.ExecutablePath);
 
 			//关闭当前实例

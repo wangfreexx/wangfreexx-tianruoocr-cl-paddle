@@ -210,8 +210,10 @@ namespace TrOCR
 
                 IniHelper.SetValue("翻译API", "offline_url", "");
 
-                IniHelper.SetValue("其他特性", "静默识别", "True");
+                IniHelper.SetValue("其他特性", "静默识别", "False");
                 IniHelper.SetValue("其他特性", "始终复制", "True");
+                IniHelper.SetValue("其他特性", "缩放倍数", "1.0");
+                IniHelper.SetValue("其他特性", "添加换行", "False");
             }
         }
 
@@ -525,7 +527,15 @@ namespace TrOCR
             }
             if (IniHelper.GetValue("其他特性", "静默识别") == "发生错误")
             {
-                IniHelper.SetValue("其他特性", "静默识别", "True");
+                IniHelper.SetValue("其他特性", "静默识别", "False");
+            }
+            if (IniHelper.GetValue("其他特性", "添加换行") == "发生错误")
+            {
+                IniHelper.SetValue("其他特性", "添加换行", "False");
+            }
+            if (IniHelper.GetValue("其他特性", "缩放倍数") == "发生错误")
+            {
+                IniHelper.SetValue("其他特性", "缩放倍数", "1.0");
             }
 
         }

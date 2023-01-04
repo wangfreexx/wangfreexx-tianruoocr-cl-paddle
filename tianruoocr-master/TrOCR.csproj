@@ -247,6 +247,7 @@
     <Content Include="Data\screenshot.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\61e74233ly1ffnkzr87tbj20p00q0dt4.jpg" />
     <None Include="Resources\Image1.bmp" />
     <None Include="DLL\pinyin.txt" />
   </ItemGroup>

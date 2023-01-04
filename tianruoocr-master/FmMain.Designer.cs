@@ -1,10 +1,14 @@
-﻿namespace TrOCR
+﻿using System;
+using TrOCR.Helper;
+
+namespace TrOCR
 {
 
 	public sealed partial class FmMain : global::System.Windows.Forms.Form
 	{
+        public float 放大倍数 = 0f;
 
-		protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
 		{
 			global::TrOCR.Helper.HelpWin32.ChangeClipboardChain(base.Handle, this.nextClipboardViewer);
 			if (disposing && this.components != null)
@@ -16,7 +20,20 @@
 
 		private void InitializeComponent()
 		{
-			this.components = new global::System.ComponentModel.Container();
+            var value27 = IniHelper.GetValue("其他特性", "缩放倍数");
+            if (value27 == "发生错误")
+            {
+                放大倍数 = 1;
+            }
+            else
+            {
+                放大倍数 = (float)Convert.ToSingle(value27);
+				if (放大倍数 >= 1.3)
+				{
+					放大倍数 = 放大倍数 / 1.2f;
+                }
+            }
+            this.components = new global::System.ComponentModel.Container();
 			global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::TrOCR.FmMain));
 			this.minico = new global::System.Windows.Forms.NotifyIcon(this.components);
 			this.toolStripSeparator1 = new global::System.Windows.Forms.ToolStripSeparator();
@@ -86,8 +103,9 @@
 			this.minico.Text = "双击开始截图识别";
 			this.minico.Visible = true;
 			this.minico.MouseDoubleClick += new global::System.Windows.Forms.MouseEventHandler(this.tray_double_Click);
-			this.font_base.Width = 18f * this.F_factor;
-			this.font_base.Height = 17f * this.F_factor;
+
+			this.font_base.Width = 18f * this.F_factor* 放大倍数;
+			this.font_base.Height = 17f * this.F_factor* 放大倍数;
 			this.RichBoxBody_T.Visible = false;
 			this.RichBoxBody.Dock = global::System.Windows.Forms.DockStyle.Fill;
 			this.RichBoxBody.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;

@@ -34,6 +34,7 @@ using TencentCloud.Common;
 using TencentCloud.Common.Profile;
 using System.Security.Policy;
 using System.Web.UI.WebControls.WebParts;
+
 // ReSharper disable StringLiteralTypo
 
 
@@ -188,11 +189,11 @@ namespace TrOCR
                 Hide();
                 if (transtalate_fla == "开启")
                 {
-                    form_width = Width / 2;
+                    form_width = (int)(Width * StaticValue.缩放倍数 / 2);
                 }
                 else
                 {
-                    form_width = Width;
+                    form_width = (int)(Width * StaticValue.缩放倍数);
                 }
                 form_height = Height;
                 minico.Visible = false;
@@ -659,7 +660,7 @@ namespace TrOCR
             var value27 = IniHelper.GetValue("其他特性", "静默识别");
             if (value27 == "发生错误")
             {
-                StaticValue.set_静默识别 = true;
+                StaticValue.set_静默识别 = false;
             }
             try
             {
@@ -667,7 +668,7 @@ namespace TrOCR
             }
             catch
             {
-                StaticValue.set_静默识别 = true;
+                StaticValue.set_静默识别 = false;
             }
 
             value27 = IniHelper.GetValue("其他特性", "始终复制");
@@ -683,6 +684,75 @@ namespace TrOCR
             {
                 StaticValue.set_始终复制 = true;
             }
+
+            value27 = IniHelper.GetValue("其他特性", "添加换行");
+            if (value27 == "发生错误")
+            {
+                StaticValue.set_添加换行 = false;
+            }
+            try
+            {
+                StaticValue.set_添加换行 = Convert.ToBoolean(value27);
+            }
+            catch
+            {
+                StaticValue.set_添加换行 = false;
+            }
+
+            value27 = IniHelper.GetValue("其他特性", "缩放倍数");
+            if (value27 == "发生错误")
+            {
+                StaticValue.缩放倍数 = 1;
+            }
+            try
+            {
+                StaticValue.缩放倍数 = (float)Convert.ToDouble(value27);
+            }
+            catch
+            {
+                StaticValue.缩放倍数 = 1;
+            }
+
+            value27 = IniHelper.GetValue("代理", "代理类型");
+            if (value27 == "发生错误")
+            {
+                StaticValue.代理类型 = "不使用代理";
+            }
+            try
+            {
+                StaticValue.代理类型 = value27;
+            }
+            catch
+            {
+                StaticValue.代理类型 = "不使用代理";
+            }
+            value27 = IniHelper.GetValue("代理", "服务器");
+            if (value27 == "发生错误")
+            {
+                StaticValue.代理网址 = "127.0.0.1";
+            }
+            try
+            {
+                StaticValue.代理网址 = value27;
+            }
+            catch
+            {
+                StaticValue.代理网址 = "127.0.0.1";
+            }
+            value27 = IniHelper.GetValue("代理", "端口");
+            if (value27 == "发生错误")
+            {
+                StaticValue.代理端口 = "1080";
+            }
+            try
+            {
+                StaticValue.代理端口 = value27;
+            }
+            catch
+            {
+                StaticValue.代理端口 = "1080";
+            }
+
 
         }
 
@@ -805,7 +875,7 @@ namespace TrOCR
                 var value27 = IniHelper.GetValue("其他特性", "静默识别");
                 if (value27 == "发生错误")
                 {
-                    StaticValue.set_静默识别 = true;
+                    StaticValue.set_静默识别 = false;
                 }
                 try
                 {
@@ -813,7 +883,7 @@ namespace TrOCR
                 }
                 catch
                 {
-                    StaticValue.set_静默识别 = true;
+                    StaticValue.set_静默识别 = false;
                 }
                 value27 = IniHelper.GetValue("其他特性", "始终复制");
                 if (value27 == "发生错误")
@@ -828,6 +898,74 @@ namespace TrOCR
                 {
                     StaticValue.set_始终复制 = true;
                 }
+
+                value27 = IniHelper.GetValue("其他特性", "添加换行");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.set_添加换行 = false;
+                }
+                try
+                {
+                    StaticValue.set_添加换行 = Convert.ToBoolean(value27);
+                }
+                catch
+                {
+                    StaticValue.set_添加换行 = false;
+                }
+
+                value27 = IniHelper.GetValue("其他特性", "缩放倍数");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.缩放倍数 = 1;
+                }
+                try
+                {
+                    StaticValue.缩放倍数 = (float)Convert.ToDouble(value27);
+                }
+                catch
+                {
+                    StaticValue.缩放倍数 = 1;
+                }
+                value27 = IniHelper.GetValue("代理", "代理类型");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.代理类型 = "不使用代理";
+                }
+                try
+                {
+                    StaticValue.代理类型 = value27;
+                }
+                catch
+                {
+                    StaticValue.代理类型 = "不使用代理";
+                }
+                value27 = IniHelper.GetValue("代理", "服务器");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.代理网址 = "127.0.0.1";
+                }
+                try
+                {
+                    StaticValue.代理网址 = value27;
+                }
+                catch
+                {
+                    StaticValue.代理网址 = "127.0.0.1";
+                }
+                value27 = IniHelper.GetValue("代理", "端口");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.代理端口 = "1080";
+                }
+                try
+                {
+                    StaticValue.代理端口 = value27;
+                }
+                catch
+                {
+                    StaticValue.代理端口 = "1080";
+                }
+
             }
         }
 
@@ -872,6 +1010,7 @@ namespace TrOCR
             RichBoxBody.Dock = DockStyle.None;
             RichBoxBody_T.Dock = DockStyle.None;
             RichBoxBody_T.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            RichBoxBody_T.richTextBox1.ZoomFactor = StaticValue.缩放倍数;
             RichBoxBody_T.Text = "";
             RichBoxBody.Focus();
             if (num_ok == 0)
@@ -1138,7 +1277,87 @@ namespace TrOCR
                 return createParams;
             }
         }
+        public static string GoogleTranslate(string data)
+        {
+            var url = "https://translate.googleapis.com/translate_a/single?";
+            var request_url = string.Concat(url, data);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(request_url);     //谷歌翻译API  
+            // 设置HttpWebRequest请求的一些参数   
+            request.MaximumAutomaticRedirections = 4;
+            request.MaximumResponseHeadersLength = 4;
+            request.Credentials = CredentialCache.DefaultCredentials;
+            request.Method = "GET";
+            try
+            {
+                if (StaticValue.代理类型 == "自定义代理")
+                {
+                    string pro = "http://" + StaticValue.代理网址 + ":" + StaticValue.代理端口;
+                    WebProxy proxy = new WebProxy(pro);
+                    request.Proxy = proxy;
+                }
 
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream receiveStream = response.GetResponseStream();
+                StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                var text_string = readStream.ReadToEnd();
+                Console.WriteLine(text_string);
+
+
+                JArray root = JArray.Parse(text_string);
+
+                Console.WriteLine(root.GetType());
+                var text_result = "";
+
+                response.Close();
+                readStream.Close();
+
+                var count = ((JArray)root[0]).Count;
+                Console.WriteLine(count);
+                for (var i = 0; i < count; i++)
+                {
+                    text_result += root[0][i][0].ToString();
+                }
+
+                response.Close();
+                readStream.Close();
+
+                return text_result;
+            }
+            catch (Exception)
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream receiveStream = response.GetResponseStream();
+                StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                var text_string = readStream.ReadToEnd();
+                Console.WriteLine(text_string);
+
+
+                JArray root = JArray.Parse(text_string);
+
+                Console.WriteLine(root.GetType());
+                var text_result = "";
+
+                response.Close();
+                readStream.Close();
+
+                var count = ((JArray)root[0]).Count;
+                Console.WriteLine(count);
+                for (var i = 0; i < count; i++)
+                {
+                    text_result += root[0][i][0].ToString();
+                }
+
+                response.Close();
+                readStream.Close();
+
+                return text_result;
+            }
+
+
+        }
         public string Translate_Google(string text)
         {
             //todo
@@ -1186,15 +1405,12 @@ namespace TrOCR
                         text4 = "ko";
                     }
                 }
-                var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=", HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
-                var html = CommonHelper.PostStrData("https://translate.googleapis.com/translate_a/single", data);
+                var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=",
+                HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
 
-                var jArray = (JArray)JsonConvert.DeserializeObject(html);
-                var count = ((JArray)jArray[0]).Count;
-                for (var i = 0; i < count; i++)
-                {
-                    text2 += jArray[0][i][0].ToString();
-                }
+
+
+                text2 = GoogleTranslate(data);
             }
             catch (Exception)
             {
@@ -1515,11 +1731,11 @@ namespace TrOCR
                 Thread.Sleep(100);
                 if (transtalate_fla == "开启")
                 {
-                    form_width = Width / 2;
+                    form_width = (int)(Width * StaticValue.缩放倍数 / 2);
                 }
                 else
                 {
-                    form_width = Width;
+                    form_width = (int)(Width * StaticValue.缩放倍数);
                 }
                 shupai_Right_txt = "";
                 shupai_Left_txt = "";
@@ -1991,6 +2207,12 @@ namespace TrOCR
             RichBoxBody.Text = RichBoxBody.Text.TrimEnd('\r', '\n');
             RichBoxBody.Refresh();
             //RichBoxBody.font_微软雅黑c(null,null);
+
+            if (StaticValue.set_添加换行 == true)
+            {
+                RichBoxBody.Text = RichBoxBody.Text + Environment.NewLine;
+            }
+
 
             if (StaticValue.set_静默识别 == true)
             {
