@@ -32,10 +32,12 @@
 
 
 ## 注意
+-----
 1. 编译的话需要引用Microsoft.ML.OnnxRuntime.dll，如果是为了win7能用可以引用我编译好的（在dll和runtime文件夹），也可以自己编译，需要把对应onnxruntime.dll放在运行文件夹中。如果不使用win7，可以直接使用nuget安装即可。
 2. 更改nuget包管理为PackageReference，应该不要packages了，编译之前请先安装nuget的一堆包
 3. 编译的话注意AdvRichTextBox.Designer.cs文件，必须重写，这个文件在切换的过程中有可能会被系统自动覆盖，需要复制回来
 ## 问题汇总
+-----
 1. ~~win7无法使用，基本无解~~（V1.3 win7已经可以用了）
 2. 如果出现`Exception from HRESULT: 0x8007007E`可以使用dx修复工具进行修复，一般能够启动
 3. 请尝试安装vc++运行库，net4.7.2
@@ -48,6 +50,7 @@
 |paddle-ocr|ch_PP-OCRv3_det_infer.onnx|ch_PP-OCRv2_rec_infer.onnx|ch_ppocr_mobile_v2.0_cls|
 
 ## 翻译说明
+----
 ### 翻译问题说明
 1. 目前离线翻译建立在python搭建模型和建立服务器，本软件只负责与搭建的网站对接，因此需要一定的python基础和运行环境，如果不能运行请尝试自己解决，作者也无能为力。
 2. 由于离线翻译网站属性，实际上可以自行搭建服务器，只要满足post格式就行，post一共两个参数，“mod”和“text”，mod为zh2en，en2zh，ja2zh，zh2ja，分别代表对于语言，text为待翻译文本，直接返回翻译结果即可。
@@ -70,18 +73,21 @@
 
 
 ## 下载地址
+----
 > https://gitee.com/wanglifree/tianruoocr-cl/releases
 
 
 > https://github.com/wangfreexx/wangfreexx-tianruoocr-cl-paddle/releases
 
 ## 下一步目标
+----
 1. ~~离线翻译~~
 2. 重构截图
 3. 增加图片二值化，提高识别率
 
 
 ## 版本更新说明
+----
 ### v1.3.8.1（2023.1.4）
 1. 优化适配高分辨率屏幕，可以在设置中单独设置图标和文字缩放倍数，可以放大界面
 
@@ -157,6 +163,7 @@
 1. 添加了Chineseocr-lite支持，使用原来搜狗的接口选项
 
 ## 一些碎碎念
+----
 ### v1.3.8
 感觉很多“伪”需求（之所以说伪是因为我觉得用不到），精力有限，不再更新，除了部分bug修复，当然如果能有偿还是可以考虑，只是违背初心
 ### v1.3.7
@@ -169,3 +176,13 @@
 win7编译后需要手动替换onnxruntime.dll，版本为1.6，vs nuget中的不支持win7，github上下载的支持。尝试解决读取ini文件的问题，本来想改成utf8格式读取，但是试了很久都不行，用了大概3天一无所获，不过今天用了别人的库一下就没问题了...........还是crtlv好用
 ### v1.3
 win7支持源自与逛吾爱时看到有大佬做出来ncnn和onnx的差不多的天若本地版，目的就是解决我的不支持win7的问题，可惜没有开源，但是大佬提供了思路，然后顺着大佬思路，我也自己编译了onnxruntime，得益于微软的开源，编译很简单，然后又修正了下库的引用，在win7上真的跑起来了（我用了虚拟机）。我编译的是onnxruntime 1.5.2版本，1.6我试了好像不支持了，具体不清楚。当然大佬还做了其他差异化的东西，例如二维码，局域网网页调用，我就没做了，自己还是太菜，应该不会再更新了，算是圆满了，这个项目其实只是简单粘贴复制，方法很菜，希望有朝一日能给大家提供一点微薄的帮助。
+
+
+## Stargazers over time
+----
+[![Stargazers over time](https://starchart.cc/wangfreexx/wangfreexx-tianruoocr-cl-paddle.svg)](https://starchart.cc/wangfreexx/wangfreexx-tianruoocr-cl-paddle)
+
+## License
+----
+GPL-3.0 license
+

@@ -10,7 +10,6 @@
     <AssemblyName>天若OCR文字识别</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>天若OCR文字识别.ico</ApplicationIcon>
     <StartupObject>TrOCR.Program</StartupObject>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -247,6 +246,33 @@
     <Content Include="Data\screenshot.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\toolStripButtonTrans.Image1.png" />
+    <None Include="Resources\toolStripButtonspace.Image1.png" />
+    <None Include="Resources\toolStripButtonSend.Image1.png" />
+    <None Include="Resources\toolStripButtonNote.Image1.png" />
+    <None Include="Resources\toolStripButtonMerge.Image1.png" />
+    <None Include="Resources\toolStripButtonMerge_2.Image1.png" />
+    <None Include="Resources\toolStripButtonLeft.Image1.png" />
+    <None Include="Resources\toolStripButtonFull.Image1.png" />
+    <None Include="Resources\toolStripButtonFind.Image1.png" />
+    <None Include="Resources\toolStripButtonColor.Image1.png" />
+    <None Include="Resources\toolStripButtonBold.Image1.png" />
+    <None Include="Resources\toolStripButtonTrans2.Image.png" />
+    <None Include="Resources\toolStripButtonTrans.Image.png" />
+    <None Include="Resources\toolStripButtonspace.Image.png" />
+    <None Include="Resources\toolStripButtonSend.Image.png" />
+    <None Include="Resources\toolStripButtonNote.Image.png" />
+    <None Include="Resources\toolStripButtonMerge_2.Image.png" />
+    <None Include="Resources\toolStripButtonMerge.Image.png" />
+    <None Include="Resources\toolStripButtonLeft.Image.png" />
+    <None Include="Resources\toolStripButtonFull.Image.png" />
+    <None Include="Resources\toolStripButtonFind.Image.png" />
+    <None Include="Resources\toolStripButtonColor.Image.png" />
+    <None Include="Resources\toolStripButtonBold.Image.png" />
+    <None Include="Resources\mode.Image.png" />
+    <None Include="Resources\main.Image.png" />
+    <None Include="Resources\languagle.Image.png" />
+    <None Include="Resources\Fontstyle.Image.png" />
     <None Include="Resources\61e74233ly1ffnkzr87tbj20p00q0dt4.jpg" />
     <None Include="Resources\Image1.bmp" />
     <None Include="DLL\pinyin.txt" />

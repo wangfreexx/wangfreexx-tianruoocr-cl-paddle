@@ -112,7 +112,7 @@ namespace TrOCR
             this.toolStripToolBar.GripStyle = ToolStripGripStyle.Hidden;
             this.toolStripToolBar.Location = new Point(0, 0);
             this.toolStripToolBar.Name = "toolStripToolBar";
-            this.toolStripToolBar.ImageScalingSize= new Size((int)(16*放大倍数), (int)(16 * 放大倍数));
+            this.toolStripToolBar.ImageScalingSize = new Size((int)(16 * 放大倍数), (int)(16 * 放大倍数));
             this.toolStripToolBar.RenderMode = ToolStripRenderMode.System;
             this.toolStripToolBar.Size = new Size(600, 25);
             this.toolStripToolBar.LayoutStyle = ToolStripLayoutStyle.Flow;
@@ -133,6 +133,7 @@ namespace TrOCR
             this.toolStripButtonParagraph.ImageTransparentColor = Color.Magenta;
             this.toolStripButtonParagraph.Name = "toolStripButtonParagraph";
             this.toolStripButtonParagraph.Size = new Size(23, 22);
+            this.toolStripButtonParagraph.Visible = false;
             this.toolStripButtonParagraph.Text = "依据位置自动分段\r\n仅支持搜狗接口\r\n适合段落识别\r\n图片越清晰越准确\r\n准确度98%以上";
             this.toolStripButtonParagraph.Click += this.toolStripButtonParagraph_Click;
             this.toolStripButtonParagraph.MouseDown += this.toolStripButtonParagraph_keydown;
@@ -171,6 +172,7 @@ namespace TrOCR
             this.toolStripButtonVoice.Name = "toolStripButtonVoice";
             this.toolStripButtonVoice.Size = new Size(23, 22);
             this.toolStripButtonVoice.Text = "朗读";
+            this.toolStripButtonVoice.Visible = false;
             this.toolStripButtonVoice.Click += this.toolStripButtonVoice_Click;
             this.toolStripButtonFull.DisplayStyle = ToolStripItemDisplayStyle.Image;
             this.toolStripButtonFull.Image = (Image)componentResourceManager.GetObject("toolStripButtonFull.Image");
@@ -191,6 +193,7 @@ namespace TrOCR
             this.toolStripButtonFence.ImageTransparentColor = Color.Magenta;
             this.toolStripButtonFence.Name = "toolStripButtonformat";
             this.toolStripButtonFence.Size = new Size(23, 22);
+            this.toolStripButtonFence.Visible = false;
             this.toolStripButtonFence.Text = "截图时自动分栏\r\n多选区时无效\r\n单击显示分栏示意图";
             this.toolStripButtonFence.Click += this.toolStripButtonFence_Click;
             this.toolStripButtonFence.MouseDown += this.toolStripButtonFence_keydown;
@@ -207,6 +210,7 @@ namespace TrOCR
             this.toolStripButtonSplit.Name = "toolStripButtonSplit";
             this.toolStripButtonSplit.Size = new Size(23, 22);
             this.toolStripButtonSplit.Text = "按图片中的行进行拆分";
+            this.toolStripButtonSplit.Visible = false;
             this.toolStripButtonSplit.Click += this.toolStripButtonSplit_Click;
             this.toolStripButtonSplit.MouseDown += this.toolStripButtonSplit_keydown;
             this.toolStripButtoncheck.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -215,6 +219,7 @@ namespace TrOCR
             this.toolStripButtoncheck.Name = "toolStripButtoncheck";
             this.toolStripButtoncheck.Size = new Size(23, 22);
             this.toolStripButtoncheck.Text = "检查文本是否有错别字";
+            this.toolStripButtoncheck.Visible = false;
             this.toolStripButtoncheck.Click += this.toolStripButtoncheck_Click;
             this.toolStripButtoncheck.MouseDown += this.toolStripButtoncheck_keydown;
             this.toolStripButtonTrans.DisplayStyle = ToolStripItemDisplayStyle.Image;

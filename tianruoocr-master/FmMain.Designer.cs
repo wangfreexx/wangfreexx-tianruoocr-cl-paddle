@@ -142,7 +142,7 @@ namespace TrOCR
 				this.Trans_copy,
 				this.Trans_paste,
 				this.Trans_SelectAll,
-				this.Trans_Voice,
+				//this.Trans_Voice,
 				this.trans_input,
 				this.Trans_close
 			});
@@ -174,7 +174,7 @@ namespace TrOCR
 				this.Main_copy,
 				this.Main_paste,
 				this.Main_selectall,
-				this.speak,
+				//this.speak,
 				this.baidu_s,
 				this.Main_change,
 				this.Main_jiekou,
@@ -239,12 +239,12 @@ namespace TrOCR
 			{
 				this.sougou,
 				this.tencent,
-				this.youdao,
+				//this.youdao,
 				this.baidu,
-				this.toolStripSeparator1,
-				this.Mathfuntion,
-				this.ocr_table,
-				this.shupai
+				//this.toolStripSeparator1,
+				//this.Mathfuntion,
+				//this.ocr_table,
+				//this.shupai
 			});
 			if (global::TrOCR.Helper.IniHelper.GetValue("配置", "接口") == "百度")
 			{
