@@ -2241,17 +2241,26 @@ namespace TrOCR
             {
                 RichBoxBody.Text = RichBoxBody.Text + Environment.NewLine;
             }
-
+            string Text_temp;
+            if (bool.Parse(IniHelper.GetValue("工具栏", "合并")) || set_merge)
+            {
+                set_merge = false;
+                Text_temp = ProcessText(RichBoxBody.Text);
+            }
+            else
+            {
+                Text_temp = RichBoxBody.Text;
+            }
 
             if (StaticValue.set_静默识别 == true)
             {
-                Clipboard.SetDataObject(ProcessText(RichBoxBody.Text));
+                Clipboard.SetDataObject(Text_temp);
             }
             else
             {
                 if (StaticValue.set_始终复制 == true)
                 {
-                    Clipboard.SetDataObject(ProcessText(RichBoxBody.Text));
+                    Clipboard.SetDataObject(Text_temp);
                 }
                 //显示窗口在这里
                 FormBorderStyle = FormBorderStyle.Sizable;
