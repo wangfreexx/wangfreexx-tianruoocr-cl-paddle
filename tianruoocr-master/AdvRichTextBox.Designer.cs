@@ -361,7 +361,7 @@ namespace TrOCR
             base.Controls.Add(this.toolStripToolBar);
             base.Name = "richTextBox";
             base.Text = "richTextBox";
-            base.Size = new Size(600, 300);
+            base.Size = new Size(700, 300);
             this.toolStripToolBar.ResumeLayout(false);
             this.toolStripToolBar.PerformLayout();
             base.ResumeLayout(false);

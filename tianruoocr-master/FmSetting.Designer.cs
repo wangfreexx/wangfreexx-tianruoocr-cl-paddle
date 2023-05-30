@@ -166,6 +166,11 @@
             this.cbBox_开机 = new System.Windows.Forms.CheckBox();
             this.tab_标签 = new System.Windows.Forms.TabControl();
             this.Page_其他特性 = new System.Windows.Forms.TabPage();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.user_kuan = new System.Windows.Forms.NumericUpDown();
+            this.user_chang = new System.Windows.Forms.NumericUpDown();
             this.button6 = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
@@ -224,6 +229,8 @@
             this.groupBox1.SuspendLayout();
             this.tab_标签.SuspendLayout();
             this.Page_其他特性.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.user_kuan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_chang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_zoom_text)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_zoom)).BeginInit();
             this.SuspendLayout();
@@ -588,7 +595,7 @@
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
             this.tableLayoutPanel2.Controls.Add(this.label29, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum12, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.ocrNum9, 1, 2);
@@ -877,7 +884,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
             this.tableLayoutPanel1.Controls.Add(this.label26, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum6, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ocrNum3, 1, 2);
@@ -2014,6 +2021,11 @@
             // 
             // Page_其他特性
             // 
+            this.Page_其他特性.Controls.Add(this.label49);
+            this.Page_其他特性.Controls.Add(this.label48);
+            this.Page_其他特性.Controls.Add(this.label47);
+            this.Page_其他特性.Controls.Add(this.user_kuan);
+            this.Page_其他特性.Controls.Add(this.user_chang);
             this.Page_其他特性.Controls.Add(this.button6);
             this.Page_其他特性.Controls.Add(this.label45);
             this.Page_其他特性.Controls.Add(this.label46);
@@ -2032,10 +2044,61 @@
             this.Page_其他特性.Text = "其他特性";
             this.Page_其他特性.UseVisualStyleBackColor = true;
             // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(196, 152);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(17, 12);
+            this.label49.TabIndex = 21;
+            this.label49.Text = "宽";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(108, 152);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(17, 12);
+            this.label48.TabIndex = 20;
+            this.label48.Text = "长";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(6, 169);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(101, 12);
+            this.label47.TabIndex = 19;
+            this.label47.Text = "界面长宽自定义：";
+            // 
+            // user_kuan
+            // 
+            this.user_kuan.Location = new System.Drawing.Point(198, 167);
+            this.user_kuan.Maximum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.user_kuan.Name = "user_kuan";
+            this.user_kuan.Size = new System.Drawing.Size(74, 21);
+            this.user_kuan.TabIndex = 18;
+            // 
+            // user_chang
+            // 
+            this.user_chang.Location = new System.Drawing.Point(110, 167);
+            this.user_chang.Maximum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.user_chang.Name = "user_chang";
+            this.user_chang.Size = new System.Drawing.Size(74, 21);
+            this.user_chang.TabIndex = 17;
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(297, 121);
+            this.button6.Location = new System.Drawing.Point(297, 102);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 16;
@@ -2177,7 +2240,7 @@
             this.MinimizeBox = false;
             this.Name = "FmSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "设置（version 1.3.8.2）";
+            this.Text = "设置（version 1.3.9）";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -2248,6 +2311,8 @@
             this.tab_标签.ResumeLayout(false);
             this.Page_其他特性.ResumeLayout(false);
             this.Page_其他特性.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.user_kuan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_chang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_zoom_text)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_zoom)).EndInit();
             this.ResumeLayout(false);
@@ -2416,5 +2481,10 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.NumericUpDown num_zoom_text;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.NumericUpDown user_kuan;
+        private System.Windows.Forms.NumericUpDown user_chang;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label48;
     }
 }

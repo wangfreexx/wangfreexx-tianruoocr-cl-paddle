@@ -79,6 +79,8 @@ namespace TrOCR.Helper
         public static bool set_添加换行;
         public static float 缩放倍数;
         public static float 文字缩放倍数;
+        public static int user_chang;
+        public static int user_kuan;
         public static string 代理类型 = "";
         public static string 代理网址 = "";
         public static string 代理端口 = "";

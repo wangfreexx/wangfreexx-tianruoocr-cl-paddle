@@ -258,7 +258,15 @@ namespace TrOCR
                 {
                     WindowState = FormWindowState.Normal;
                 }
-                Size = new Size((int)font_base.Width * 23, (int)font_base.Height * 24);
+
+                if (StaticValue.user_chang != 0 || StaticValue.user_kuan != 0)
+                {
+                    Size = new Size(StaticValue.user_chang, StaticValue.user_kuan);
+                }
+                else
+                {
+                    Size = new Size((int)font_base.Width * 23, (int)font_base.Height * 24);
+                }
             }
             if (m.Msg == 786 && m.WParam.ToInt32() == 512)
             {
@@ -718,14 +726,48 @@ namespace TrOCR
             {
                 StaticValue.文字缩放倍数 = 1;
             }
-            try
+            else
             {
-                StaticValue.文字缩放倍数 = (float)Convert.ToDouble(value27);
+                try
+                {
+                    StaticValue.文字缩放倍数 = (float)Convert.ToDouble(value27);
+                }
+                catch
+                {
+                    StaticValue.文字缩放倍数 = 1;
+                }
             }
-            catch
+
+
+            value27 = IniHelper.GetValue("其他特性", "自定义长宽");
+            if (value27 == "发生错误")
             {
-                StaticValue.文字缩放倍数 = 1;
+                StaticValue.user_chang = 0;
+                StaticValue.user_kuan = 0;
             }
+            else
+            {
+                try
+                {
+                    string[] sArray = value27.Split(',');
+                    if (sArray.Length == 2)
+                    {
+                        StaticValue.user_chang = Convert.ToInt32(sArray[0]);
+                        StaticValue.user_kuan = Convert.ToInt32(sArray[1]);
+                    }
+                    else
+                    {
+                        StaticValue.user_chang = 0;
+                        StaticValue.user_kuan = 0;
+                    }
+                }
+                catch
+                {
+                    StaticValue.user_chang = 0;
+                    StaticValue.user_kuan = 0;
+                }
+            }
+
 
             value27 = IniHelper.GetValue("代理", "代理类型");
             if (value27 == "发生错误")
@@ -955,6 +997,36 @@ namespace TrOCR
                     StaticValue.文字缩放倍数 = 1;
                 }
 
+                value27 = IniHelper.GetValue("其他特性", "自定义长宽");
+                if (value27 == "发生错误")
+                {
+                    StaticValue.user_chang = 0;
+                    StaticValue.user_kuan = 0;
+                }
+                else
+                {
+                    try
+                    {
+                        string[] sArray = value27.Split(',');
+                        if (sArray.Length == 2)
+                        {
+                            StaticValue.user_chang = Convert.ToInt32(sArray[0]);
+                            StaticValue.user_kuan = Convert.ToInt32(sArray[1]);
+                        }
+                        else
+                        {
+                            StaticValue.user_chang = 0;
+                            StaticValue.user_kuan = 0;
+                        }
+                    }
+                    catch
+                    {
+                        StaticValue.user_chang = 0;
+                        StaticValue.user_kuan = 0;
+                    }
+                }
+
+
                 value27 = IniHelper.GetValue("代理", "代理类型");
                 if (value27 == "发生错误")
                 {
@@ -1039,7 +1111,7 @@ namespace TrOCR
             RichBoxBody.Dock = DockStyle.None;
             RichBoxBody_T.Dock = DockStyle.None;
             RichBoxBody_T.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            RichBoxBody_T.richTextBox1.ZoomFactor = StaticValue.文字缩放倍数+ 0.000001f;
+            RichBoxBody_T.richTextBox1.ZoomFactor = StaticValue.文字缩放倍数 + 0.000001f;
             RichBoxBody_T.Text = "";
             RichBoxBody.Focus();
             if (num_ok == 0)
@@ -1057,7 +1129,16 @@ namespace TrOCR
             PictureBox1.Visible = true;
             PictureBox1.BringToFront();
             MinimumSize = new Size((int)font_base.Width * 23 * 2, (int)font_base.Height * 24);
-            Size = new Size((int)font_base.Width * 23 * 2, (int)font_base.Height * 24);
+
+            if (StaticValue.user_chang != 0 || StaticValue.user_kuan != 0)
+            {
+                Size = new Size(StaticValue.user_chang * 2, StaticValue.user_kuan);
+            }
+            else
+            {
+                Size = new Size((int)font_base.Width * 23 * 2, (int)font_base.Height * 24);
+            }
+            //Size = new Size(100, 100);
             CheckForIllegalCrossThreadCalls = false;
             new Thread(trans_Calculate).Start();
         }
@@ -1162,7 +1243,14 @@ namespace TrOCR
             {
                 WindowState = FormWindowState.Normal;
             }
-            Size = new Size((int)font_base.Width * 23, (int)font_base.Height * 24);
+            if (StaticValue.user_chang != 0 || StaticValue.user_kuan != 0)
+            {
+                Size = new Size(StaticValue.user_chang, StaticValue.user_kuan);
+            }
+            else
+            {
+                Size = new Size((int)font_base.Width * 23, (int)font_base.Height * 24);
+            }
         }
 
         private void ShowLoading()
@@ -1473,8 +1561,11 @@ namespace TrOCR
             var result = "";
             try
             {
-                var image = new BinaryBitmap(new HybridBinarizer(new BitmapLuminanceSource((Bitmap)image_screen)));
-                var result2 = new QRCodeReader().decode(image);
+                BarcodeReader reader = new BarcodeReader();
+                reader.Options.CharacterSet = "UTF-8";
+                //var image = new BinaryBitmap(new HybridBinarizer(new BitmapLuminanceSource((Bitmap)image_screen)));
+                //var result2 = new QRCodeReader().decode(image);
+                var result2 = reader.Decode((Bitmap)image_screen);
                 if (result2 != null)
                 {
                     result = result2.Text;
@@ -2265,10 +2356,22 @@ namespace TrOCR
                 //显示窗口在这里
                 FormBorderStyle = FormBorderStyle.Sizable;
                 Visible = true;
+                //Size = new Size(100, 100);
                 Show();
 
                 WindowState = FormWindowState.Normal;
-                Size = new Size(form_width, form_height);
+
+                //RichBoxBody.Width = 100;
+                if (StaticValue.user_chang != 0 || StaticValue.user_kuan != 0)
+                {
+                    Size = new Size(StaticValue.user_chang, StaticValue.user_kuan);
+                }
+                else
+                {
+                    Size = new Size(form_width, form_height);
+                }
+
+                //
                 HelpWin32.SetForegroundWindow(Handle);
             }
 

@@ -215,6 +215,7 @@ namespace TrOCR
                 IniHelper.SetValue("其他特性", "缩放倍数", "1.0");
                 IniHelper.SetValue("其他特性", "文字缩放倍数", "1.0");
                 IniHelper.SetValue("其他特性", "添加换行", "False");
+                IniHelper.SetValue("其他特性", "自定义长宽", "0,0");
             }
         }
 
@@ -541,6 +542,10 @@ namespace TrOCR
             if (IniHelper.GetValue("其他特性", "文字缩放倍数") == "发生错误")
             {
                 IniHelper.SetValue("其他特性", "文字缩放倍数", "1.0");
+            }
+            if (IniHelper.GetValue("其他特性", "自定义长宽") == "发生错误")
+            {
+                IniHelper.SetValue("其他特性", "自定义长宽", "0,0");
             }
 
         }

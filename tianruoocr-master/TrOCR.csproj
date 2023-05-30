@@ -100,9 +100,6 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="zxing">
-      <HintPath>DLL\zxing.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -305,6 +302,9 @@
     </PackageReference>
     <PackageReference Include="TencentCloudSDK.Tmt">
       <Version>3.0.644</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net">
+      <Version>0.16.9</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
