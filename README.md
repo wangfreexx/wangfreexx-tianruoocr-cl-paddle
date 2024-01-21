@@ -1,5 +1,9 @@
 # tianruoocr-cl
 
+
+由于本人精力有限，本软件目前暂时不进行任何维护，推荐使用[Umi-ocr](https://gitee.com/wanglifree/tianruoocr-cl/issues/I5LRD0)我使用了一下，非常不错，至少比我的好多了，有时间有精力可能会再来维护。
+Due to my limited energy, this software is currently not undergoing any maintenance, recommend to use [ UMI-OCR ](https://gitee.com/wanglifree/tianruoocr-cl/issues/i5lrd0) I used it, it is very good, at least much better than mine, have time and energy may be again to maintain.
+
 #### 介绍
 
 ![图 1](images/6752d5502fadfb2c5d7bfc4a15004997713f7aafed5b2b1e8766ec6723a0d4e3.png)  
